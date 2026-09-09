@@ -1,0 +1,587 @@
+.content-showcase {
+  position: relative;
+  height: calc(var(--team-height-desktop) + var(--blog-height-desktop));
+  color: var(--color-black);
+  background: var(--color-white);
+  isolation: isolate;
+}
+
+.content-showcase__background {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 700px);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.content-showcase__ellipse {
+  position: absolute;
+  width: 1356px;
+  height: 1356px;
+  max-width: none;
+}
+
+.content-showcase__ellipse--top-right {
+  top: -434px;
+  left: 790px;
+}
+
+.content-showcase__ellipse--top-left {
+  top: -412px;
+  left: -295px;
+}
+
+.content-showcase__ellipse--middle-left {
+  top: 149px;
+  left: -279px;
+}
+
+.content-showcase__ellipse--bottom-right {
+  top: 537px;
+  right: -585px;
+  left: auto;
+}
+
+@media (min-width: 768px) {
+  body[data-layout-page="home"] .content-showcase::after {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: var(--content-showcase-footer-gap);
+    background: linear-gradient(
+      to bottom,
+      rgb(255 255 255 / 0%) 0%,
+      var(--color-white) 100%
+    );
+    content: "";
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  body[data-layout-page="home"] .content-showcase {
+    --content-showcase-footer-gap: 150px;
+    height: calc(var(--team-height-desktop) + var(--blog-height-desktop) + var(--content-showcase-footer-gap));
+  }
+}
+
+.team {
+  position: relative;
+  z-index: 1;
+  height: var(--team-height-desktop);
+}
+
+.team__container {
+  position: relative;
+  height: 100%;
+}
+
+@media (min-width: 1280px) {
+  .team__container {
+    left: 41px;
+  }
+}
+
+.team__title {
+  position: absolute;
+  top: 199px;
+  left: 0;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 70px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.team__title span {
+  color: var(--color-accent);
+}
+
+.team__controls {
+  position: absolute;
+  z-index: 3;
+  top: 219px;
+  left: 386px;
+  display: flex;
+  gap: 35px;
+  width: 71px;
+  height: 30px;
+}
+
+.team__control {
+  display: block;
+  width: 18px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.team__control--next {
+  transform: rotate(180deg);
+}
+
+.team__arrow {
+  width: 18px;
+  height: 30px;
+  max-width: none;
+}
+
+.team__arrow--mobile {
+  display: none;
+}
+
+.team__viewport,
+.team__list {
+  position: absolute;
+  inset: 0;
+}
+
+.team__item {
+  position: absolute;
+  top: 319px;
+  width: 285px;
+  height: 420px;
+}
+
+.team__item--alexander {
+  left: 1px;
+}
+
+.team__item--akmal {
+  left: 306px;
+}
+
+.team__item--maxim {
+  left: 611px;
+}
+
+.team__item--valeria {
+  left: 916px;
+}
+
+.team-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.team-card__photo {
+  position: relative;
+  width: 285px;
+  height: 347px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.team-card__sprite {
+  position: absolute;
+  top: -120px;
+  width: 1201px;
+  height: 540px;
+  max-width: none;
+}
+
+.team__item--alexander .team-card__sprite--desktop {
+  left: 0;
+}
+
+.team__item--akmal .team-card__sprite--desktop {
+  left: -305px;
+}
+
+.team__item--maxim .team-card__sprite--desktop {
+  left: -610px;
+}
+
+.team__item--valeria .team-card__sprite--desktop {
+  left: -915px;
+}
+
+.team-card__sprite--mobile {
+  display: none;
+}
+
+.team-card__info {
+  position: absolute;
+  top: 365px;
+  left: 50%;
+  width: 254px;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.team-card__name {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.team-card__role {
+  margin-top: 10px;
+  color: var(--color-accent);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .content-showcase {
+    height: 1050px;
+  }
+
+  body[data-layout-page="home"] .content-showcase {
+    --content-showcase-footer-gap: 100px;
+    height: calc(1050px + var(--content-showcase-footer-gap));
+  }
+
+  .team {
+    height: 570px;
+  }
+
+  .team__title {
+    top: 70px;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .team__controls {
+    top: 85px;
+    left: 335px;
+  }
+
+  .team__list {
+    top: 170px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    height: auto;
+  }
+
+  .team__item,
+  .team__item:nth-child(n) {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .team-card__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 285 / 347;
+  }
+
+  .team-card__sprite {
+    top: -34.5821%;
+    width: 421.4035%;
+    height: auto;
+  }
+
+  .team__item--akmal .team-card__sprite--desktop {
+    left: -107.0175%;
+  }
+
+  .team__item--maxim .team-card__sprite--desktop {
+    left: -214.0351%;
+  }
+
+  .team__item--valeria .team-card__sprite--desktop {
+    left: -321.0526%;
+  }
+
+  .team-card__info {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 16px;
+    transform: none;
+  }
+
+  .team-card__name {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .team-card__role {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-layout-page="home"] .content-showcase {
+    --content-showcase-footer-gap: 70px;
+    height: calc(721.1401px + 498px + var(--content-showcase-footer-gap));
+  }
+
+  body[data-layout-page="home"] .content-showcase::after {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: var(--content-showcase-footer-gap);
+    background: var(--color-white);
+    content: "";
+    pointer-events: none;
+  }
+
+  .content-showcase__background {
+    display: none;
+  }
+
+  .team {
+    height: 721.1401px;
+  }
+
+  .team__title {
+    top: 70px;
+    left: 0;
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .team__controls {
+    top: 76px;
+    right: -2px;
+    left: auto;
+    gap: 37px;
+    width: 73px;
+  }
+
+  .team__arrow--desktop {
+    display: none;
+  }
+
+  .team__arrow--mobile {
+    display: block;
+  }
+
+  .team__item,
+  .team__item:nth-child(n) {
+    top: 150px;
+    left: 50%;
+    display: none;
+    width: min(100%, 350px);
+    height: 501.1401px;
+    transform: translateX(-50%);
+  }
+
+  .team__item.is-active {
+    display: block;
+  }
+
+  .team-card__photo {
+    width: 100%;
+    height: 426.1401px;
+  }
+
+  .team-card__sprite--desktop {
+    top: -147.3684px;
+    width: 1474.9123px;
+    height: 663.1579px;
+  }
+
+  .team__item--akmal .team-card__sprite--desktop {
+    left: -374.5614px;
+  }
+
+  .team__item--maxim .team-card__sprite--desktop {
+    left: -749.1228px;
+  }
+
+  .team__item--valeria .team-card__sprite--desktop {
+    left: -1123.6842px;
+  }
+
+  .team__item--alexander .team-card__sprite--desktop {
+    display: none;
+  }
+
+  .team-card__sprite--mobile {
+    top: -80px;
+    left: 0;
+    display: block;
+    width: 350px;
+    height: 581.1401px;
+  }
+
+  .team-card__info {
+    top: 446.1401px;
+  }
+}
+
+@media (max-width: 359px) {
+  .team__title {
+    font-size: 44px;
+  }
+
+  .team__controls {
+    right: 0;
+  }
+}
+
+/* A single transform-based track keeps mouse and touch swipes smooth at every breakpoint. */
+.team__viewport {
+  position: absolute;
+  inset: auto;
+  top: 319px;
+  left: 1px;
+  width: 1200px;
+  height: 420px;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.team__viewport.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.team__list {
+  position: relative;
+  inset: auto;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transition: transform 460ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.team__viewport.is-dragging .team__list {
+  transition: none;
+  pointer-events: none;
+}
+
+.team__item,
+.team__item:nth-child(n) {
+  position: relative;
+  inset: auto;
+  display: block;
+  flex: 0 0 calc((100% - 60px) / 4);
+  width: calc((100% - 60px) / 4);
+  height: 420px;
+  transform: none;
+}
+
+.team-card__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 285 / 347;
+}
+
+.team-card__sprite--desktop {
+  top: -34.5821%;
+  width: 421.4035%;
+  height: auto;
+}
+
+.team__item--akmal .team-card__sprite--desktop {
+  left: -107.0175%;
+}
+
+.team__item--maxim .team-card__sprite--desktop {
+  left: -214.0351%;
+}
+
+.team__item--valeria .team-card__sprite--desktop {
+  left: -321.0526%;
+}
+
+.team-card__info {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  margin-top: 18px;
+  transform: none;
+}
+
+.team__viewport img {
+  -webkit-user-drag: none;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .team__viewport {
+    top: 170px;
+    left: 0;
+    width: 100%;
+    height: 360px;
+  }
+
+  .team-card__info {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .team__viewport {
+    top: 150px;
+    left: 50%;
+    width: min(100%, 350px);
+    height: 501.1401px;
+    transform: translateX(-50%);
+  }
+
+  .team__list {
+    gap: 0;
+  }
+
+  .team__item,
+  .team__item:nth-child(n) {
+    flex-basis: 100%;
+    width: 100%;
+    height: 501.1401px;
+  }
+
+  .team-card__photo {
+    height: 426.1401px;
+    aspect-ratio: auto;
+  }
+
+  .team-card__sprite--desktop {
+    top: -147.3684px;
+    width: 1474.9123px;
+    height: 663.1579px;
+  }
+
+  .team__item--akmal .team-card__sprite--desktop {
+    left: -374.5614px;
+  }
+
+  .team__item--maxim .team-card__sprite--desktop {
+    left: -749.1228px;
+  }
+
+  .team__item--valeria .team-card__sprite--desktop {
+    left: -1123.6842px;
+  }
+
+  .team-card__info {
+    position: absolute;
+    top: 446.1401px;
+    left: 50%;
+    width: 254px;
+    margin-top: 0;
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team__list {
+    transition: none;
+  }
+}

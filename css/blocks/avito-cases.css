@@ -1,0 +1,261 @@
+.avito-cases {
+  position: relative;
+  z-index: 1;
+  height: 711px;
+  padding: 0;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.avito-cases::before {
+  position: absolute;
+  z-index: 0;
+  top: -449px;
+  right: -253px;
+  width: 538px;
+  height: 538px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.avito-cases__container {
+  position: relative;
+  z-index: 1;
+}
+
+.avito-cases__head {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.avito-cases__all {
+  position: absolute;
+  top: 110px;
+  left: 1px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.avito-cases__arrows {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 90px;
+  height: 39px;
+}
+
+.avito-cases__arrow {
+  position: relative;
+  width: 30px;
+  height: 39px;
+  padding: 0;
+  color: var(--color-avito-violet);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.avito-cases__arrow::before {
+  position: absolute;
+  top: 4px;
+  width: 30px;
+  height: 31px;
+  background: currentColor;
+  content: "";
+}
+
+.avito-cases__arrow--prev::before {
+  left: 0;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.avito-cases__arrow--next::before {
+  right: 0;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.avito-cases__arrow:disabled {
+  color: #f1f1f2;
+  cursor: default;
+}
+
+@media (hover: hover) {
+  .avito-cases__arrow:not(:disabled):hover {
+    color: #7f43d7;
+  }
+}
+
+.avito-cases__arrow:focus-visible {
+  outline: 2px solid var(--color-avito-violet);
+  outline-offset: 4px;
+}
+
+.avito-cases__viewport {
+  overflow: hidden;
+}
+
+.avito-cases__viewport.is-swipe-enabled {
+  cursor: grab;
+  overscroll-behavior-x: contain;
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.avito-cases__viewport.is-swipe-enabled:active,
+.avito-cases__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.avito-cases__list {
+  display: flex;
+  gap: 20px;
+  margin-top: 88px;
+  transition: transform 420ms cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+
+.avito-cases__viewport.is-dragging .avito-cases__list {
+  transition: none;
+}
+
+.avito-cases__item {
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 0;
+}
+
+.avito-case-card__image {
+  width: 100%;
+  height: 338px;
+  border-radius: 20px;
+  object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avito-cases__list {
+    transition-duration: 0.01ms;
+  }
+}
+
+.avito-case-card__title {
+  min-height: 50px;
+  margin: 20px 0 0;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 25px;
+}
+
+.avito-case-card__copy {
+  min-height: 40px;
+  margin: 20px 0 0;
+  color: rgba(0, 0, 0, .5);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.avito-case-card__button {
+  width: 100%;
+  min-height: 55px;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.avito-cases__controls {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .avito-cases {
+    height: 572px;
+    min-height: 572px;
+    padding: 0;
+  }
+
+  .avito-cases::before {
+    display: none;
+  }
+
+  .avito-cases__head {
+    align-items: center;
+  }
+
+  .avito-cases__all { display: block; top: 73px; left: 1px; font-size: 14px; line-height: 20px; }
+  .avito-cases__arrows { top: 70px; right: 0; gap: 20px; width: 60px; height: 26px; }
+
+  .avito-cases__arrow {
+    width: 20px;
+    height: 26px;
+  }
+
+  .avito-cases__arrow::before {
+    top: 3px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .avito-cases__viewport {
+    width: 300px;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+
+  .avito-cases__list {
+    gap: 0;
+    width: 100%;
+    margin-top: 66px;
+  }
+
+  .avito-cases__item {
+    flex: 0 0 100%;
+  }
+
+  .avito-case-card__image {
+    height: 288px;
+    border-radius: 10px;
+  }
+
+  .avito-case-card__title {
+    min-height: 44px;
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .avito-case-card__copy {
+    min-height: 32px;
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .avito-case-card__button {
+    min-height: 47px;
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .avito-cases__controls {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .avito-cases::before {
+    top: -397px;
+  }
+}

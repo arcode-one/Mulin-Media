@@ -1,0 +1,243 @@
+/* Shared interaction state for every primary action across all pages. */
+.header__cta,
+.lead-form__submit,
+.site-footer__form .lead-form__submit,
+.case-card__button,
+.service-card__button,
+.services-promo__button,
+.blog-card__button,
+.avito-button,
+.avito-inline-form__row button,
+.cases-contact__submit,
+.catalog-case-card__button,
+.case-filter__button,
+.mobile-case-filter__option {
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .header__cta:hover,
+  .lead-form__submit:hover,
+  .site-footer__form .lead-form__submit:hover,
+  .case-card__button:hover,
+  .service-card__button:hover,
+  .services-promo__button:hover,
+  .blog-card__button:hover,
+  .avito-button:hover,
+  .avito-inline-form__row button:hover,
+  .cases-contact__submit:hover,
+  .catalog-case-card__button:hover,
+  .case-filter__button:hover,
+  .mobile-case-filter__option:hover {
+    color: var(--color-white);
+    background-color: var(--button-hover-background);
+    box-shadow: var(--button-hover-shadow);
+    transform: none;
+  }
+}
+
+.header__cta:focus-visible,
+.lead-form__submit:focus-visible,
+.site-footer__form .lead-form__submit:focus-visible,
+.case-card__button:focus-visible,
+.service-card__button:focus-visible,
+.services-promo__button:focus-visible,
+.blog-card__button:focus-visible,
+.avito-button:focus-visible,
+.avito-inline-form__row button:focus-visible,
+.cases-contact__submit:focus-visible,
+.catalog-case-card__button:focus-visible,
+.case-filter__button:focus-visible,
+.mobile-case-filter__option:focus-visible {
+  color: var(--color-white);
+  background-color: var(--button-hover-background);
+  box-shadow: var(--button-hover-shadow);
+}
+
+.header__cta:active,
+.lead-form__submit:active,
+.site-footer__form .lead-form__submit:active,
+.case-card__button:active,
+.service-card__button:active,
+.services-promo__button:active,
+.blog-card__button:active,
+.avito-button:active,
+.avito-inline-form__row button:active,
+.cases-contact__submit:active,
+.catalog-case-card__button:active,
+.case-filter__button:active,
+.mobile-case-filter__option:active {
+  transform: none;
+}
+
+/* Blog actions keep a clean capsule edge: no glow leaking below or to the right. */
+.blog-card__button,
+.blog-card__button:hover,
+.blog-card__button:focus-visible,
+.blog-card__button:active {
+  box-shadow: none;
+}
+
+/* Text actions: generous hit area, visible hover and keyboard focus, no movement. */
+.cases__all-link,
+.blog__all-link,
+.avito-cases__all,
+.lead-form__consent-text a {
+  z-index: 4;
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition:
+    color var(--transition-fast),
+    text-decoration-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.lead-form__consent-text a {
+  position: relative;
+}
+
+.cases__all-link::before,
+.blog__all-link::before,
+.avito-cases__all::before {
+  position: absolute;
+  inset: -12px -8px;
+  content: "";
+}
+
+@media (hover: hover) {
+  .cases__all-link:hover,
+  .blog__all-link:hover,
+  .avito-cases__all:hover {
+    color: var(--color-accent-soft);
+    text-decoration-color: transparent;
+  }
+
+  .lead-form__consent-text a:hover {
+    color: var(--color-accent-soft);
+    text-decoration-color: currentColor;
+  }
+}
+
+.cases__all-link:focus-visible,
+.blog__all-link:focus-visible,
+.avito-cases__all:focus-visible {
+  color: var(--color-accent-soft);
+  text-decoration-color: transparent;
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.lead-form__consent-text a:focus-visible {
+  color: var(--color-accent-soft);
+  text-decoration-color: currentColor;
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.cases__all-link:active,
+.blog__all-link:active,
+.avito-cases__all:active,
+.lead-form__consent-text a:active {
+  opacity: 0.72;
+}
+
+/* Light-section slider arrows: accent feedback without shifting the control. */
+.team__control,
+.blog__control {
+  border-radius: 4px;
+}
+
+.team__control .team__arrow,
+.blog__control img {
+  transition:
+    filter var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .team__control:hover .team__arrow,
+  .blog__control:hover img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2213%) hue-rotate(247deg) brightness(104%) contrast(101%);
+  }
+}
+
+.team__control:focus-visible,
+.blog__control:focus-visible {
+  outline: 2px solid var(--color-accent-soft);
+  outline-offset: 4px;
+}
+
+.team__control:active .team__arrow,
+.blog__control:active img {
+  filter: brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2213%) hue-rotate(247deg) brightness(104%) contrast(101%);
+  opacity: 0.72;
+}
+
+/* Circular slider controls use the same accent feedback as primary actions. */
+.avito-slider-controls__button {
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .avito-slider-controls__button:not(:disabled):hover {
+    color: var(--color-white);
+    background-color: var(--button-hover-background);
+    border-color: var(--button-hover-background);
+    box-shadow: var(--button-hover-shadow);
+    transform: none;
+  }
+}
+
+.avito-slider-controls__button:not(:disabled):focus-visible {
+  color: var(--color-white);
+  background-color: var(--button-hover-background);
+  border-color: var(--button-hover-background);
+  box-shadow: var(--button-hover-shadow);
+}
+
+.avito-slider-controls__button:not(:disabled):active {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__cta,
+  .lead-form__submit,
+  .site-footer__form .lead-form__submit,
+  .case-card__button,
+  .service-card__button,
+  .services-promo__button,
+  .blog-card__button,
+  .avito-button,
+  .avito-inline-form__row button,
+  .cases-contact__submit,
+  .catalog-case-card__button,
+  .case-filter__button,
+  .mobile-case-filter__option,
+  .avito-slider-controls__button {
+    transition: none;
+  }
+
+  .cases__all-link,
+  .blog__all-link,
+  .avito-cases__all,
+  .lead-form__consent-text a {
+    transition: none;
+  }
+
+  .team__control .team__arrow,
+  .blog__control img {
+    transition: none;
+  }
+}

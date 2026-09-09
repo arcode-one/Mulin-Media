@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mulin Media — комплексный performance-маркетинг с фокусом на окупаемость.">
+    <title>Mulin Media — performance-маркетинг</title>
+    <link rel="icon" href="./assets/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body data-layout-page="home">
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+    <div class="site">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__media" aria-hidden="true">
+          <img class="hero__mobile-base" src="./assets/images/hero/hero-mask-mobile.png" alt="">
+          <picture>
+            <source media="(max-width: 767px)" srcset="./assets/images/hero/hero-office-mobile.png">
+            <img
+              class="hero__office"
+              src="./assets/images/hero/hero-office-desktop.png"
+              width="3515"
+              height="1978"
+              alt=""
+              fetchpriority="high"
+            >
+          </picture>
+          <picture>
+            <source media="(max-width: 767px)" srcset="./assets/images/hero/hero-person-mobile.png">
+            <img
+              class="hero__person"
+              src="./assets/images/hero/hero-person-desktop.png"
+              width="690"
+              height="1436"
+              alt=""
+              fetchpriority="high"
+            >
+          </picture>
+          <img class="hero__glow hero__glow--left" src="./assets/images/hero/hero-glow-left.svg" alt="">
+          <img class="hero__glow hero__glow--bottom" src="./assets/images/hero/hero-glow-bottom.svg" alt="">
+          <div class="hero__mobile-light">
+            <img src="./assets/images/hero/hero-light-mobile.png" alt="">
+          </div>
+          <img class="hero__mobile-glow" src="./assets/images/hero/hero-glow-mobile.svg" alt="">
+          <img class="hero__mobile-shadow" src="./assets/images/hero/hero-shadow-mobile.svg" alt="">
+        </div>
+
+        <div data-layout-header></div>
+
+        <div class="hero__container container">
+          <div class="hero__content">
+            <div class="hero__title-wrap">
+              <img class="hero__bracket hero__bracket--left" src="./assets/images/hero/title-bracket-left.svg" alt="" aria-hidden="true">
+              <h1 class="hero__title" id="hero-title">
+                <span class="hero__title-copy hero__title-copy--desktop">
+                  Маркетинг, который<br>
+                  приносит прибыль,<br>
+                  а не сливает бюджет
+                </span>
+                <span class="hero__title-copy hero__title-copy--mobile">
+                  Комплексный<br>
+                  performance<br>
+                  маркетинг<br>
+                  с фокусом<br>
+                  на окупаемость
+                </span>
+              </h1>
+              <img class="hero__bracket hero__bracket--right" src="./assets/images/hero/title-bracket-right.svg" alt="" aria-hidden="true">
+            </div>
+
+            <p class="hero__description">
+              Строим управляемые системы продаж через Директ, Авито, ТГ и соцсети. Интегрируем CRM и берем на себя всю техническую часть
+            </p>
+
+            <form class="lead-form hero__form" action="#" method="post" novalidate>
+              <p class="lead-form__intro">
+                Оставьте заявку и получите <span>подробный аудит</span>,<br>
+                расчет стоимости работ и прогноз заявок
+              </p>
+
+              <div class="lead-form__controls">
+                <label class="visually-hidden" for="hero-phone">Номер телефона</label>
+                <div class="lead-form__phone-field">
+                  <img class="lead-form__flag" src="./assets/images/form/flag-ru-desktop.png" width="33" height="20" alt="Россия">
+                  <span class="lead-form__prefix" aria-hidden="true">+7</span>
+                  <input
+                    class="lead-form__input"
+                    id="hero-phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    placeholder="(000) 000-00-00"
+                    aria-describedby="hero-phone-error"
+                    required
+                  >
+                </div>
+                <button class="lead-form__submit" type="submit">
+                  <span class="lead-form__submit-text lead-form__submit-text--desktop">Обсудить проект</span>
+                  <span class="lead-form__submit-text lead-form__submit-text--mobile">Заказать аудит</span>
+                </button>
+              </div>
+
+              <label class="lead-form__consent">
+                <input class="lead-form__checkbox" type="checkbox" name="consent" required>
+                <span class="lead-form__checkbox-mark" aria-hidden="true"></span>
+                <span class="lead-form__consent-text">
+                  Я даю согласие на <a href="./personal-data.html">обработку персональных данных</a><br class="lead-form__desktop-break">
+                  и соглашаюсь с <a href="./privacy.html">политикой конфиденциальности</a>
+                </span>
+              </label>
+              <p class="lead-form__error" id="hero-phone-error" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <main id="main-content">
+        <section class="trusted" aria-labelledby="trusted-title">
+          <div class="trusted__container container">
+            <h2 class="trusted__title" id="trusted-title">
+              Нам <span class="trusted__title-accent">доверяют</span>
+            </h2>
+
+            <div
+              class="trusted__slider"
+              data-trusted-slider
+              tabindex="0"
+              aria-label="Клиенты Mulin Media. На мобильном устройстве листайте логотипы в сторону."
+            >
+              <ul class="trusted__list">
+                <li class="trusted__item trusted__item--yandex">
+                  <div class="trusted__card">
+                    <picture class="trusted__logo-box trusted__logo-box--yandex">
+                      <source media="(max-width: 767px)" srcset="./assets/images/trusted/yandex-delivery-mobile.png">
+                      <img
+                        class="trusted__logo"
+                        src="./assets/images/trusted/yandex-delivery-desktop.png"
+                        width="316"
+                        height="39"
+                        alt="Яндекс Доставка"
+                        loading="lazy"
+                      >
+                    </picture>
+                  </div>
+                </li>
+                <li class="trusted__item trusted__item--drum-school">
+                  <div class="trusted__card">
+                    <span class="trusted__logo-box trusted__logo-box--drum-school">
+                      <img
+                        class="trusted__logo"
+                        src="./assets/images/trusted/ne-shkola-barabanov.png"
+                        width="182"
+                        height="39"
+                        alt="Не школа барабанов"
+                        loading="lazy"
+                      >
+                    </span>
+                  </div>
+                </li>
+                <li class="trusted__item trusted__item--roistat">
+                  <div class="trusted__card">
+                    <span class="trusted__logo-box trusted__logo-box--roistat">
+                      <img
+                        class="trusted__logo trusted__logo--roistat"
+                        src="./assets/images/trusted/roistat.png"
+                        width="219"
+                        height="87"
+                        alt="Roistat"
+                        loading="lazy"
+                      >
+                    </span>
+                  </div>
+                </li>
+                <li class="trusted__item trusted__item--belgerd">
+                  <div class="trusted__card">
+                    <span class="trusted__logo-box trusted__logo-box--belgerd">
+                      <img
+                        class="trusted__logo"
+                        src="./assets/images/trusted/belgerd.png"
+                        width="230"
+                        height="39"
+                        alt="Belgerd"
+                        loading="lazy"
+                      >
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="cases" id="cases" aria-labelledby="cases-title">
+          <div class="cases__media" aria-hidden="true">
+            <div class="cases__background-base">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./assets/images/cases/background-base-mobile.png">
+                <img src="./assets/images/cases/background-base-desktop.png" alt="">
+              </picture>
+            </div>
+            <picture class="cases__background-overlay">
+              <source media="(max-width: 767px)" srcset="./assets/images/cases/background-overlay-mobile.png">
+              <img src="./assets/images/cases/background-overlay-desktop.png" alt="">
+            </picture>
+            <div class="cases__background-light">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./assets/images/cases/background-light-mobile.png">
+                <img src="./assets/images/cases/background-light-desktop.png" alt="">
+              </picture>
+            </div>
+          </div>
+
+          <div class="cases__header container">
+            <h2 class="cases__title" id="cases-title">Наши кейсы</h2>
+            <a class="cases__all-link" href="./cases.html">Смотреть все кейсы</a>
+
+            <div class="cases__controls cases__controls--mobile" aria-label="Переключение кейсов">
+              <button class="cases__mobile-control" type="button" data-cases-prev aria-label="Предыдущий кейс">
+                <img src="./assets/images/cases/arrow-prev.svg" width="18" height="30" alt="">
+              </button>
+              <button class="cases__mobile-control cases__mobile-control--next" type="button" data-cases-next aria-label="Следующий кейс">
+                <img src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
+              </button>
+            </div>
+          </div>
+
+          <div class="cases__viewport" data-cases-slider tabindex="0" aria-labelledby="cases-title">
+            <ul class="cases__track" id="cases-list">
+              <li class="cases__slide">
+                <article class="case-card">
+                  <span class="case-card__tag">Авито</span>
+                  <picture class="case-card__metrics" aria-hidden="true">
+                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
+                    <img src="./assets/images/cases/metrics-desktop.svg" width="80" height="30" alt="">
+                  </picture>
+                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
+                  <div class="case-card__media">
+                    <picture>
+                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
+                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
+                    </picture>
+                  </div>
+                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
+                  <a class="case-card__button" href="./case.html">
+                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
+                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
+                  </a>
+                </article>
+              </li>
+
+              <li class="cases__slide">
+                <article class="case-card">
+                  <span class="case-card__tag">Авито</span>
+                  <picture class="case-card__metrics" aria-hidden="true">
+                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
+                    <img src="./assets/images/cases/metrics-desktop.svg" width="80" height="30" alt="">
+                  </picture>
+                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
+                  <div class="case-card__media">
+                    <picture>
+                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
+                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
+                    </picture>
+                  </div>
+                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
+                  <a class="case-card__button" href="./case.html">
+                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
+                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
+                  </a>
+                </article>
+              </li>
+
+              <li class="cases__slide">
+                <article class="case-card">
+                  <span class="case-card__tag">Авито</span>
+                  <picture class="case-card__metrics" aria-hidden="true">
+                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
+                    <img src="./assets/images/cases/metrics-desktop.svg" width="80" height="30" alt="">
+                  </picture>
+                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
+                  <div class="case-card__media">
+                    <picture>
+                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
+                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
+                    </picture>
+                  </div>
+                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
+                  <a class="case-card__button" href="./case.html">
+                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
+                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
+                  </a>
+                </article>
+              </li>
+
+              <li class="cases__slide">
+                <article class="case-card">
+                  <span class="case-card__tag">Авито</span>
+                  <picture class="case-card__metrics" aria-hidden="true">
+                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
+                    <img src="./assets/images/cases/metrics-desktop-alt.svg" width="80" height="30" alt="">
+                  </picture>
+                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
+                  <div class="case-card__media">
+                    <picture>
+                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
+                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
+                    </picture>
+                  </div>
+                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
+                  <a class="case-card__button" href="./case.html">
+                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
+                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
+                  </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cases__controls cases__controls--desktop" aria-label="Переключение кейсов">
+            <button class="cases__desktop-control cases__desktop-control--prev" type="button" data-cases-prev aria-label="Предыдущий кейс">
+              <img src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
+            </button>
+            <div class="cases__dots" role="group" aria-label="Выбор кейса">
+              <button class="cases__dot" type="button" data-cases-dot="0" aria-label="Показать кейс 1"></button>
+              <button class="cases__dot" type="button" data-cases-dot="1" aria-label="Показать кейс 2"></button>
+              <button class="cases__dot" type="button" data-cases-dot="2" aria-label="Показать кейс 3"></button>
+              <button class="cases__dot" type="button" data-cases-dot="3" aria-label="Показать кейс 4"></button>
+            </div>
+            <button class="cases__desktop-control cases__desktop-control--next" type="button" data-cases-next aria-label="Следующий кейс">
+              <img src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
+            </button>
+          </div>
+          <p class="visually-hidden" data-cases-status aria-live="polite">Показан первый кейс</p>
+        </section>
+
+        <section class="services" id="services" aria-labelledby="services-title" data-services>
+          <div class="services__background" aria-hidden="true">
+            <img
+              class="services__ellipse services__ellipse--top-right"
+              src="./assets/images/services/ellipse-top-right.svg"
+              width="1356"
+              height="1356"
+              alt=""
+            >
+            <img
+              class="services__ellipse services__ellipse--left"
+              src="./assets/images/services/ellipse-left.svg"
+              width="1356"
+              height="1356"
+              alt=""
+            >
+            <img
+              class="services__ellipse services__ellipse--right"
+              src="./assets/images/services/ellipse-right.svg"
+              width="1356"
+              height="1356"
+              alt=""
+            >
+            <img
+              class="services__ellipse services__ellipse--bottom"
+              src="./assets/images/services/ellipse-bottom.svg"
+              width="1356"
+              height="1356"
+              alt=""
+            >
+          </div>
+
+          <div class="services__container container">
+            <h2 class="services__title" id="services-title">
+              Наши <span class="services__title-accent">услуги</span>
+            </h2>
+
+            <ul class="services__grid">
+              <li class="services__item">
+                <article class="service-card">
+                  <span class="service-card__icon" aria-hidden="true">
+                    <span class="service-card__icon-crop service-card__icon-crop--context">
+                      <img src="./assets/images/services/icon-context.png" alt="">
+                    </span>
+                  </span>
+                  <h3 class="service-card__title">Контекстная реклама<br>(Яндекс Директ)</h3>
+                  <p class="service-card__description service-card__description--context">Приводим «горячих» клиентов из поиска и РСЯ. Оптимизируем стоимость лида за счет глубокой аналитики и работы с офферами</p>
+                  <p class="service-card__tags">#Поиск #РСЯ #Ретаргетинг #Товарные кампании</p>
+                  <a class="service-card__button" href="#contacts">Подробнее</a>
+                </article>
+              </li>
+
+              <li class="services__item">
+                <article class="service-card service-card--avito">
+                  <span class="service-card__icon service-card__icon--avito" aria-hidden="true">
+                    <span class="service-card__icon-crop service-card__icon-crop--avito">
+                      <img src="./assets/images/services/icon-avito.png" alt="">
+                    </span>
+                  </span>
+                  <h3 class="service-card__title">Авитолог. Продвижение<br>на Авито</h3>
+                  <p class="service-card__description service-card__description--avito">Захватываем нишу на крупнейшем классифайне. Масс-постинг, оформление магазинов и вывод объявлений в топ выдачи</p>
+                  <p class="service-card__tags">#Стратегия #Оформление #Ведение 24/7</p>
+                  <a class="service-card__button" href="#contacts">Подробнее</a>
+                </article>
+              </li>
+
+              <li class="services__item services__item--target">
+                <article class="service-card service-card--target">
+                  <span class="service-card__icon" aria-hidden="true">
+                    <img class="service-card__icon-vector service-card__icon-vector--target" src="./assets/images/services/icon-target.svg" alt="">
+                  </span>
+                  <h3 class="service-card__title">Таргетированная<br>реклама</h3>
+                  <p class="service-card__description">Масштабируем продажи через соцсети. Точечная настройка на вашу ЦА и конкурентов. Работаем с официальным кабинетом TG Ads</p>
+                  <p class="service-card__tags">#Telegram Ads #VK Реклама #Посевы</p>
+                  <a class="service-card__button" href="#contacts">Подробнее</a>
+                </article>
+              </li>
+
+              <li class="services__item">
+                <article class="service-card">
+                  <span class="service-card__icon" aria-hidden="true">
+                    <img class="service-card__icon-vector service-card__icon-vector--web" src="./assets/images/services/icon-web.svg" alt="">
+                  </span>
+                  <h3 class="service-card__title">Web-разработка<br>и Landing Pages</h3>
+                  <p class="service-card__description">Создаем конверсионные страницы, которые не просто «висят», а продают. От квизов до сложных многостраничных порталов</p>
+                  <p class="service-card__tags">#Лендинги #Quiz #Проектирование смыслов</p>
+                  <a class="service-card__button" href="#contacts">Подробнее</a>
+                </article>
+              </li>
+
+              <li class="services__item">
+                <article class="service-card">
+                  <span class="service-card__icon" aria-hidden="true">
+                    <img class="service-card__icon-vector service-card__icon-vector--seo" src="./assets/images/services/icon-seo.svg" alt="">
+                  </span>
+                  <h3 class="service-card__title">Поисковый<br>маркетинг (SEO)</h3>
+                  <p class="service-card__description">Стабильный поток бесплатного трафика из Google и Яндекс. Исправляем технические ошибки и поднимаем сайт в ТОП по целевым запросам</p>
+                  <p class="service-card__tags">#Тех. аудит #Ссылочное продвижение #Контент</p>
+                  <a class="service-card__button" href="#contacts">Подробнее</a>
+                </article>
+              </li>
+
+              <li class="services__item">
+                <article class="service-card service-card--crm">
+                  <span class="service-card__icon" aria-hidden="true">
+                    <span class="service-card__icon-crop service-card__icon-crop--crm">
+                      <img src="./assets/images/services/icon-crm.png" alt="">
+                    </span>
+                  </span>
+                  <h3 class="service-card__title">Автоматизация<br>продаж (CRM)</h3>
+                  <p class="service-card__description">Интегрируем АmoCRM или Битрикс24. Настраиваем сквозную аналитику, чтобы вы видели путь клиента от клика до чека</p>
+                  <p class="service-card__tags">#AmoCRM #Битрикс24 #Сквозная аналитика</p>
+                  <a class="service-card__button" href="#contacts">Подробнее</a>
+                </article>
+              </li>
+            </ul>
+
+            <article class="services-promo">
+              <div class="services-promo__media" aria-hidden="true">
+                <img src="./assets/images/services/performance-marketing.png" alt="">
+              </div>
+              <h3 class="services-promo__title">
+                <span>Комплексный</span>
+                <span>Performance-маркетинг</span>
+              </h3>
+              <p class="services-promo__description">Берем на себя роль вашего маркетингового отдела. Связка из трафика, сайта и CRM для максимального ROI</p>
+              <a class="services-promo__button" href="#contacts">Подробнее</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="workflow" aria-labelledby="workflow-title" data-workflow>
+          <div class="workflow__background" aria-hidden="true">
+            <img class="workflow__ellipse workflow__ellipse--top" src="./assets/images/workflow/ellipse-top.svg" width="1356" height="1356" alt="">
+            <img class="workflow__ellipse workflow__ellipse--right" src="./assets/images/workflow/ellipse-right.svg" width="1356" height="1356" alt="">
+            <img class="workflow__ellipse workflow__ellipse--left" src="./assets/images/workflow/ellipse-left.svg" width="1356" height="1356" alt="">
+          </div>
+
+          <div class="workflow__container container">
+            <div class="workflow__header">
+              <h2 class="workflow__title" id="workflow-title">
+                Схема <span class="workflow__title-accent">работы</span>
+              </h2>
+              <p class="workflow__hint">Нажмите на этап – узнайте подробнее</p>
+            </div>
+
+            <img
+              class="workflow__lines"
+              src="./assets/images/workflow/connector-lines-desktop.svg"
+              width="594"
+              height="1182"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <ol class="workflow__steps">
+              <li class="workflow__item">
+                <button
+                  class="workflow-card"
+                  type="button"
+                  data-workflow-step
+                  data-number="01"
+                  data-title="Брифинг"
+                  data-icon="📃"
+                  data-time="1-2 дня"
+                  data-detail="Проводим подробное интервью: изучаем ваш бизнес, конкурентов, целевую аудиторию и текущие результаты. Определяем KPI и точки роста."
+                  data-result="Заполненный бриф + понимание задачи"
+                  aria-pressed="false"
+                >
+                  <span class="workflow-card__icon" aria-hidden="true">📃</span>
+                  <span class="workflow-card__title"><span class="workflow-card__number">01</span> Брифинг</span>
+                  <span class="workflow-card__summary">Проводим подробное интервью: изучаем<br>ваш бизнес, конкурентов,...</span>
+                  <span class="workflow-card__mobile-detail">Проводим подробное интервью: изучаем ваш бизнес, конкурентов, целевую аудиторию и текущие результаты. Определяем KPI и точки роста.</span>
+                  <span class="workflow-card__result"><strong>Результат:</strong> Заполненный бриф + понимание задачи</span>
+                  <span class="workflow-card__time">1-2 дня</span>
+                </button>
+              </li>
+
+              <li class="workflow__item">
+                <button
+                  class="workflow-card"
+                  type="button"
+                  data-workflow-step
+                  data-number="02"
+                  data-title="Стратегия"
+                  data-icon="🎯"
+                  data-time="3-5 дней"
+                  data-detail="Разрабатываем индивидуальную стратегию продвижения: определяем каналы, аудитории, офферы и приоритетные точки роста."
+                  data-result="Пошаговая стратегия продвижения"
+                  aria-pressed="false"
+                >
+                  <span class="workflow-card__icon" aria-hidden="true">🎯</span>
+                  <span class="workflow-card__title"><span class="workflow-card__number">02</span> Стратегия</span>
+                  <span class="workflow-card__summary">Разрабатываем индивидуальную стратегию<br>продвижения: выбираем...</span>
+                  <span class="workflow-card__mobile-detail">Разрабатываем индивидуальную стратегию продвижения: определяем каналы, аудитории, офферы и точки роста.</span>
+                  <span class="workflow-card__result"><strong>Результат:</strong> Пошаговая стратегия продвижения</span>
+                  <span class="workflow-card__time">3-5 дней</span>
+                </button>
+              </li>
+
+              <li class="workflow__item">
+                <button
+                  class="workflow-card"
+                  type="button"
+                  data-workflow-step
+                  data-number="03"
+                  data-title="Настройка"
+                  data-icon="⚙️"
+                  data-time="5 дней"
+                  data-detail="Настраиваем аналитику, пиксели и UTM-метки. Готовим рекламные кабинеты, интеграции и все необходимые технические связки."
+                  data-result="Готовая инфраструктура для запуска"
+                  aria-pressed="false"
+                >
+                  <span class="workflow-card__icon" aria-hidden="true">⚙️</span>
+                  <span class="workflow-card__title"><span class="workflow-card__number">03</span> Настройка</span>
+                  <span class="workflow-card__summary">Настраиваем аналитику, пиксели, UTM-метки.<br>Готовим кабинеты,...</span>
+                  <span class="workflow-card__mobile-detail">Настраиваем аналитику, пиксели и UTM-метки. Готовим кабинеты, интеграции и технические связки.</span>
+                  <span class="workflow-card__result"><strong>Результат:</strong> Инфраструктура готова к запуску</span>
+                  <span class="workflow-card__time">5 дней</span>
+                </button>
+              </li>
+
+              <li class="workflow__item">
+                <button
+                  class="workflow-card"
+                  type="button"
+                  data-workflow-step
+                  data-number="04"
+                  data-title="Запуск трафика"
+                  data-icon="🚀"
+                  data-time="5 дней"
+                  data-detail="Запускаем рекламные кампании по всем согласованным каналам. Проверяем корректность аналитики и начинаем сбор данных."
+                  data-result="Первые рекламные кампании запущены"
+                  aria-pressed="false"
+                >
+                  <span class="workflow-card__icon" aria-hidden="true">🚀</span>
+                  <span class="workflow-card__title"><span class="workflow-card__number">04</span> Запуск трафика</span>
+                  <span class="workflow-card__summary">Запускаем рекламные кампании по всем<br>согласованным каналам...</span>
+                  <span class="workflow-card__mobile-detail">Запускаем рекламные кампании по всем согласованным каналам. Проверяем аналитику и начинаем сбор данных.</span>
+                  <span class="workflow-card__result"><strong>Результат:</strong> Кампании запущены</span>
+                  <span class="workflow-card__time">5 дней</span>
+                </button>
+              </li>
+
+              <li class="workflow__item">
+                <button
+                  class="workflow-card"
+                  type="button"
+                  data-workflow-step
+                  data-number="05"
+                  data-title="Оптимизация"
+                  data-icon="📊"
+                  data-time="∞"
+                  data-detail="Анализируем результаты ежедневно. Отключаем неэффективные объявления, тестируем новые гипотезы и снижаем стоимость заявки."
+                  data-result="Стабильная стоимость целевого обращения"
+                  aria-pressed="false"
+                >
+                  <span class="workflow-card__icon" aria-hidden="true">📊</span>
+                  <span class="workflow-card__title"><span class="workflow-card__number">05</span> Оптимизация</span>
+                  <span class="workflow-card__summary">Анализируем результаты ежедневно.<br>Отключаем неэффективное,...</span>
+                  <span class="workflow-card__mobile-detail">Анализируем результаты ежедневно. Отключаем неэффективное и тестируем новые гипотезы.</span>
+                  <span class="workflow-card__result"><strong>Результат:</strong> Стабильная стоимость заявки</span>
+                  <span class="workflow-card__time workflow-card__time--infinity">∞</span>
+                </button>
+              </li>
+
+              <li class="workflow__item">
+                <button
+                  class="workflow-card"
+                  type="button"
+                  data-workflow-step
+                  data-number="06"
+                  data-title="Масштабирование"
+                  data-icon="📈"
+                  data-time="∞"
+                  data-detail="Увеличиваем бюджет на рабочих связках, подключаем новые каналы и переносим успешные гипотезы на дополнительные сегменты аудитории."
+                  data-result="Рост объёма заявок и продаж"
+                  aria-pressed="false"
+                >
+                  <span class="workflow-card__icon" aria-hidden="true">📈</span>
+                  <span class="workflow-card__title"><span class="workflow-card__number">06</span> Масштабирование</span>
+                  <span class="workflow-card__summary">Увеличиваем бюджет на рабочих связках,<br>подключаем новые...</span>
+                  <span class="workflow-card__mobile-detail">Увеличиваем бюджет на рабочих связках, подключаем новые каналы и успешные гипотезы.</span>
+                  <span class="workflow-card__result"><strong>Результат:</strong> Рост заявок и продаж</span>
+                  <span class="workflow-card__time workflow-card__time--infinity">∞</span>
+                </button>
+              </li>
+            </ol>
+
+            <article class="workflow-detail" aria-live="polite">
+              <span class="workflow-detail__icon-wrap" aria-hidden="true">
+                <span class="workflow-detail__icon" data-workflow-detail-icon>📃</span>
+              </span>
+              <h3 class="workflow-detail__title">
+                <span class="workflow-detail__number" data-workflow-detail-number>01</span>
+                <span data-workflow-detail-title>Брифинг</span>
+              </h3>
+              <p class="workflow-detail__description" data-workflow-detail-description>Проводим подробное интервью: изучаем ваш бизнес, конкурентов, целевую аудиторию и текущие результаты. Определяем KPI и точки роста.</p>
+              <p class="workflow-detail__result">
+                <strong>Результат:</strong>
+                <span data-workflow-detail-result>Заполненный бриф + понимание задачи</span>
+              </p>
+              <span class="workflow-detail__time" data-workflow-detail-time>1-2 дня</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="why-us" id="about" aria-labelledby="why-us-title" data-why-us>
+          <div class="why-us__background" aria-hidden="true">
+            <div class="why-us__backdrop-wrap">
+              <img class="why-us__backdrop why-us__backdrop--desktop" src="./assets/images/why-us/background-desktop.png" width="1725" height="912" alt="">
+              <img class="why-us__backdrop why-us__backdrop--mobile" src="./assets/images/why-us/background-mobile.png" width="1725" height="912" alt="">
+            </div>
+
+            <div class="why-us__wordmark-wrap">
+              <img class="why-us__wordmark why-us__wordmark--desktop" src="./assets/images/why-us/wordmark-desktop.svg" width="1702" height="308" alt="">
+              <img class="why-us__wordmark why-us__wordmark--mobile" src="./assets/images/why-us/wordmark-mobile.svg" width="1702" height="308" alt="">
+            </div>
+
+            <div class="why-us__light-wrap">
+              <div class="why-us__light-beam">
+                <img class="why-us__light why-us__light--desktop" src="./assets/images/why-us/light-source-desktop.png" width="1200" height="1200" alt="">
+                <img class="why-us__light why-us__light--mobile" src="./assets/images/why-us/light-source-mobile.png" width="1200" height="1200" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="why-us__container container">
+            <h2 class="why-us__title" id="why-us-title">
+              <span>Почему</span>
+              <span class="why-us__title-accent">Mulin Media?</span>
+            </h2>
+
+            <ul class="why-us__benefits">
+              <li class="why-us__benefit why-us__benefit--payback">
+                <article class="why-us-card">
+                  <span class="why-us-card__icon" aria-hidden="true">📈</span>
+                  <h3 class="why-us-card__title">Окупаемость</h3>
+                  <p class="why-us-card__description">
+                    <span class="why-us-card__copy why-us-card__copy--desktop">Никаких «кликов» или «охватов».<br>Наша метрика – ваша прибыль</span>
+                    <span class="why-us-card__copy why-us-card__copy--mobile">Никаких «кликов» или «охватов». Наша метрика<br>– ваша прибыль</span>
+                  </p>
+                </article>
+              </li>
+
+              <li class="why-us__benefit why-us__benefit--complex">
+                <article class="why-us-card">
+                  <span class="why-us-card__icon" aria-hidden="true">⚡</span>
+                  <h3 class="why-us-card__title">Комплекс</h3>
+                  <p class="why-us-card__description">
+                    <span class="why-us-card__copy why-us-card__copy--desktop">Не нужно искать<br>5 разных подрядчиков</span>
+                    <span class="why-us-card__copy why-us-card__copy--mobile">Не нужно искать 5 разных подрядчиков</span>
+                  </p>
+                </article>
+              </li>
+
+              <li class="why-us__benefit why-us__benefit--transparent">
+                <article class="why-us-card">
+                  <span class="why-us-card__icon" aria-hidden="true">🔍</span>
+                  <h3 class="why-us-card__title">Прозрачность</h3>
+                  <p class="why-us-card__description">
+                    <span class="why-us-card__copy why-us-card__copy--desktop">Доступ к кабинетам<br>и ежедневная отчетность</span>
+                    <span class="why-us-card__copy why-us-card__copy--mobile">Доступ к кабинетам и ежедневная отчетность</span>
+                  </p>
+                </article>
+              </li>
+
+              <li class="why-us__benefit why-us__benefit--technology">
+                <article class="why-us-card">
+                  <span class="why-us-card__icon" aria-hidden="true">🤖</span>
+                  <h3 class="why-us-card__title">Технологичность</h3>
+                  <p class="why-us-card__description">
+                    <span class="why-us-card__copy why-us-card__copy--desktop">Используем AI и автоматизацию<br>для снижения стоимости лида</span>
+                    <span class="why-us-card__copy why-us-card__copy--mobile">Используем AI и автоматизацию для снижения<br>стоимости лида</span>
+                  </p>
+                </article>
+              </li>
+            </ul>
+
+            <dl class="why-us__stats">
+              <div class="why-us__stat why-us__stat--experience">
+                <dt class="why-us__stat-value">
+                  <strong>7</strong>
+                  <span>лет</span>
+                </dt>
+                <dd class="why-us__stat-caption">опыта в маркетинге<br>и привлечении клиентов</dd>
+              </div>
+
+              <div class="why-us__stat why-us__stat--projects">
+                <dt class="why-us__stat-value">
+                  <strong>100</strong>
+                  <span>+</span>
+                </dt>
+                <dd class="why-us__stat-caption">успешных проектов<br>реализованно</dd>
+              </div>
+
+              <div class="why-us__stat why-us__stat--budget">
+                <dt class="why-us__stat-value">
+                  <strong>500</strong>
+                  <span>млн р</span>
+                </dt>
+                <dd class="why-us__stat-caption">освоенного бюджета<br>за время работы</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <div class="content-showcase">
+          <div class="content-showcase__background" aria-hidden="true">
+            <img class="content-showcase__ellipse content-showcase__ellipse--top-right" src="./assets/images/content-glows/ellipse-4699.svg" width="1356" height="1356" alt="">
+            <img class="content-showcase__ellipse content-showcase__ellipse--top-left" src="./assets/images/content-glows/ellipse-4704.svg" width="1356" height="1356" alt="">
+            <img class="content-showcase__ellipse content-showcase__ellipse--middle-left" src="./assets/images/content-glows/ellipse-4700.svg" width="1356" height="1356" alt="">
+            <img class="content-showcase__ellipse content-showcase__ellipse--bottom-right" src="./assets/images/content-glows/ellipse-4701.svg" width="1356" height="1356" alt="">
+          </div>
+
+          <section class="team" aria-labelledby="team-title" data-team>
+            <div class="team__container container">
+              <h2 class="team__title" id="team-title">Наша <span>команда</span></h2>
+
+              <div class="team__controls" aria-label="Переключение сотрудников">
+                <button class="team__control team__control--prev" type="button" data-team-prev aria-label="Предыдущий сотрудник">
+                  <img class="team__arrow team__arrow--desktop" src="./assets/images/team/arrow-prev-desktop.svg" width="18" height="30" alt="">
+                  <img class="team__arrow team__arrow--mobile" src="./assets/images/team/arrow-prev-mobile.svg" width="18" height="30" alt="">
+                </button>
+                <button class="team__control team__control--next" type="button" data-team-next aria-label="Следующий сотрудник">
+                  <img class="team__arrow team__arrow--desktop" src="./assets/images/team/arrow-next-desktop.svg" width="18" height="30" alt="">
+                  <img class="team__arrow team__arrow--mobile" src="./assets/images/team/arrow-next-mobile.svg" width="18" height="30" alt="">
+                </button>
+              </div>
+
+              <div class="team__viewport" aria-live="polite">
+                <ul class="team__list">
+                  <li class="team__item team__item--alexander is-active" data-team-slide>
+                    <article class="team-card">
+                      <div class="team-card__photo">
+                        <img class="team-card__sprite team-card__sprite--desktop" src="./assets/images/team/team-desktop-export.png" width="1201" height="540" alt="Александр Мулин">
+                        <img class="team-card__sprite team-card__sprite--mobile" src="./assets/images/team/team-mobile-export.png" width="350" height="581" alt="Александр Мулин">
+                      </div>
+                      <div class="team-card__info">
+                        <h3 class="team-card__name">Александр Мулин</h3>
+                        <p class="team-card__role">Руководитель</p>
+                      </div>
+                    </article>
+                  </li>
+
+                  <li class="team__item team__item--akmal" data-team-slide>
+                    <article class="team-card">
+                      <div class="team-card__photo">
+                        <img class="team-card__sprite team-card__sprite--desktop" src="./assets/images/team/team-desktop-export.png" width="1201" height="540" alt="Акмалхон Хомидов">
+                      </div>
+                      <div class="team-card__info">
+                        <h3 class="team-card__name">Акмалхон Хомидов</h3>
+                        <p class="team-card__role">Авитолог</p>
+                      </div>
+                    </article>
+                  </li>
+
+                  <li class="team__item team__item--maxim" data-team-slide>
+                    <article class="team-card">
+                      <div class="team-card__photo">
+                        <img class="team-card__sprite team-card__sprite--desktop" src="./assets/images/team/team-desktop-export.png" width="1201" height="540" alt="Максим Савельев">
+                      </div>
+                      <div class="team-card__info">
+                        <h3 class="team-card__name">Максим Савельев</h3>
+                        <p class="team-card__role">Авитолог</p>
+                      </div>
+                    </article>
+                  </li>
+
+                  <li class="team__item team__item--valeria" data-team-slide>
+                    <article class="team-card">
+                      <div class="team-card__photo">
+                        <img class="team-card__sprite team-card__sprite--desktop" src="./assets/images/team/team-desktop-export.png" width="1201" height="540" alt="Валерия Корниенко">
+                      </div>
+                      <div class="team-card__info">
+                        <h3 class="team-card__name">Валерия Корниенко</h3>
+                        <p class="team-card__role">Дизайнер</p>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="blog" id="blog" aria-labelledby="blog-title" data-blog>
+            <div class="blog__container container">
+              <h2 class="blog__title" id="blog-title">Блог</h2>
+              <a class="blog__all-link" href="./case.html">Читать все статьи</a>
+
+              <div class="blog__controls" aria-label="Переключение статей">
+                <button class="blog__control blog__control--prev" type="button" data-blog-prev aria-label="Предыдущая статья">
+                  <img src="./assets/images/blog/arrow-prev-mobile.svg" width="18" height="30" alt="">
+                </button>
+                <button class="blog__control blog__control--next" type="button" data-blog-next aria-label="Следующая статья">
+                  <img src="./assets/images/blog/arrow-next-mobile.svg" width="18" height="30" alt="">
+                </button>
+              </div>
+
+              <div class="blog__viewport" aria-live="polite">
+                <ul class="blog__list">
+                  <li class="blog__item is-active" data-blog-slide>
+                    <article class="blog-card">
+                      <a class="blog-card__image-link" href="./case.html" aria-label="Открыть статью: Название статьи">
+                        <picture>
+                          <img class="blog-card__image" src="./assets/images/blog/article-flooring.webp" width="772" height="676" alt="Рекламный макет услуги по стяжке пола">
+                        </picture>
+                        <span class="blog-card__tag">Авито</span>
+                      </a>
+                      <time class="blog-card__date" datetime="2026-04-30">30.04.26</time>
+                      <h3 class="blog-card__title">Название статьи</h3>
+                      <a class="blog-card__button" href="./case.html">Открыть</a>
+                    </article>
+                  </li>
+
+                  <li class="blog__item" data-blog-slide>
+                    <article class="blog-card">
+                      <a class="blog-card__image-link" href="./case.html" aria-label="Открыть статью: Название статьи">
+                        <img class="blog-card__image" src="./assets/images/blog/article-flooring.webp" width="772" height="676" alt="Рекламный макет услуги по стяжке пола">
+                        <span class="blog-card__tag">CRM</span>
+                      </a>
+                      <time class="blog-card__date" datetime="2026-05-01">01.05.26</time>
+                      <h3 class="blog-card__title">Название статьи</h3>
+                      <a class="blog-card__button" href="./case.html">Открыть</a>
+                    </article>
+                  </li>
+
+                  <li class="blog__item" data-blog-slide>
+                    <article class="blog-card">
+                      <a class="blog-card__image-link" href="./case.html" aria-label="Открыть статью: Название статьи">
+                        <img class="blog-card__image" src="./assets/images/blog/article-flooring.webp" width="772" height="676" alt="Рекламный макет услуги по стяжке пола">
+                        <span class="blog-card__tag">Яндекс</span>
+                      </a>
+                      <time class="blog-card__date" datetime="2026-05-05">05.05.26</time>
+                      <h3 class="blog-card__title">Название статьи</h3>
+                      <a class="blog-card__button" href="./case.html">Открыть</a>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <div data-layout-footer></div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

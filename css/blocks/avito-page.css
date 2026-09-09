@@ -1,0 +1,116 @@
+.avito-page {
+  color: var(--color-ink);
+  background: var(--color-white);
+}
+
+.avito-page .site {
+  background: var(--color-white);
+}
+
+.avito-page :focus-visible {
+  outline-color: var(--color-avito-violet);
+}
+
+.avito-container {
+  width: min(calc(100% - 48px), var(--avito-container-width));
+  margin-inline: auto;
+}
+
+.avito-title {
+  margin: 0;
+  color: var(--color-black);
+  font-family: var(--font-display);
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.avito-title span {
+  color: var(--color-avito-violet);
+}
+
+.avito-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 30px;
+  color: var(--color-white);
+  background: var(--color-avito-violet);
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.avito-button:hover {
+  background: #7f43d7;
+}
+
+.avito-button:active {
+  transform: scale(0.985);
+}
+
+.avito-slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.avito-slider-controls__button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: var(--color-avito-violet);
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.avito-slider-controls__button:disabled {
+  color: #d7d7d7;
+}
+
+.avito-slider-controls__dots {
+  display: flex;
+  gap: 7px;
+}
+
+.avito-slider-controls__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  background: #d8d2de;
+  border-radius: 50%;
+}
+
+.avito-slider-controls__dot.is-active {
+  width: 18px;
+  background: var(--color-avito-violet);
+  border-radius: 8px;
+}
+
+.avito-page .site-footer--avito {
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .avito-container {
+    width: min(calc(100% - 40px), 350px);
+  }
+
+  .avito-title {
+    font-size: 50px;
+    line-height: 1;
+  }
+
+  .avito-button {
+    min-height: 36px;
+    padding-inline: 24px;
+    font-size: 14px;
+  }
+}

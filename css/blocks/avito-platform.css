@@ -1,0 +1,358 @@
+.avito-platform {
+  position: relative;
+  min-height: 1181px;
+  height: 1181px;
+  padding: 149px 0 0;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.avito-platform__container {
+  position: relative;
+  z-index: 1;
+  height: 882px;
+}
+
+.avito-platform__title {
+  max-width: none;
+  margin-left: 1px;
+}
+
+.avito-platform__source {
+  position: relative;
+  z-index: 4;
+  margin: 9px 0 0;
+  margin-left: 1px;
+  color: var(--color-ink);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.avito-platform__map-wrap {
+  position: relative;
+  height: 632px;
+  margin-top: -19px;
+  overflow: hidden;
+}
+
+.avito-platform__map {
+  position: absolute;
+  top: 0;
+  left: -9px;
+  width: 1199px;
+  max-width: none;
+  height: 632px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.avito-platform__stat {
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  width: 231px;
+  height: 127px;
+  padding: 12px 19px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 101px 28px rgba(0,0,0,0),0 65px 26px rgba(0,0,0,.01),0 36px 22px rgba(0,0,0,.05),0 16px 16px rgba(0,0,0,.09),0 4px 9px rgba(0,0,0,.1);
+}
+
+.avito-platform__stat::after {
+  position: absolute;
+  z-index: 0;
+  top: -47px;
+  left: -96px;
+  width: 485px;
+  height: 230px;
+  background: url("../../assets/images/avito/platform/stat-lines.svg") center / 100% 100% no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+.avito-platform__stat dt {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  height: 70px;
+  color: var(--color-avito-violet);
+}
+
+.avito-platform__stat dt strong {
+  font-family: var(--font-display);
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 70px;
+}
+
+.avito-platform__stat dt small {
+  margin: 0 0 13px 7px;
+  color: var(--color-black);
+  font-family: var(--font-main);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.avito-platform__stat dd {
+  position: relative;
+  z-index: 1;
+  margin: -4px 0 0;
+  color: rgba(0,0,0,.6);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.avito-platform__stat--users { top: 189px; left: 159px; }
+.avito-platform__stat--deals { top: 341px; left: 426px; }
+.avito-platform__stat--price { top: 189px; right: 270px; }
+
+.avito-platform__stat--price {
+  padding-left: 18px;
+}
+
+.avito-platform__stat--deals dt {
+  margin-left: -9px;
+}
+
+.avito-platform__stat--deals dt small,
+.avito-platform__stat--price dt small:not(.avito-platform__stat-prefix) {
+  margin-bottom: 11px;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.avito-platform__stat--price dt {
+  margin-left: 1px;
+}
+
+.avito-platform__stat--price dt small:not(.avito-platform__stat-prefix) {
+  margin-left: 6px;
+  font-weight: 500;
+}
+
+.avito-platform__stat dt .avito-platform__stat-prefix {
+  margin: 0 -5px 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: lowercase;
+}
+
+.avito-platform__half {
+  position: absolute;
+  bottom: 30px;
+  left: 153px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 70px;
+  line-height: 70px;
+  text-transform: uppercase;
+}
+
+.avito-platform__half span {
+  display: block;
+  margin-top: -2px;
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: none;
+}
+
+.avito-platform__benefits {
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+  left: 1px;
+  display: grid;
+  grid-template-columns: 386px 385px 386px;
+  gap: 20px;
+  margin: 0;
+}
+
+.avito-platform__benefit {
+  display: flex;
+  align-items: center;
+  min-height: 105px;
+  padding: 20px 35px;
+  background: #f1f1f2;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.avito-platform__benefit:nth-child(2) {
+  padding-left: 39px;
+}
+
+.avito-platform__benefit:nth-child(2) img {
+  margin-right: 27px;
+}
+
+.avito-platform__benefit:nth-child(3) {
+  padding-left: 44px;
+  padding-right: 20px;
+}
+
+.avito-platform__benefit:nth-child(3) span {
+  white-space: nowrap;
+}
+
+.avito-platform__benefit img {
+  width: 50px;
+  height: 50px;
+  margin-right: 29px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .avito-platform__benefits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .avito-platform__benefit:nth-child(n) {
+    padding-inline: clamp(14px, 2vw, 28px);
+  }
+
+  .avito-platform__benefit:nth-child(3) span {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .avito-platform {
+    height: 935px;
+    min-height: 935px;
+    padding: 70px 0 46px;
+  }
+
+  .avito-platform__title {
+    width: 350px;
+    margin-left: 0;
+  }
+
+  .avito-platform__source {
+    width: 350px;
+    margin-top: 6px;
+    margin-left: 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .avito-platform__map-wrap {
+    height: 518px;
+    margin-top: -10px;
+    overflow: visible;
+  }
+
+  .avito-platform__map {
+    top: -6px;
+    left: 55%;
+    width: 863px;
+    height: 454px;
+    object-fit: cover;
+    transform: translateX(-50%) rotate(-14.85deg);
+  }
+
+  .avito-platform__stat {
+    width: 165px;
+    height: 81px;
+    min-width: 165px;
+    padding: 6px 13px;
+    border-radius: 10px;
+  }
+
+  .avito-platform__stat::after {
+    top: -31px;
+    left: -62px;
+    width: 320px;
+    height: 152px;
+  }
+
+  .avito-platform__stat dt {
+    height: 40px;
+  }
+
+  .avito-platform__stat dt strong { font-size: 40px; line-height: 40px; }
+  .avito-platform__stat dt small {
+    margin-bottom: 7px;
+    margin-left: 4px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .avito-platform__stat--deals dt small,
+  .avito-platform__stat--price dt small:not(.avito-platform__stat-prefix) {
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .avito-platform__stat dt .avito-platform__stat-prefix {
+    margin-right: -3px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    line-height: 11px;
+  }
+  .avito-platform__stat dd {
+    margin-top: -3px;
+    font-size: 12px;
+    line-height: 14px;
+    white-space: nowrap;
+  }
+  .avito-platform__stat--users { top: 78px; left: 0; }
+  .avito-platform__stat--deals { top: 159px; left: 190px; }
+  .avito-platform__stat--price { top: 273px; right: 145px; }
+
+  .avito-platform__half {
+    bottom: 52px;
+    left: 0;
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .avito-platform__half span { margin-top:0; font-size: 12px; line-height:12px; }
+
+  .avito-platform__benefits {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    right: 0;
+    bottom: 17px;
+    left: 0;
+    gap: 10px;
+  }
+
+  .avito-platform__benefit {
+    min-height: 53px;
+    padding: 10px 25px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .avito-platform__benefit:nth-child(2),
+  .avito-platform__benefit:nth-child(3) {
+    padding-left: 25px;
+  }
+
+  .avito-platform__benefit:nth-child(3) span {
+    white-space: normal;
+  }
+
+  .avito-platform__benefit:nth-child(2) img {
+    margin-right: 10px;
+  }
+
+  .avito-platform__benefit img { width: 27px; height: 27px; margin-right: 10px; }
+}
+
+@media (max-width: 374px) {
+  .avito-platform {
+    height: 985px;
+    min-height: 985px;
+  }
+
+  .avito-platform__container {
+    height: 932px;
+  }
+}

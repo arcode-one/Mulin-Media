@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Кейсы Mulin Media: результаты продвижения бизнеса на Авито и в других digital-каналах.">
+    <title>Кейсы — Mulin Media</title>
+    <link rel="icon" href="./assets/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="stylesheet" href="./css/cases-page.css">
+  </head>
+  <body class="cases-page" data-layout-page="cases">
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+    <div class="site">
+      <div data-layout-header></div>
+
+      <main class="cases-catalog" id="main-content">
+        <div class="cases-catalog__container container">
+          <nav class="breadcrumbs cases-catalog__breadcrumbs" aria-label="Хлебные крошки">
+            <a href="./index.html">Главная</a>
+            <span aria-hidden="true">–</span>
+            <span aria-current="page">Кейсы</span>
+          </nav>
+
+          <h1 class="cases-catalog__title">Наши <span>кейсы</span></h1>
+
+          <div class="cases-catalog__layout">
+            <aside class="cases-catalog__sidebar" aria-label="Фильтр кейсов">
+              <div class="case-filter" data-case-filter>
+                <p class="case-filter__title">Выберите инструмент</p>
+                <div class="case-filter__buttons">
+                  <button class="case-filter__button is-active" type="button" data-filter="all" aria-pressed="true">Все кейсы</button>
+                  <button class="case-filter__button" type="button" data-filter="avito-pro" aria-pressed="false">Авито Pro</button>
+                  <button class="case-filter__button" type="button" data-filter="avito-ads" aria-pressed="false">Авито Реклама</button>
+                  <button class="case-filter__button" type="button" data-filter="direct" aria-pressed="false">Яндекс Директ</button>
+                  <button class="case-filter__button" type="button" data-filter="web" aria-pressed="false">Web-дизайн</button>
+                </div>
+              </div>
+
+              <form class="cases-contact" action="#" method="post" novalidate data-cases-contact>
+                <h2 class="cases-contact__title">Не нашли свою нишу?</h2>
+                <p class="cases-contact__copy">Оставьте свой номер телефона и мы проанализируем ваш рынок и предложим персональную стратегию</p>
+                <label class="visually-hidden" for="cases-phone">Номер телефона</label>
+                <div class="cases-contact__phone">
+                  <img src="./assets/images/cases-page/flag-ru.png" width="33" height="20" alt="Россия">
+                  <span aria-hidden="true">+7</span>
+                  <input id="cases-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(000) 000-00-00" required>
+                </div>
+                <button class="cases-contact__submit" type="submit">Получить консультацию</button>
+                <p class="cases-contact__status" role="status" aria-live="polite"></p>
+              </form>
+
+              <img class="cases-catalog__ellipses" src="./assets/images/cases-page/ellipses-desktop.svg" width="287" height="276" alt="" aria-hidden="true">
+            </aside>
+
+            <section class="cases-catalog__results" aria-label="Список кейсов">
+              <div class="cases-catalog__mobile-filter mobile-case-filter" data-mobile-case-filter>
+                <button class="mobile-case-filter__trigger" type="button" aria-expanded="false" aria-controls="mobile-case-filter-options" data-mobile-filter-trigger>
+                  <span data-mobile-filter-label>Выберите инструмент</span>
+                  <span class="mobile-case-filter__chevron" aria-hidden="true"></span>
+                </button>
+                <div class="mobile-case-filter__options" id="mobile-case-filter-options" data-mobile-filter-options hidden>
+                  <button class="mobile-case-filter__option is-active" type="button" data-filter="all" aria-pressed="true">Все кейсы</button>
+                  <button class="mobile-case-filter__option" type="button" data-filter="avito-pro" aria-pressed="false">Авито Pro</button>
+                  <button class="mobile-case-filter__option" type="button" data-filter="avito-ads" aria-pressed="false">Авито Реклама</button>
+                  <button class="mobile-case-filter__option" type="button" data-filter="direct" aria-pressed="false">Яндекс Директ</button>
+                  <button class="mobile-case-filter__option" type="button" data-filter="web" aria-pressed="false">Web-дизайн</button>
+                </div>
+              </div>
+
+              <ul class="cases-catalog__grid" data-cases-grid>
+                <li class="cases-catalog__item" data-category="avito-pro">
+                  <article class="catalog-case-card">
+                    <a class="catalog-case-card__image-link" href="./case.html" aria-label="Открыть кейс о логистической компании">
+                      <img class="catalog-case-card__image" src="./assets/images/cases-page/card-red-car.png" width="320" height="240" alt="Рекламный макет автосервиса с красным автомобилем">
+                    </a>
+                    <h2 class="catalog-case-card__title">
+                      <span class="catalog-case-card__text catalog-case-card__text--desktop">46 заявок на дома<br>от 16 млн ₽ на Авито</span>
+                      <span class="catalog-case-card__text catalog-case-card__text--mobile">46 заявок для автосервиса<br>на Авито</span>
+                    </h2>
+                    <p class="catalog-case-card__copy">
+                      <span class="catalog-case-card__text catalog-case-card__text--desktop">Помогли застройщику получать заявки и снизить стоимость обращения</span>
+                      <span class="catalog-case-card__text catalog-case-card__text--mobile">Помогли владельцу получать заявки и снизить стоимость обращения</span>
+                    </p>
+                    <a class="catalog-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+                <li class="cases-catalog__item" data-category="avito-pro">
+                  <article class="catalog-case-card">
+                    <a class="catalog-case-card__image-link" href="./case.html" aria-label="Открыть кейс автосервиса">
+                      <img class="catalog-case-card__image" src="./assets/images/cases-page/card-auto-service.png" width="320" height="240" alt="Рекламный макет автосервиса">
+                    </a>
+                    <h2 class="catalog-case-card__title">
+                      <span class="catalog-case-card__text catalog-case-card__text--desktop">179 заявок для<br>автосервиса на Авито</span>
+                      <span class="catalog-case-card__text catalog-case-card__text--mobile">158 заявок для автосервиса<br>на Авито</span>
+                    </h2>
+                    <p class="catalog-case-card__copy">Помогли автосервису получать больше клиентов через Авито</p>
+                    <a class="catalog-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+                <li class="cases-catalog__item" data-category="avito-pro">
+                  <article class="catalog-case-card">
+                    <a class="catalog-case-card__image-link" href="./case.html" aria-label="Открыть кейс по ремонту автомобилей">
+                      <img class="catalog-case-card__image" src="./assets/images/cases-page/card-repair.png" width="320" height="240" alt="Рекламный макет технического обслуживания автомобиля">
+                    </a>
+                    <h2 class="catalog-case-card__title">112 заявок на ремонт<br>за месяц с Авито</h2>
+                    <p class="catalog-case-card__copy">Помогли получить клиентов на ремонт через узкие услуги</p>
+                    <a class="catalog-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+              </ul>
+              <p class="cases-catalog__empty" data-cases-empty hidden>Кейсы по этому направлению скоро появятся.</p>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <div data-layout-footer></div>
+    </div>
+
+    <script type="module" src="./js/cases-page-main.js"></script>
+  </body>
+</html>

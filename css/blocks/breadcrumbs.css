@@ -1,0 +1,38 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(0 0 0 / 30%);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.breadcrumbs a {
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible,
+.breadcrumbs [aria-current="page"] {
+  color: var(--color-avito-violet);
+}
+
+.breadcrumbs a:focus-visible {
+  outline-color: var(--color-avito-violet);
+}
+
+@media (max-width: 767px) {
+  .breadcrumbs {
+    gap: 10px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+
+  .breadcrumbs [aria-current="page"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

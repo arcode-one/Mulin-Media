@@ -1,0 +1,325 @@
+.avito-hero {
+  position: relative;
+  min-height: 892px;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.avito-hero__container {
+  position: relative;
+  z-index: 2;
+  min-height: 892px;
+}
+
+.avito-hero__content {
+  position: absolute;
+  z-index: 2;
+  top: 225px;
+  left: 2px;
+  width: 570px;
+}
+
+.avito-hero__title {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 78px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.avito-hero__title span {
+  position: relative;
+  display: inline-block;
+}
+
+.avito-hero__title span::after {
+  position: absolute;
+  bottom: -3px;
+  left: -10px;
+  width: 452.5px;
+  height: 5px;
+  background: var(--color-avito-green);
+  content: "";
+}
+
+.avito-hero__description {
+  width: 480px;
+  margin: 54px 0 0;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.avito-hero__description span {
+  color: var(--color-avito-violet);
+}
+
+.avito-hero__form {
+  width: 539px;
+  margin-top: 30px;
+}
+
+.avito-hero__form .lead-form__controls,
+.avito-hero__form .lead-form__controls::before,
+.avito-hero__form .lead-form__submit {
+  height: 62px;
+}
+
+.avito-hero__form .lead-form__controls::before {
+  width: 539px;
+  border: 1px solid #ececec;
+  border-radius: 31px;
+}
+
+.avito-hero__form .lead-form__phone-field {
+  flex-basis: 307px;
+  padding-left: 28px;
+}
+
+.avito-hero__form .lead-form__prefix,
+.avito-hero__form .lead-form__input {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.avito-hero__form .lead-form__input {
+  width: 194px;
+}
+
+.avito-hero__form .lead-form__submit {
+  flex-basis: 232px;
+  border-radius: 31px;
+  font-size: 20px;
+}
+
+.lead-form--light .lead-form__consent {
+  width: 420px;
+  margin-top: 30px;
+  color: #9f9f9f;
+}
+
+.lead-form--light .lead-form__checkbox-mark {
+  width: 21px;
+  height: 21px;
+  flex-basis: 21px;
+  margin-top: 4px;
+  border-color: #c8c8c8;
+}
+
+.lead-form--light .lead-form__checkbox-mark::after {
+  top: 2px;
+  left: 6px;
+  border-color: var(--color-avito-violet);
+}
+
+.lead-form--light .lead-form__consent-text {
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.lead-form--light .lead-form__checkbox:focus-visible + .lead-form__checkbox-mark {
+  outline-color: var(--color-avito-violet);
+}
+
+.avito-hero__visual {
+  position: absolute;
+  z-index: 1;
+  top: 112px;
+  left: 444px;
+  width: 856px;
+  height: 802px;
+}
+
+.avito-hero__circles {
+  position: absolute;
+  z-index: 1;
+  top: 56px;
+  left: 53px;
+  width: 703px;
+  height: 704px;
+  overflow: hidden;
+  background: url("../../assets/images/avito/hero/desktop-img1.png") 0 0 / 2556px 704px no-repeat;
+}
+
+.avito-hero__person,
+.avito-hero__person img {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.avito-hero__person {
+  width: 792px;
+  height: 802px;
+  -webkit-mask: url("../../assets/images/avito/hero/desktop-img2.svg") 71.5px 17.5px / 783.5px 683.025px no-repeat;
+  mask: url("../../assets/images/avito/hero/desktop-img2.svg") 71.5px 17.5px / 783.5px 683.025px no-repeat;
+}
+
+.avito-hero__person img {
+  top: 0;
+  left: -3.56px;
+  width: 799px;
+  height: 991px;
+  max-width: none;
+}
+
+.avito-hero__ellipse {
+  position: absolute;
+  border-radius: 50%;
+  background: #f5f5f5;
+}
+
+.avito-hero__ellipse--left { top: -64px; left: -216px; width: 538px; height: 538px; }
+.avito-hero__ellipse--middle { top: 182px; left: calc(50% - 222px); width: 204px; height: 204px; background: rgb(0 0 0 / 3%); }
+.avito-hero__ellipse--right { top: 443px; right: -253px; width: 538px; height: 538px; }
+
+@media (max-width: 1279px) and (min-width: 768px) {
+  .avito-hero__content {
+    top: 205px;
+    left: 0;
+  }
+
+  .avito-hero__title {
+    font-size: 60px;
+  }
+
+  .avito-hero__visual {
+    top: 145px;
+    right: -135px;
+    left: auto;
+    transform: scale(0.72);
+    transform-origin: right top;
+  }
+}
+
+@media (max-width: 767px) {
+  .avito-hero {
+    height: 977px;
+    min-height: 977px;
+  }
+
+  .avito-hero__container {
+    min-height: 977px;
+  }
+
+  .avito-hero__content {
+    top: 116px;
+    left: 0;
+    width: 100%;
+  }
+
+  .avito-hero__title {
+    font-size: 50px;
+    line-height: 1;
+  }
+
+  .avito-hero__title span::after {
+    bottom: -3px;
+    left: -6px;
+    width: 290px;
+    height: 5px;
+  }
+
+  .avito-hero__description {
+    width: 335px;
+    margin-top: 30px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .avito-hero__form {
+    width: 334px;
+    margin-top: 20px;
+  }
+
+  .avito-hero__form .lead-form__controls {
+    display: grid;
+    grid-template-rows: 47px 47px;
+    gap: 20px;
+    width: 334px;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .avito-hero__form .lead-form__phone-field,
+  .avito-hero__form .lead-form__submit {
+    width: 334px;
+    height: 47px;
+  }
+
+  .avito-hero__form .lead-form__phone-field {
+    flex: none;
+    padding-left: 25px;
+    border: 0;
+    border-radius: 24px;
+    box-shadow: 0 15px 24px rgb(0 0 0 / 10%);
+  }
+
+  .avito-hero__form .lead-form__submit {
+    flex: none;
+    border-radius: 24px;
+    font-size: 16px;
+  }
+
+  .avito-hero__form .lead-form__prefix,
+  .avito-hero__form .lead-form__input {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .avito-hero__form .lead-form__input {
+    width: 220px;
+  }
+
+  .lead-form--light .lead-form__consent {
+    width: 334px;
+    margin-top: 20px;
+  }
+
+  .lead-form--light .lead-form__consent-text {
+    flex: 1 1 auto;
+    margin-left: 20px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .avito-hero__visual {
+    top: 545px;
+    right: auto;
+    bottom: auto;
+    left: calc(50% + 4.5px);
+    width: 381px;
+    height: 396px;
+    transform: translateX(-50%);
+  }
+
+  .avito-hero__circles {
+    display: none;
+  }
+
+  .avito-hero__person,
+  .avito-hero__person img {
+    top: 0;
+    left: 0;
+    width: 381px;
+    height: 396px;
+  }
+
+  .avito-hero__person {
+    -webkit-mask: none;
+    mask: none;
+  }
+
+  .avito-hero__person img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .avito-hero__ellipse {
+    display: none;
+  }
+}

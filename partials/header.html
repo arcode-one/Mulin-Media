@@ -1,0 +1,66 @@
+<header class="header" data-shared-header>
+  <div class="header__container container">
+    <a class="header__logo" href="./index.html" aria-label="Mulin Media — на главную">
+      <picture>
+        <source media="(max-width: 767px)" srcset="./assets/images/avito/hero/logo-mobile.png">
+        <img src="./assets/images/avito/hero/logo-desktop.png" width="86" height="52" alt="Mulin Media">
+      </picture>
+    </a>
+
+    <nav class="header__nav" aria-label="Основная навигация">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a class="header__nav-link" href="./index.html#about" data-header-route="about">О нас</a></li>
+        <li class="header__nav-item header__nav-item--has-submenu">
+          <a class="header__nav-link" href="./index.html#services" data-header-route="services" aria-haspopup="true">Услуги</a>
+          <div class="header__submenu">
+            <ul class="header__submenu-list" aria-label="Направления услуг">
+              <li><a class="header__submenu-link" href="./avito.html" data-page-link="avito">Авито PRO</a></li>
+              <li><a class="header__submenu-link" href="./avito-ads.html" data-page-link="avito-ads">Авито Реклама</a></li>
+              <li><a class="header__submenu-link" href="./yandex-direct.html" data-page-link="yandex-direct">Яндекс Директ</a></li>
+              <li><a class="header__submenu-link" href="./vk-ads.html" data-page-link="vk-ads">VK Реклама</a></li>
+              <li><a class="header__submenu-link" href="./seo.html" data-page-link="seo">SEO</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="header__nav-item"><a class="header__nav-link" href="./cases.html" data-header-route="cases" data-page-link="cases">Кейсы</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="./index.html#blog" data-header-route="articles">Статьи</a></li>
+      </ul>
+    </nav>
+
+    <a class="header__cta" href="https://t.me/sasha_mulin" target="_blank" rel="noopener noreferrer">Написать в тг <span class="header__cta-icon" aria-hidden="true"></span></a>
+
+    <button class="header__menu-toggle" type="button" aria-label="Открыть меню" aria-controls="mobile-menu" aria-expanded="false">
+      <span>Меню</span>
+    </button>
+  </div>
+
+  <div class="header__menu" id="mobile-menu" aria-hidden="true">
+    <div class="header__menu-head">
+      <p class="header__menu-title">МЕНЮ</p>
+      <button class="header__menu-close" type="button" aria-label="Закрыть меню">
+        <img src="./assets/images/header/menu-close.svg" width="52" height="52" alt="">
+      </button>
+    </div>
+
+    <nav class="header__menu-nav" aria-label="Мобильная навигация">
+      <img class="header__menu-lines" src="./assets/images/header/menu-lines.svg" alt="" aria-hidden="true">
+      <ul class="header__menu-list">
+        <li class="header__menu-item"><a class="header__menu-link" href="./index.html">Главная</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="./index.html#about" data-header-route="about">О нас</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="./index.html#services" data-header-route="services">Услуги</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="./cases.html" data-header-route="cases" data-page-link="cases">Кейсы</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="./index.html#blog" data-header-route="articles">Статьи</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__menu-socials" aria-label="Социальные сети">
+      <a class="header__menu-social-link" href="https://t.me/sasha_mulin" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+        <span class="visually-hidden">Telegram</span>
+      </a>
+      <a class="header__menu-social-link" href="https://wa.me/79370003317" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <span class="visually-hidden">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>

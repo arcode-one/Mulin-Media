@@ -1,0 +1,529 @@
+.cases-page {
+  color: var(--color-ink);
+  background: var(--color-white);
+}
+
+.cases-page :focus-visible {
+  outline-color: var(--color-avito-violet);
+}
+
+.cases-catalog {
+  min-height: 1244px;
+  background: var(--color-white);
+}
+
+.cases-catalog__container {
+  position: relative;
+  padding-top: 149px;
+}
+
+.cases-catalog__title,
+.cases-contact__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.cases-catalog__title {
+  margin-top: 34px;
+  margin-left: 1px;
+  font-size: 70px;
+  line-height: 70px;
+}
+
+.cases-catalog__title span {
+  color: var(--color-avito-violet);
+}
+
+.cases-catalog__layout {
+  display: grid;
+  grid-template-columns: 418px minmax(0, 1fr);
+  gap: 105px;
+  margin-top: -70px;
+}
+
+.cases-catalog__sidebar {
+  position: relative;
+  left: 1px;
+  min-height: 1050px;
+  padding-top: 111px;
+}
+
+.case-filter__title {
+  margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.case-filter__buttons {
+  display: grid;
+  gap: 14px;
+}
+
+.case-filter__button {
+  width: 100%;
+  min-height: 45px;
+  padding: 10px 20px;
+  color: var(--color-ink);
+  background: #ececed;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.case-filter__button:hover,
+.case-filter__button:focus-visible,
+.case-filter__button.is-active {
+  color: var(--color-white);
+  background: var(--color-avito-violet);
+}
+
+.case-filter__button:active {
+  transform: scale(0.99);
+}
+
+.cases-contact {
+  margin-top: 70px;
+}
+
+.cases-contact__title {
+  font-size: 54px;
+  line-height: 60px;
+}
+
+.cases-contact__copy {
+  width: 400px;
+  margin: 10px 0 40px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.cases-contact__phone,
+.cases-contact__submit {
+  width: 417px;
+  height: 62px;
+  border-radius: 999px;
+}
+
+.cases-contact__phone {
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  background: var(--color-white);
+  box-shadow: 0 105px 29px rgb(0 0 0 / 0%), 0 67px 27px rgb(0 0 0 / 1%), 0 38px 23px rgb(0 0 0 / 3%), 0 17px 17px rgb(0 0 0 / 4%), 0 4px 9px rgb(0 0 0 / 5%);
+}
+
+.cases-contact__phone img {
+  width: 33px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px rgb(35 35 35 / 18%);
+}
+
+.cases-contact__phone span {
+  margin-left: 14px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.cases-contact__phone input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  padding: 0 8px;
+  color: var(--color-ink);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font: 500 20px/25px var(--font-main);
+}
+
+.cases-contact__phone input::placeholder {
+  color: var(--color-muted);
+}
+
+.cases-contact__submit {
+  margin-top: 20px;
+  color: var(--color-white);
+  background: var(--color-avito-violet);
+  box-shadow: 0 10px 26px rgb(0 0 0 / 8%);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.cases-contact__submit:hover {
+  background: var(--color-accent);
+}
+
+.cases-contact__submit:active {
+  transform: scale(0.99);
+}
+
+.cases-contact__status {
+  min-height: 18px;
+  margin: 8px 20px 0;
+  color: #168a46;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.cases-contact.has-error .cases-contact__phone {
+  box-shadow: 0 0 0 2px var(--color-error), 0 17px 17px rgb(0 0 0 / 4%);
+}
+
+.cases-contact.has-error .cases-contact__status {
+  color: #c94242;
+}
+
+.cases-catalog__ellipses {
+  position: absolute;
+  top: 881px;
+  left: 58px;
+  display: block;
+  width: 287px;
+  height: 276px;
+}
+
+.cases-catalog__results {
+  min-width: 0;
+}
+
+.cases-catalog__mobile-filter {
+  display: none;
+}
+
+.catalog-case-card__text {
+  display: block;
+}
+
+.catalog-case-card__text--mobile {
+  display: none;
+}
+
+.cases-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 323px));
+  gap: 20px 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cases-catalog__item {
+  min-width: 0;
+}
+
+.cases-catalog__item[hidden] {
+  display: none;
+}
+
+.catalog-case-card {
+  display: flex;
+  min-height: 453px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.catalog-case-card__image-link {
+  display: block;
+  height: 248px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.catalog-case-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter var(--transition-base);
+}
+
+.catalog-case-card__image-link:hover .catalog-case-card__image {
+  filter: brightness(0.9);
+}
+
+.catalog-case-card__title {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 25px;
+}
+
+.catalog-case-card__copy {
+  min-height: 40px;
+  margin: 0;
+  color: rgb(0 0 0 / 50%);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.catalog-case-card__button {
+  display: flex;
+  width: 100%;
+  min-height: 45px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  color: var(--color-white);
+  background: var(--color-avito-violet);
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgb(0 0 0 / 8%);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.catalog-case-card__button:hover {
+  background: var(--color-accent);
+}
+
+.catalog-case-card__button:active {
+  transform: scale(0.99);
+}
+
+.cases-catalog__empty {
+  margin: 0;
+  padding: 48px 0;
+  color: rgb(35 35 35 / 60%);
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .cases-catalog {
+    min-height: 1180px;
+  }
+
+  .cases-catalog__layout {
+    grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+    gap: 48px;
+  }
+
+  .cases-catalog__sidebar {
+    left: 0;
+  }
+
+  .case-filter__button,
+  .case-filter__title,
+  .cases-contact__copy,
+  .cases-contact__phone span,
+  .cases-contact__phone input,
+  .cases-contact__submit {
+    font-size: 16px;
+  }
+
+  .cases-contact__phone,
+  .cases-contact__submit,
+  .cases-contact__copy {
+    width: 100%;
+  }
+
+  .cases-catalog__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .catalog-case-card__title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cases-catalog {
+    min-height: 1765px;
+  }
+
+  .cases-catalog__container {
+    width: 100%;
+    padding: 114px 20px 0;
+  }
+
+  .cases-catalog__title {
+    margin-top: 37px;
+    margin-left: 0;
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .cases-catalog__layout {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .cases-catalog__sidebar {
+    display: none;
+  }
+
+  .cases-catalog__mobile-filter {
+    position: relative;
+    display: block;
+    width: 266px;
+    height: 39px;
+  }
+
+  .cases-catalog__mobile-filter.is-open {
+    width: 349px;
+    height: 295px;
+  }
+
+  .mobile-case-filter__trigger {
+    display: flex;
+    width: 266px;
+    height: 39px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 30px;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 90px 12.5px rgb(0 0 0 / 0%), 0 58px 11.5px rgb(0 0 0 / 1%), 0 32px 9.5px rgb(0 0 0 / 4%), 0 14px 7px rgb(0 0 0 / 6%), 0 4px 4px rgb(0 0 0 / 7%);
+    outline: 0;
+    font: 500 16px/16px var(--font-main);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .mobile-case-filter__chevron {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    background: var(--color-avito-violet);
+    clip-path: polygon(10.54% 5.26%, 89.46% 5.26%, 50% 75%);
+    transition: transform var(--transition-fast);
+  }
+
+  .mobile-case-filter__options {
+    display: grid;
+    width: 349px;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .mobile-case-filter__options[hidden] {
+    display: none;
+  }
+
+  .mobile-case-filter__option {
+    display: flex;
+    width: 100%;
+    min-height: 36px;
+    align-items: center;
+    padding: 10px 20px;
+    color: var(--color-ink);
+    background: #ececed;
+    border-radius: 999px;
+    font: 500 16px/16px var(--font-main);
+    text-align: left;
+    cursor: pointer;
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .mobile-case-filter__option:hover,
+  .mobile-case-filter__option:focus-visible,
+  .mobile-case-filter__option.is-active {
+    color: var(--color-white);
+    background: var(--color-avito-violet);
+  }
+
+  .cases-catalog__grid {
+    display: grid;
+    grid-template-columns: 300px;
+    justify-content: center;
+    row-gap: 41px;
+    margin-top: 40px;
+  }
+
+  .cases-catalog__results.has-open-filter .cases-catalog__grid {
+    row-gap: 40px;
+  }
+
+  .catalog-case-card {
+    min-height: 456px;
+    gap: 15px;
+  }
+
+  .cases-catalog__item:nth-child(3) {
+    position: relative;
+    top: -1px;
+  }
+
+  .cases-catalog__results.has-open-filter .cases-catalog__item:nth-child(3) {
+    top: 0;
+  }
+
+  .catalog-case-card__text--desktop {
+    display: none;
+  }
+
+  .catalog-case-card__text--mobile {
+    display: block;
+  }
+
+  .catalog-case-card__image-link {
+    height: 288px;
+  }
+
+  .catalog-case-card__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .catalog-case-card__copy {
+    min-height: 32px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .catalog-case-card__button {
+    min-height: 47px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  .cases-catalog__empty {
+    padding-top: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cases-page .site-footer {
+    margin-top: 141px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cases-page .site-footer {
+    margin-top: 69px;
+  }
+
+  .cases-page.cases-filter-open .site-footer {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 359px) {
+  .cases-catalog__container {
+    padding-inline: 16px;
+  }
+
+  .cases-catalog__grid {
+    grid-template-columns: minmax(0, 300px);
+  }
+}

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Продвижение бизнеса на Авито от Mulin Media: упаковка профиля, объявления, автоматизация и аналитика.">
+    <title>Продвижение на Авито — Mulin Media</title>
+    <link rel="icon" href="./assets/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="stylesheet" href="./css/avito.css">
+  </head>
+  <body class="avito-page" data-layout-page="avito">
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+    <div class="site">
+      <section class="avito-hero" aria-labelledby="avito-hero-title">
+        <span class="avito-hero__ellipse avito-hero__ellipse--left" aria-hidden="true"></span>
+        <span class="avito-hero__ellipse avito-hero__ellipse--middle" aria-hidden="true"></span>
+        <span class="avito-hero__ellipse avito-hero__ellipse--right" aria-hidden="true"></span>
+
+        <div data-layout-header></div>
+
+        <div class="avito-hero__container avito-container">
+          <div class="avito-hero__content">
+            <h1 class="avito-hero__title" id="avito-hero-title">
+              Авитолог:<br>
+              ваши объявления<br>
+              <span>в топе за 7 дней</span>
+            </h1>
+            <p class="avito-hero__description">Оставьте заявку и получите <span>подробный аудит</span>, расчет стоимости работ и прогноз заявок</p>
+
+            <form class="lead-form lead-form--light avito-hero__form" action="#" method="post" novalidate>
+              <div class="lead-form__controls">
+                <label class="visually-hidden" for="avito-hero-phone">Номер телефона</label>
+                <div class="lead-form__phone-field">
+                  <img class="lead-form__flag" src="./assets/images/form/flag-ru-desktop.png" width="33" height="20" alt="Россия">
+                  <span class="lead-form__prefix" aria-hidden="true">+7</span>
+                  <input class="lead-form__input" id="avito-hero-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(000) 000-00-00" aria-describedby="avito-hero-error" required>
+                </div>
+                <button class="lead-form__submit" type="submit">Заказать аудит</button>
+              </div>
+              <label class="lead-form__consent">
+                <input class="lead-form__checkbox" type="checkbox" name="consent" required>
+                <span class="lead-form__checkbox-mark" aria-hidden="true"></span>
+                <span class="lead-form__consent-text">Я даю согласие на <a href="./personal-data.html">обработку персональных данных</a> и соглашаюсь с <a href="./privacy.html">политикой конфиденциальности</a></span>
+              </label>
+              <p class="lead-form__error" id="avito-hero-error" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="avito-hero__visual" aria-hidden="true">
+            <span class="avito-hero__circles"></span>
+            <picture class="avito-hero__person">
+              <source media="(max-width: 767px)" srcset="./assets/images/avito/hero/visual-mobile.png">
+              <img src="./assets/images/avito/hero/desktop-img3.png" width="799" height="991" alt="">
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <main id="main-content">
+        <section class="avito-cases" id="avito-cases" aria-labelledby="avito-cases-title">
+          <div class="avito-cases__container avito-container">
+            <div class="avito-cases__head">
+              <h2 class="avito-title" id="avito-cases-title">Наши <span>кейсы</span></h2>
+              <a class="avito-cases__all" href="./cases.html">Смотреть все кейсы</a>
+              <div class="avito-cases__arrows" data-slider-controls>
+                <button class="avito-cases__arrow avito-cases__arrow--prev" type="button" data-prev aria-label="Предыдущий кейс"></button>
+                <button class="avito-cases__arrow avito-cases__arrow--next" type="button" data-next aria-label="Следующий кейс"></button>
+              </div>
+            </div>
+
+            <div class="avito-cases__viewport" data-avito-cases-slider>
+              <ul class="avito-cases__list">
+                <li class="avito-cases__item is-active" data-slide>
+                  <article class="avito-case-card">
+                    <picture><source media="(max-width: 767px)" srcset="./assets/images/avito/cases/mobile-img.png"><img class="avito-case-card__image" src="./assets/images/avito/cases/desktop-img.png" width="386" height="338" alt="Коттеджи в современном поселке с охраной"></picture>
+                    <h3 class="avito-case-card__title">46 заявок на дома от 16 млн ₽ на Авито</h3>
+                    <p class="avito-case-card__copy">Помогли застройщику получать заявки и снизить стоимость обращения</p>
+                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+                <li class="avito-cases__item" data-slide>
+                  <article class="avito-case-card">
+                    <img class="avito-case-card__image" src="./assets/images/avito/cases/desktop-img1.png" width="386" height="338" alt="Техническое обслуживание автомобиля">
+                    <h3 class="avito-case-card__title">179 заявок для автосервиса за первый месяц</h3>
+                    <p class="avito-case-card__copy">Помогли автосервису получать больше клиентов через Авито уже с первых запусков</p>
+                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+                <li class="avito-cases__item" data-slide>
+                  <article class="avito-case-card">
+                    <img class="avito-case-card__image" src="./assets/images/avito/cases/case-floor-screed.webp" width="772" height="676" alt="Мастер по стяжке пола">
+                    <h3 class="avito-case-card__title">112 заявок на ремонт за месяц с Авито</h3>
+                    <p class="avito-case-card__copy">Помогли получить клиентов на ремонт через узкие услуги: штукатурку и наливной пол</p>
+                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+                <li class="avito-cases__item" data-slide>
+                  <article class="avito-case-card">
+                    <img class="avito-case-card__image" src="./assets/images/cases-page/card-red-car.png" width="320" height="240" alt="Рекламный макет автосервиса с красным автомобилем">
+                    <h3 class="avito-case-card__title">68 заявок на услуги автосервиса с Авито</h3>
+                    <p class="avito-case-card__copy">Настроили продвижение и увеличили количество обращений от новых клиентов</p>
+                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+                <li class="avito-cases__item" data-slide>
+                  <article class="avito-case-card">
+                    <img class="avito-case-card__image" src="./assets/images/blog/article-houses.png" width="2048" height="1536" alt="Современные загородные дома">
+                    <h3 class="avito-case-card__title">94 заявки на строительство загородных домов</h3>
+                    <p class="avito-case-card__copy">Помогли строительной компании стабильно получать целевые обращения через Авито</p>
+                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
+                  </article>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="avito-platform" aria-labelledby="avito-platform-title">
+          <div class="avito-platform__container avito-container">
+            <h2 class="avito-title avito-platform__title" id="avito-platform-title">Авито – <span>платформа №1</span> для старта бизнеса</h2>
+            <p class="avito-platform__source">По данным исследования «РБК Исследования рынков», декабрь 2025</p>
+
+            <div class="avito-platform__map-wrap">
+              <picture><img class="avito-platform__map" src="./assets/images/avito/platform/platform-map.png" width="1199" height="632" alt="Карта России со статистикой аудитории Авито"></picture>
+              <dl class="avito-platform__stats">
+                <div class="avito-platform__stat avito-platform__stat--users"><dt><strong>72</strong><small>млн</small></dt><dd>уникальных<br>пользователей в месяц</dd></div>
+                <div class="avito-platform__stat avito-platform__stat--deals"><dt><strong>10</strong><small>шт</small></dt><dd>сделок<br>совершается в секунду</dd></div>
+                <div class="avito-platform__stat avito-platform__stat--price"><dt><small class="avito-platform__stat-prefix">от</small><strong>150</strong><small>₽</small></dt><dd>стоимость<br>целевой заявки</dd></div>
+              </dl>
+              <p class="avito-platform__half">Более 1/2 <span>населения России</span></p>
+            </div>
+
+            <ul class="avito-platform__benefits">
+              <li class="avito-platform__benefit"><img src="./assets/images/avito/platform/icon-globe.png" alt=""><span>Продажи без затрат<br>на разработку сайта</span></li>
+              <li class="avito-platform__benefit"><img src="./assets/images/avito/platform/icon-wallet.png" alt=""><span>Минимальный бюджет<br>для старта</span></li>
+              <li class="avito-platform__benefit"><img src="./assets/images/avito/platform/icon-hypotheses.png" alt=""><span>Быстрые тесты гипотез</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="avito-solutions" id="avito-solutions" aria-labelledby="avito-solutions-title">
+          <div class="avito-solutions__container avito-container">
+            <h2 class="avito-title" id="avito-solutions-title">Решения <span>для любого</span> масштаба бизнеса на Авито</h2>
+
+            <div class="avito-solutions__message avito-message">
+              <img class="avito-message__avatar" src="./assets/images/avito/solutions/desktop-img.png" width="83" height="83" alt="Александр Мулин">
+              <p class="avito-message__bubble"><span class="avito-message__desktop-copy">Разрабатываем индивидуальные стратегии продвижения, учитывая специфику вашей ниши и алгоритмы площадки.</span><span class="avito-message__mobile-copy">Разрабатываем индивидуальные стратегии продвижения, учитывая специфику нашей ниши и алгоритмы площадки</span></p>
+            </div>
+
+            <ul class="avito-solutions__list">
+              <li class="avito-solutions__item"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/solutions/mobile-imgRectangle42033.png"><img src="./assets/images/avito/solutions/desktop-imgRectangle42033.png" alt=""></picture><div><h3>Товарный бизнес <span>(Опт и Розница)</span></h3><p>Помогаем запустить продажи товаров через Авито Магазин. Настраиваем автозагрузку, создаем инфографику, которая выделяет вас среди конкурентов, и оптимизируем воронку продаж</p><p class="avito-solutions__for"><b>Для кого:</b> мебель, электроника, стройматериалы, одежда, оборудование для бизнеса</p></div></li>
+              <li class="avito-solutions__item"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/solutions/mobile-imgRectangle42034.png"><img src="./assets/images/avito/solutions/desktop-imgRectangle42034.png" alt=""></picture><div><h3>Услуги и Сервис</h3><p>Переводим «холодный» интерес в запись на услугу. Пишем тексты, закрывающие боли клиентов, и работаем с услугами продвижения для вывода объявлений в топ выдачи</p><p class="avito-solutions__for"><b>Для кого:</b> ремонт и строительство, бьюти-индустрия, юридические услуги, логистика, обучение</p></div></li>
+              <li class="avito-solutions__item"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/solutions/mobile-imgRectangle42035.png"><img src="./assets/images/avito/solutions/desktop-imgRectangle42035.png" alt=""></picture><div><h3>Недвижимость и Аренда</h3><p>Привлекаем целевых лидов для застройщиков, агентств и частных риелторов. Знаем, как правильно упаковать объект, чтобы получить звонки даже в условиях высокой конкуренции</p><p class="avito-solutions__for"><b>Для кого:</b> продажа квартир и домов, посуточная и долгосрочная аренда, коммерческая недвижимость</p></div></li>
+              <li class="avito-solutions__item"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/solutions/mobile-imgRectangle42036.png"><img src="./assets/images/avito/solutions/desktop-imgRectangle42036.png" alt=""></picture><div><h3>Авто и Запчасти</h3><p>Продаем автомобили и спецтехнику через классифайд №1. Настраиваем автозагрузку объявлений и создаем поток заявок для автодилеров и сервисов разбора</p><p class="avito-solutions__for"><b>Для кого:</b> автосалоны, продажа спецтехники, выкуп авто, запчасти</p></div></li>
+              <li class="avito-solutions__item"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/solutions/mobile-imgRectangle42037.png"><img src="./assets/images/avito/solutions/desktop-imgRectangle42037.png" alt=""></picture><div><h3>Подбор персонала</h3><p>Закрываем кадровый голод быстро. Упаковываем вакансии так, чтобы на них откликались релевантные кандидаты. Экономим бюджет на поиске сотрудников за счет точной настройки рекламы</p><p class="avito-solutions__for"><b>Для кого:</b> линейный персонал, офисные сотрудники, поиск специалистов для производства</p></div></li>
+              <li class="avito-solutions__item avito-solutions__item--business"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/solutions/mobile-imgRectangle42038.png"><img src="./assets/images/avito/solutions/desktop-imgRectangle42038.png" alt=""></picture><div><h3>Готовый бизнес и Франшизы</h3><p>Помогаем собственникам и брокерам продавать активы быстро и дорого. Упаковываем бизнес как инвестиционный продукт: от создания профессиональной PDF-презентации до вывода объявлений в топ выдачи по всей России</p><p class="avito-solutions__for"><b>Для кого:</b> продажа действующих предприятий, ПВЗ, заводов, франшиз, арендного бизнеса</p></div></li>
+            </ul>
+          </div>
+
+          <div class="avito-solutions__cta">
+            <div class="avito-solutions__cta-inner avito-container">
+              <div class="avito-solutions__cta-copy">
+                <h3>Оставьте свой контакт</h3>
+                <p>Мы проанализируем ваш рынок и предложим персональную стратегию продвижения</p>
+              </div>
+              <form class="avito-inline-form" action="#" method="post" novalidate>
+                <div class="avito-inline-form__row">
+                  <div class="avito-inline-form__phone-field">
+                    <label class="visually-hidden" for="solutions-phone">Номер телефона</label>
+                    <img class="avito-inline-form__flag" src="./assets/images/avito/solutions/desktop-imgRectangle41880.png" width="33" height="20" alt="Россия">
+                    <img class="avito-inline-form__chevron" src="./assets/images/avito/solutions/desktop-imgPolygon38.svg" width="7" height="6" alt="" aria-hidden="true">
+                    <span class="avito-inline-form__prefix" aria-hidden="true">+7</span>
+                    <input class="avito-inline-form__phone-input" id="solutions-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(000) 000-00-00" aria-describedby="solutions-form-error" required>
+                  </div>
+                  <button type="submit"><span class="avito-inline-form__desktop-label">Получить консультацию</span><span class="avito-inline-form__mobile-label">Заказать аудит</span></button>
+                </div>
+                <label class="avito-inline-form__consent">
+                  <input class="avito-inline-form__checkbox" type="checkbox" name="consent" required>
+                  <span class="avito-inline-form__checkbox-mark" aria-hidden="true"></span>
+                  <span class="avito-inline-form__consent-text">Я даю согласие на <a href="./personal-data.html">обработку персональных данных</a><br class="avito-inline-form__desktop-break"> и соглашаюсь с <a href="./privacy.html">политикой конфиденциальности</a></span>
+                </label>
+                <p class="avito-inline-form__error" id="solutions-form-error" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="avito-steps" aria-labelledby="avito-steps-title">
+          <div class="avito-steps__container avito-container">
+            <h2 class="avito-title" id="avito-steps-title">Как мы строим вашу <span>систему продаж</span> на Авито</h2>
+            <div class="avito-steps__message avito-message">
+              <img class="avito-message__avatar" src="./assets/images/avito/steps/desktop-img1.png" width="83" height="83" alt="Александр Мулин">
+              <p class="avito-message__bubble"><span class="avito-message__desktop-copy">От глубокой аналитики рынка до ежедневного контроля окупаемости. Мы не просто выкладываем объявления — мы управляем вашим результатом.</span><span class="avito-message__mobile-copy">Разрабатываем индивидуальные стратегии продвижения, учитывая специфику нашей ниши и алгоритмы площадки</span></p>
+            </div>
+
+            <div class="avito-steps__roadmap">
+              <picture><source media="(max-width: 767px)" srcset="./assets/images/avito/steps/mobile-imgVector2480.svg"><img class="avito-steps__line" src="./assets/images/avito/steps/desktop-img.svg" alt="" aria-hidden="true"></picture>
+              <div class="avito-steps__endpoint avito-steps__endpoint--start">
+                <span>
+                  <picture class="avito-steps__endpoint-ring"><source media="(max-width: 767px)" srcset="./assets/images/avito/steps/mobile-imgEllipse2730.png"><img src="./assets/images/avito/steps/desktop-imgEllipse2730.png" alt=""></picture>
+                  <picture class="avito-steps__endpoint-photo"><source media="(max-width: 767px)" srcset="./assets/images/avito/steps/mobile-imgEllipse2732.png"><img src="./assets/images/avito/steps/desktop-imgEllipse2732.png" alt=""></picture>
+                </span>
+                <b>Холодный клиент</b>
+              </div>
+              <div class="avito-steps__endpoint avito-steps__endpoint--finish">
+                <span>
+                  <picture class="avito-steps__endpoint-ring"><source media="(max-width: 767px)" srcset="./assets/images/avito/steps/mobile-imgEllipse2733.png"><img src="./assets/images/avito/steps/desktop-imgEllipse2733.png" alt=""></picture>
+                  <picture class="avito-steps__endpoint-photo"><source media="(max-width: 767px)" srcset="./assets/images/avito/steps/mobile-imgEllipse2731.png"><img src="./assets/images/avito/steps/desktop-imgEllipse2731.png" alt=""></picture>
+                </span>
+                <b>Продажа</b>
+              </div>
+              <ol class="avito-steps__list">
+                <li class="avito-step"><span class="avito-step__number">01</span><div><h3>Анализ ниши и конкурентов</h3><p>Изучаем спрос, активность конкурентов и «емкость» рынка в вашем регионе. На основе данных формируем стратегию продвижения, которая позволит занять долю рынка с минимальным бюджетом</p><small>#Анализ ниши на Авито #Стратегия продвижения на классифайдах</small></div></li>
+                <li class="avito-step"><span class="avito-step__number">02</span><div><h3>Упаковка профиля и объявлений</h3><p>Разрабатываем продающие офферы и тексты по воронке «Внимание — Интерес — Желание — Действие». Создаем уникальную инфографику, которая повышает CTR (кликабельность) в 1.5–2 раза</p><small>#Продающие тексты для Авито #Дизайн инфографики для объявлений</small></div></li>
+                <li class="avito-step"><span class="avito-step__number">03</span><div><h3>Настройка и автоматизация</h3><p>Настраиваем профессиональный Авито-магазин и автоматическую загрузку объявлений. Используем белые методы уникализации, чтобы исключить блокировки и обеспечить максимальный охват</p><small>#Настройка Авито магазина #Автозагрузка объявлений Авито</small></div></li>
+                <li class="avito-step"><span class="avito-step__number">04</span><div><h3>Работа с продвижением и вывод в ТОП</h3><p>Грамотно распределяем бюджет на услуги продвижения, а также задействуем весь функционал Авито: от оформленного портфолио до рассылок</p><small>#Платное продвижение Авито #Услуги авитолога</small></div></li>
+                <li class="avito-step"><span class="avito-step__number">05</span><div><h3>Еженедельный отчет и оптимизация</h3><p>Мы не бросаем проект после запуска. Еженедельно анализируем стоимость лида (CPL) и конверсию. Масштабируем то, что приносит деньги, и отключаем неэффективные связки</p><small>#Аналитика Авито кабинета #Ведение аккаунта под ключ</small></div></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="avito-team" id="avito-team" aria-labelledby="avito-team-title">
+          <div class="avito-team__container avito-container">
+            <div class="avito-team__intro">
+              <h2 class="avito-title" id="avito-team-title"><span>Мы</span><small>digital-агентство<br>Mulin Media, официальные<br>партнёры площадки Авито</small></h2>
+              <dl class="avito-team__stats">
+                <div><dt>7 <b>лет</b></dt><dd>опыта в маркетинге<br>и привлечении клиентов</dd></div>
+                <div><dt>90 <b>%</b></dt><dd>клиентов остаются<br>работать с нами</dd></div>
+                <div><dt>9 <b>человек</b></dt><dd>работает в команде<br>профессионалов</dd></div>
+              </dl>
+            </div>
+
+            <div class="avito-team__layout">
+              <div class="avito-team__members-wrap" data-avito-team-slider>
+                <ul class="avito-team__members">
+                  <li class="avito-team__member is-active" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42099" src="./assets/images/avito/team/desktop-imgRectangle42099.png" alt="Акмал Фамилия"></div><h3>Акмал Фамилия</h3><p>Авитолог</p></li>
+                  <li class="avito-team__member" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42102" src="./assets/images/avito/team/desktop-imgRectangle42102.png" alt="Максим Савельев"></div><h3>Максим Савельев</h3><p>Авитолог</p></li>
+                  <li class="avito-team__member" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42104" src="./assets/images/avito/team/desktop-imgRectangle42104.png" alt="Никита Неклеца"></div><h3>Никита Неклеца</h3><p>Авитолог</p></li>
+                  <li class="avito-team__member" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42100" src="./assets/images/avito/team/desktop-imgRectangle42100.png" alt="Валерия Корниенко"></div><h3>Валерия Корниенко</h3><p>Дизайнер</p></li>
+                  <li class="avito-team__member" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42103" src="./assets/images/avito/team/desktop-imgRectangle42103.png" alt="Арина Фамилия"></div><h3>Арина Фамилия</h3><p>Менеджер</p></li>
+                  <li class="avito-team__member" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42099" src="./assets/images/avito/team/desktop-imgRectangle42099.png" alt="Акмал Фамилия"></div><h3>Акмал Фамилия</h3><p>Авитолог</p></li>
+                  <li class="avito-team__member" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42101" src="./assets/images/avito/team/desktop-imgRectangle42101.png" alt="Акмал Фамилия"></div><h3>Акмал Фамилия</h3><p>Авитолог</p></li>
+                  <li class="avito-team__member" data-slide><div class="avito-team__member-photo"><img class="avito-team__portrait--42104" src="./assets/images/avito/team/desktop-imgRectangle42104.png" alt="Акмал Фамилия"></div><h3>Акмал Фамилия</h3><p>Авитолог</p></li>
+                </ul>
+                <div class="avito-slider-controls avito-team__controls" data-slider-controls>
+                  <button class="avito-slider-controls__button" type="button" data-prev aria-label="Предыдущий сотрудник">‹</button>
+                  <div class="avito-slider-controls__dots" data-dots></div>
+                  <button class="avito-slider-controls__button" type="button" data-next aria-label="Следующий сотрудник">›</button>
+                </div>
+              </div>
+
+              <article class="avito-team__leader">
+                <picture><source media="(max-width: 767px)" srcset="./assets/images/avito/team/mobile-imgTelegramCloudDocument252966633156473500000.png"><img src="./assets/images/avito/team/desktop-imgTelegramCloudDocument252966633156473500000.png" alt="Александр Мулин"></picture>
+                <div class="avito-team__leader-copy">
+                  <p class="avito-team__leader-eyebrow">Основатель и руководитель агентства</p>
+                  <h3>Александр Мулин</h3>
+                  <p class="avito-team__leader-role">Маркетолог, выпускник<span class="avito-team__leader-desktop-break"><br></span> РЭУ им. Плеханова</p>
+                  <a class="avito-button" href="https://t.me/sasha_mulin" target="_blank" rel="noopener noreferrer">Telegram-канал Александра</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="avito-bonus" aria-labelledby="avito-bonus-title">
+          <div class="avito-bonus__container avito-container">
+            <img class="avito-bonus__circles" src="./assets/images/avito/bonus/desktop-bg-circles.svg" alt="" aria-hidden="true">
+            <div class="avito-bonus__content">
+              <h2 class="avito-title" id="avito-bonus-title">Дарим до <span>20 000 бонусов</span> новым клиентам</h2>
+              <p class="avito-bonus__subtitle">Как их получить?</p>
+              <ol class="avito-bonus__list">
+                <li><span class="avito-bonus__icon"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/mobile-imgEllipse2772.png"><img class="avito-bonus__icon-ring" src="./assets/images/avito/bonus/desktop-imgEllipse2772.png" alt=""></picture><img class="avito-bonus__icon-glyph" src="./assets/images/avito/bonus/desktop-img1.png" alt=""></span><div><h3>У вас есть ИП или ООО</h3><p>зарегистрированный бизнес — индивидуальный предприниматель или юридическое лицо.</p></div></li>
+                <li><span class="avito-bonus__icon"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/mobile-imgEllipse2772.png"><img class="avito-bonus__icon-ring" src="./assets/images/avito/bonus/desktop-imgEllipse2772.png" alt=""></picture><img class="avito-bonus__icon-glyph" src="./assets/images/avito/bonus/desktop-img2.png" alt=""></span><div><h3>Категория бизнеса относится к услугам</h3><p>для услуг до 20 000 бонусов, для товаров до 10 000 бонусов</p></div></li>
+                <li><span class="avito-bonus__icon"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/mobile-imgEllipse2772.png"><img class="avito-bonus__icon-ring" src="./assets/images/avito/bonus/desktop-imgEllipse2772.png" alt=""></picture><img class="avito-bonus__icon-glyph" src="./assets/images/avito/bonus/desktop-img3.png" alt=""></span><div><h3>У вас новый профиль</h3><p>либо вы не размещали и не продвигали объявления за последние 180 дней</p></div></li>
+                <li><span class="avito-bonus__icon"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/mobile-imgEllipse2772.png"><img class="avito-bonus__icon-ring" src="./assets/images/avito/bonus/desktop-imgEllipse2772.png" alt=""></picture><img class="avito-bonus__icon-glyph" src="./assets/images/avito/bonus/desktop-img4.png" alt=""></span><div><h3>Обратиться к нам</h3><p>в компанию для участия в бонусной программе</p></div></li>
+                <li><span class="avito-bonus__icon"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/mobile-imgEllipse2772.png"><img class="avito-bonus__icon-ring" src="./assets/images/avito/bonus/desktop-imgEllipse2772.png" alt=""></picture><img class="avito-bonus__icon-glyph" src="./assets/images/avito/bonus/desktop-img5.png" alt=""></span><div><h3>Пополнить кошелёк</h3><p>от 5 000 ₽ до 20 000 ₽, мы удваиваем сумму первого пополнения</p></div></li>
+              </ol>
+            </div>
+            <picture class="avito-bonus__profile"><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/profile-mobile.png"><img src="./assets/images/avito/bonus/profile-desktop.png" alt="Пример профиля Авито с 20 000 бонусов"></picture>
+          </div>
+        </section>
+
+        <section class="avito-channels" aria-labelledby="avito-channels-title">
+          <picture class="avito-channels__pattern" aria-hidden="true"><source media="(max-width: 767px)" srcset="./assets/images/avito/channels/mobile-imgGroup2085665616.svg"><img src="./assets/images/avito/channels/desktop-imgGroup2085665616.svg" alt=""></picture>
+          <div class="avito-channels__container avito-container">
+            <div class="avito-channels__copy">
+              <h2 class="avito-title" id="avito-channels-title">Поможем <span>не только</span> с Авито</h2>
+              <p>Работаем не только с Авито, но и помогаем размещаться<span class="avito-channels__desktop-break"><br></span> на других площадках</p>
+            </div>
+            <div class="avito-channels__viewport" data-avito-channels-slider>
+              <ul class="avito-channels__list">
+                <li class="avito-channels__item is-active" data-slide data-loop-index="0"><img src="./assets/images/avito/channels/logo-avito.png" alt="Авито"></li>
+                <li class="avito-channels__item" data-slide data-loop-index="1"><img src="./assets/images/avito/channels/logo-telegram-ads.png" alt="Telegram Ads"></li>
+                <li class="avito-channels__item" data-slide data-loop-index="2"><img src="./assets/images/avito/channels/logo-yandex-direct.png" alt="Яндекс Директ"></li>
+                <li class="avito-channels__item" data-slide data-loop-index="3"><img src="./assets/images/avito/channels/logo-vkontakte.png" alt="ВКонтакте"></li>
+                <li class="avito-channels__item" data-slide data-loop-index="4"><img src="./assets/images/avito/channels/logo-tilda.png" alt="Tilda"></li>
+              </ul>
+              <div class="avito-slider-controls avito-channels__controls" data-slider-controls>
+                <button class="avito-slider-controls__button" type="button" data-prev aria-label="Предыдущий канал">‹</button>
+                <div class="avito-slider-controls__dots" data-dots></div>
+                <button class="avito-slider-controls__button" type="button" data-next aria-label="Следующий канал">›</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="avito-faq" aria-labelledby="avito-faq-title">
+          <span class="avito-faq__ellipse avito-faq__ellipse--left" aria-hidden="true"></span>
+          <span class="avito-faq__ellipse avito-faq__ellipse--right" aria-hidden="true"></span>
+          <div class="avito-faq__container avito-container">
+            <h2 class="avito-title" id="avito-faq-title">Часто задаваемые <span>вопросы</span></h2>
+            <div class="avito-faq__list" data-avito-faq>
+              <article class="avito-faq__item is-open">
+                <img class="avito-faq__avatar" src="./assets/images/avito/faq/desktop-imgEllipse2730.png" alt="Клиент">
+                <div class="avito-faq__dialog">
+                  <h3><button class="avito-faq__question" type="button" aria-expanded="true" aria-controls="faq-answer-1" id="faq-question-1"><span>Какие гарантии вы даете на количество заявок?</span></button></h3>
+                  <div class="avito-faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"><span class="avito-faq__answer-author">Mulin Media</span><p>Количество заявок зависит от ниши, региона и вашего бюджета. Перед стартом мы проводим бесплатный аудит и называем прогнозные цифры, основываясь на нашем опыте и данных конкурентов. Мы гарантируем качественную техническую настройку и выполнение всех этапов стратегии.</p></div>
+                  <button class="avito-faq__action" type="button" aria-expanded="true" aria-controls="faq-answer-1">Скрыть ответ</button>
+                </div>
+              </article>
+              <article class="avito-faq__item">
+                <img class="avito-faq__avatar" src="./assets/images/avito/faq/desktop-imgEllipse2731.png" alt="Клиент">
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2"><span>Работаете ли вы с НДС и по договору?</span></button></h3><div class="avito-faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Да, работаем официально по договору, фиксируем объем работ, сроки и отчетность. Закрывающие документы предоставляем.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-2">Получить ответ</button></div>
+              </article>
+              <article class="avito-faq__item">
+                <img class="avito-faq__avatar" src="./assets/images/avito/faq/desktop-imgEllipse2732.png" alt="Клиент">
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3"><span>Сколько денег нужно на рекламный бюджет Авито?</span></button></h3><div class="avito-faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Бюджет зависит от категории и региона. После аудита мы предложим минимальный тестовый бюджет и сценарий масштабирования.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-3">Получить ответ</button></div>
+              </article>
+              <article class="avito-faq__item">
+                <img class="avito-faq__avatar" src="./assets/images/avito/faq/desktop-imgEllipse2733.png" alt="Клиент">
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4"><span>Что если у меня специфический или дорогой товар (Готовый бизнес/Спецтехника)?</span></button></h3><div class="avito-faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Для готового бизнеса, спецтехники и дорогих товаров мы отдельно изучаем спрос и цикл сделки, а объявления строим вокруг доверия и квалификации лида.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-4">Получить ответ</button></div>
+              </article>
+              <article class="avito-faq__item">
+                <img class="avito-faq__avatar" src="./assets/images/avito/faq/desktop-imgEllipse2734.png" alt="Клиент">
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5"><span>Можете ли вы помочь с другими каналами продаж?</span></button></h3><div class="avito-faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Да. Подключаем Яндекс Директ, Telegram Ads, ВКонтакте, сайты и CRM, чтобы каналы работали как единая система.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-5">Получить ответ</button></div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div data-layout-footer></div>
+    </div>
+
+    <script type="module" src="./js/avito-main.js"></script>
+  </body>
+</html>
