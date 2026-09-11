@@ -76,15 +76,14 @@
   height: var(--team-height-desktop);
 }
 
+.content-showcase--team-only {
+  height: var(--team-height-desktop);
+  background: #fff;
+}
+
 .team__container {
   position: relative;
   height: 100%;
-}
-
-@media (min-width: 1280px) {
-  .team__container {
-    left: 41px;
-  }
 }
 
 .team__title {
@@ -149,22 +148,6 @@
   height: 420px;
 }
 
-.team__item--alexander {
-  left: 1px;
-}
-
-.team__item--akmal {
-  left: 306px;
-}
-
-.team__item--maxim {
-  left: 611px;
-}
-
-.team__item--valeria {
-  left: 916px;
-}
-
 .team-card {
   position: relative;
   width: 100%;
@@ -179,32 +162,12 @@
   border-radius: 20px;
 }
 
-.team-card__sprite {
-  position: absolute;
-  top: -120px;
-  width: 1201px;
-  height: 540px;
-  max-width: none;
-}
-
-.team__item--alexander .team-card__sprite--desktop {
-  left: 0;
-}
-
-.team__item--akmal .team-card__sprite--desktop {
-  left: -305px;
-}
-
-.team__item--maxim .team-card__sprite--desktop {
-  left: -610px;
-}
-
-.team__item--valeria .team-card__sprite--desktop {
-  left: -915px;
-}
-
-.team-card__sprite--mobile {
-  display: none;
+.team-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .team-card__info {
@@ -247,6 +210,10 @@
     height: 570px;
   }
 
+  .content-showcase--team-only {
+    height: 570px;
+  }
+
   .team__title {
     top: 70px;
     font-size: 60px;
@@ -278,24 +245,6 @@
     width: 100%;
     height: auto;
     aspect-ratio: 285 / 347;
-  }
-
-  .team-card__sprite {
-    top: -34.5821%;
-    width: 421.4035%;
-    height: auto;
-  }
-
-  .team__item--akmal .team-card__sprite--desktop {
-    left: -107.0175%;
-  }
-
-  .team__item--maxim .team-card__sprite--desktop {
-    left: -214.0351%;
-  }
-
-  .team__item--valeria .team-card__sprite--desktop {
-    left: -321.0526%;
   }
 
   .team-card__info {
@@ -345,6 +294,10 @@
     height: 721.1401px;
   }
 
+  .content-showcase--team-only {
+    height: 721.1401px;
+  }
+
   .team__title {
     top: 70px;
     left: 0;
@@ -385,36 +338,6 @@
   .team-card__photo {
     width: 100%;
     height: 426.1401px;
-  }
-
-  .team-card__sprite--desktop {
-    top: -147.3684px;
-    width: 1474.9123px;
-    height: 663.1579px;
-  }
-
-  .team__item--akmal .team-card__sprite--desktop {
-    left: -374.5614px;
-  }
-
-  .team__item--maxim .team-card__sprite--desktop {
-    left: -749.1228px;
-  }
-
-  .team__item--valeria .team-card__sprite--desktop {
-    left: -1123.6842px;
-  }
-
-  .team__item--alexander .team-card__sprite--desktop {
-    display: none;
-  }
-
-  .team-card__sprite--mobile {
-    top: -80px;
-    left: 0;
-    display: block;
-    width: 350px;
-    height: 581.1401px;
   }
 
   .team-card__info {
@@ -483,24 +406,6 @@
   aspect-ratio: 285 / 347;
 }
 
-.team-card__sprite--desktop {
-  top: -34.5821%;
-  width: 421.4035%;
-  height: auto;
-}
-
-.team__item--akmal .team-card__sprite--desktop {
-  left: -107.0175%;
-}
-
-.team__item--maxim .team-card__sprite--desktop {
-  left: -214.0351%;
-}
-
-.team__item--valeria .team-card__sprite--desktop {
-  left: -321.0526%;
-}
-
 .team-card__info {
   position: relative;
   top: auto;
@@ -550,24 +455,6 @@
   .team-card__photo {
     height: 426.1401px;
     aspect-ratio: auto;
-  }
-
-  .team-card__sprite--desktop {
-    top: -147.3684px;
-    width: 1474.9123px;
-    height: 663.1579px;
-  }
-
-  .team__item--akmal .team-card__sprite--desktop {
-    left: -374.5614px;
-  }
-
-  .team__item--maxim .team-card__sprite--desktop {
-    left: -749.1228px;
-  }
-
-  .team__item--valeria .team-card__sprite--desktop {
-    left: -1123.6842px;
   }
 
   .team-card__info {

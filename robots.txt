@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /partials/
+Disallow: /assets/source/
+
+Sitemap: https://mulinmedia.ru/sitemap.xml
+Host: mulinmedia.ru

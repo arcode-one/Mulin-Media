@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mulinmedia.ru/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <image:image>
+      <image:loc>https://mulinmedia.ru/assets/images/seo/og-default.png</image:loc>
+      <image:caption>Mulin Media — маркетинг, который приносит прибыль</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mulinmedia.ru/avito.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <image:image>
+      <image:loc>https://mulinmedia.ru/assets/images/avito/hero/person-desktop.png</image:loc>
+      <image:caption>Продвижение на Авито от Mulin Media</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mulinmedia.ru/cases.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <image:image>
+      <image:loc>https://mulinmedia.ru/assets/images/cases-page/card-repair.png</image:loc>
+      <image:caption>Кейсы по продвижению бизнеса Mulin Media</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mulinmedia.ru/case.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <image:image>
+      <image:loc>https://mulinmedia.ru/assets/images/case-detail/profile-desktop.png</image:loc>
+      <image:caption>Кейс продвижения логистической компании на Авито</image:caption>
+    </image:image>
+  </url>
+</urlset>

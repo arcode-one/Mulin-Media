@@ -312,13 +312,13 @@
 }
 
 .site-footer__column--contacts {
-  left: 470px;
-  width: 340px;
+  left: 897px;
+  width: 303px;
 }
 
 .site-footer__column--services {
-  left: 897px;
-  width: 303px;
+  left: 470px;
+  width: 340px;
 }
 
 .site-footer__column-title {
@@ -336,6 +336,13 @@
   font-size: 25px;
   font-weight: 600;
   line-height: 30px;
+}
+
+.site-footer__company-logo {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin-top: 33px;
 }
 
 .site-footer__company-copy {
@@ -366,12 +373,25 @@
   font-weight: 700;
 }
 
+.site-footer__contact-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-footer__contact-heading .site-footer__column-title {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
 .site-footer__socials {
-  position: absolute;
-  top: 10px;
-  left: 204px;
+  position: relative;
+  flex: 0 0 auto;
   width: 90px;
   height: 33px;
+  /* The display font sits high inside its line box, so align to the visible
+     letterforms rather than to the mathematical centre of the line-height. */
+  transform: translateY(-5px);
 }
 
 .site-footer__socials picture,
@@ -499,6 +519,16 @@ a.site-footer__contact:focus-visible {
   white-space: nowrap;
 }
 
+.site-footer__services-list a {
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+.site-footer__services-list a:hover,
+.site-footer__services-list a:focus-visible {
+  color: #c479ff;
+}
+
 .site-footer__legal {
   top: 724px;
   right: auto;
@@ -611,14 +641,14 @@ a.site-footer__contact:focus-visible {
   }
 
   .site-footer__column--contacts {
-    left: 37%;
-    width: 31%;
-  }
-
-  .site-footer__column--services {
     right: 0;
     left: auto;
     width: 29%;
+  }
+
+  .site-footer__column--services {
+    left: 37%;
+    width: 31%;
   }
 
   .site-footer__column-title {
@@ -630,6 +660,11 @@ a.site-footer__contact:focus-visible {
     margin-top: 22px;
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .site-footer__company-logo {
+    width: 160px;
+    margin-top: 22px;
   }
 
   .site-footer__company-copy,
@@ -651,11 +686,8 @@ a.site-footer__contact:focus-visible {
   }
 
   .site-footer__socials {
-    top: 8px;
-    right: 0;
-    left: auto;
-    transform: scale(0.75);
-    transform-origin: right top;
+    transform: translateY(-4px) scale(0.75);
+    transform-origin: left center;
   }
 
   .site-footer__services-list {
@@ -683,6 +715,41 @@ a.site-footer__contact:focus-visible {
     right: 0;
     left: auto;
     width: 29%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 820px) {
+  .site-footer__title {
+    font-size: clamp(52px, 7vw, 57px);
+    line-height: 0.98;
+  }
+
+  .site-footer__contact-heading {
+    gap: 8px;
+  }
+
+  .site-footer__socials {
+    width: 59px;
+    height: 22px;
+    transform: translateY(-4px);
+  }
+
+  .site-footer__socials picture,
+  .site-footer__socials img {
+    width: 59px;
+    height: 22px;
+  }
+
+  .site-footer__social-link {
+    height: 22px;
+  }
+
+  .site-footer__social-link--telegram {
+    width: 22px;
+  }
+
+  .site-footer__social-link--whatsapp {
+    width: 23px;
   }
 }
 
@@ -901,11 +968,11 @@ a.site-footer__contact:focus-visible {
   }
 
   .site-footer__column--contacts {
-    top: 723px;
+    top: 931px;
   }
 
   .site-footer__column--services {
-    top: 931px;
+    top: 723px;
   }
 
   .site-footer__column-title {
@@ -918,6 +985,11 @@ a.site-footer__contact:focus-visible {
     margin-top: 10px;
     font-size: 20px;
     line-height: 20px;
+  }
+
+  .site-footer__company-logo {
+    width: 160px;
+    margin-top: 10px;
   }
 
   .site-footer__company-copy {
@@ -943,8 +1015,7 @@ a.site-footer__contact:focus-visible {
   }
 
   .site-footer__socials {
-    top: 6px;
-    left: 195px;
+    transform: translateY(-5px);
   }
 
   .site-footer__contacts-list {
@@ -1032,8 +1103,7 @@ a.site-footer__contact:focus-visible {
     width: calc(100vw - 40px);
   }
 
-  .site-footer__socials {
-    right: 0;
-    left: auto;
+  .site-footer__contact-heading {
+    gap: 14px;
   }
 }

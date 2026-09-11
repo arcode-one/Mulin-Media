@@ -1,3 +1,5 @@
+import { openSuccessPopup } from "./success-popup.js";
+
 const PHONE_LENGTH = 10;
 
 function normalizePhone(value) {
@@ -124,8 +126,9 @@ function initContactForm(root) {
     }
 
     submit.disabled = true;
-    status.textContent = "Спасибо! Заявка принята, мы скоро свяжемся с вами.";
+    status.textContent = "";
     form.reset();
+    openSuccessPopup(submit);
 
     window.setTimeout(() => {
       submit.disabled = false;

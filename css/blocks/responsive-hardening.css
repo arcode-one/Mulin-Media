@@ -22,6 +22,9 @@
 :where(
   .site-footer,
   .services,
+  .workflow,
+  .team,
+  .blog,
   .avito-page,
   .cases-page,
   .case-page
@@ -32,6 +35,18 @@
 :where(.lead-form, .avito-inline-form, .cases-contact) :where(input, button) {
   max-width: 100%;
   min-width: 0;
+}
+
+.avito-steps__line {
+  height: calc(1026px + var(--avito-roadmap-extra, 0px));
+}
+
+.avito-steps__roadmap::after {
+  top: calc(1001px + var(--avito-roadmap-extra, 0px));
+}
+
+.avito-steps__endpoint--finish {
+  top: calc(1019px + var(--avito-roadmap-extra, 0px));
 }
 
 @media (min-width: 1280px) {
@@ -61,6 +76,60 @@
     grid-template-columns: repeat(3, 375px);
   }
 
+  .services__item {
+    height: auto;
+    min-height: 404px;
+  }
+
+  .service-card,
+  .service-card--avito,
+  .service-card--target,
+  .service-card--crm {
+    display: flex;
+    min-height: 404px;
+    height: auto;
+    flex-direction: column;
+    padding: 24px 20px 25px;
+  }
+
+  .service-card__icon,
+  .service-card__icon--avito,
+  .service-card__title,
+  .service-card__description,
+  .service-card__tags,
+  .service-card__button {
+    position: relative;
+    inset: auto;
+    width: 100% !important;
+    max-width: none;
+  }
+
+  .service-card__icon,
+  .service-card__icon--avito {
+    width: 49px !important;
+    height: 49px;
+    flex: 0 0 49px;
+  }
+
+  .service-card__title {
+    margin-top: 20px;
+  }
+
+  .service-card__description {
+    margin-top: 20px;
+  }
+
+  .service-card__tags {
+    margin-top: auto;
+    padding-top: 16px;
+    white-space: normal;
+  }
+
+  .service-card__button {
+    flex: 0 0 45px;
+    margin-top: 20px;
+  }
+
   .services-promo {
     margin-top: 85px;
   }
@@ -68,6 +137,81 @@
 
 /* The tablet range is intentionally fluid between the desktop and mobile artboards. */
 @media (min-width: 768px) and (max-width: 1279px) {
+  .content-showcase {
+    height: 1070px;
+  }
+
+  body[data-layout-page="home"] .content-showcase {
+    height: calc(1070px + var(--content-showcase-footer-gap, 100px));
+  }
+
+  .team {
+    height: 590px;
+  }
+
+  .team-card__name,
+  .team-card__role {
+    white-space: normal;
+  }
+
+  .services__title {
+    white-space: normal;
+  }
+
+  .services__item {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .service-card,
+  .service-card--avito,
+  .service-card--target,
+  .service-card--crm {
+    display: flex;
+    min-height: 380px;
+    height: auto;
+    flex-direction: column;
+    padding: 24px 20px 22px;
+  }
+
+  .service-card__icon,
+  .service-card__icon--avito,
+  .service-card__title,
+  .service-card__description,
+  .service-card__tags,
+  .service-card__button {
+    position: relative;
+    inset: auto;
+    width: 100% !important;
+    max-width: none;
+  }
+
+  .service-card__icon,
+  .service-card__icon--avito {
+    width: 49px !important;
+    height: 49px;
+    flex: 0 0 49px;
+  }
+
+  .service-card__title {
+    margin-top: 17px;
+  }
+
+  .service-card__description {
+    margin-top: 18px;
+  }
+
+  .service-card__tags {
+    margin-top: auto;
+    padding-top: 16px;
+    white-space: normal;
+  }
+
+  .service-card__button {
+    flex: 0 0 47px;
+    margin-top: 16px;
+  }
+
   .avito-hero__content {
     width: min(50%, 530px);
   }
@@ -256,6 +400,12 @@
     flex: 1 1 auto;
   }
 
+  .avito-cases {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 0;
+  }
+
   .avito-solutions__container {
     height: auto;
     min-height: 1050px;
@@ -284,12 +434,72 @@
     width: auto;
   }
 
+  .avito-steps {
+    height: clamp(1766px, calc(2094px - 29.69vw), 1866px);
+    min-height: clamp(1766px, calc(2094px - 29.69vw), 1866px);
+    padding-bottom: 0;
+  }
+
+  .avito-steps__roadmap {
+    height: 1249px;
+    min-height: 0;
+  }
+
+  .avito-steps__list {
+    display: block;
+    min-height: 0;
+    height: 100%;
+  }
+
   .avito-step {
+    position: absolute;
     width: min(54%, 630px);
+  }
+
+  .avito-step:nth-child(1) {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+  }
+
+  .avito-step:nth-child(even) {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .avito-step:nth-child(2) {
+    top: 242px;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+
+  .avito-step:nth-child(3) {
+    top: 484px;
+    right: auto;
+    bottom: auto;
+    left: 0;
+  }
+
+  .avito-step:nth-child(4) {
+    top: 726px;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+
+  .avito-step:nth-child(5) {
+    top: 968px;
+    right: auto;
+    bottom: auto;
+    left: 0;
   }
 
   .avito-steps__line {
     left: 21%;
+    height: calc(1026px + var(--avito-roadmap-extra, 0px));
+    object-fit: fill;
   }
 
   .avito-steps__roadmap::before,
@@ -298,65 +508,14 @@
     font-size: clamp(180px, 23vw, 285px);
   }
 
-  .avito-team {
-    height: auto;
-    min-height: 1088px;
-    padding-bottom: 100px;
+  .avito-steps__roadmap::after {
+    top: calc(1001px + var(--avito-roadmap-extra, 0px));
+    bottom: auto;
   }
 
-  .avito-team__intro {
-    gap: 35px;
-  }
-
-  .avito-team__intro .avito-title {
-    width: min(41%, 480px);
-  }
-
-  .avito-team__stats {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(20px, 4vw, 57px);
-    width: min(57%, 660px);
-  }
-
-  .avito-team__stats dt {
-    font-size: clamp(62px, 7vw, 86px);
-  }
-
-  .avito-team__layout {
-    grid-template-columns: minmax(0, 1.35fr) minmax(330px, 1fr);
-    gap: clamp(18px, 2vw, 26px);
-  }
-
-  .avito-team__members {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .avito-team__member,
-  .avito-team__member-photo {
-    width: 100%;
-  }
-
-  .avito-team__member-photo {
-    aspect-ratio: 1;
-  }
-
-  .avito-team__member h3 {
-    font-size: clamp(21px, 2.35vw, 28px);
-    line-height: 1;
-    white-space: normal;
-  }
-
-  .avito-team__leader {
-    height: clamp(690px, 72vw, 850px);
-  }
-
-  .avito-team__leader-copy {
-    right: clamp(24px, 3vw, 39px);
-    left: clamp(24px, 3vw, 39px);
-  }
-
-  .avito-team__leader .avito-button {
-    width: 100%;
+  .avito-steps__endpoint--finish {
+    top: calc(1019px + var(--avito-roadmap-extra, 0px));
+    bottom: auto;
   }
 
   .avito-bonus {
@@ -434,6 +593,21 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .avito-solutions__cta,
+  .avito-solutions__cta-inner {
+    height: auto;
+    min-height: 297px;
+  }
+
+  .avito-solutions__cta-inner {
+    padding-bottom: 0;
+  }
+
+  .avito-steps {
+    height: calc(clamp(1766px, calc(2094px - 29.69vw), 1866px) + 20px);
+    min-height: calc(clamp(1766px, calc(2094px - 29.69vw), 1866px) + 20px);
+  }
+
   .avito-hero {
     min-height: 840px;
   }
@@ -479,30 +653,6 @@
     margin-top: 20px;
   }
 
-  .avito-team__intro {
-    flex-wrap: wrap;
-  }
-
-  .avito-team__intro .avito-title,
-  .avito-team__stats {
-    width: 100%;
-  }
-
-  .avito-team__layout {
-    display: block;
-    margin-top: 55px;
-  }
-
-  .avito-team__member h3 {
-    font-size: clamp(22px, 3.4vw, 30px);
-  }
-
-  .avito-team__leader {
-    width: min(100%, 498px);
-    height: 860px;
-    margin: 55px auto 0;
-  }
-
   .avito-faq__item {
     padding-right: 72px;
   }
@@ -512,12 +662,13 @@
 @media (max-width: 767px) {
   .services {
     height: auto;
-    min-height: 2784px;
+    min-height: 0;
+    padding-bottom: 70px;
   }
 
   .services__container {
     height: auto;
-    min-height: 2784px;
+    min-height: 0;
     padding-top: 70px;
   }
 
@@ -534,6 +685,60 @@
 
   .services-promo {
     margin-top: 40px;
+  }
+
+  .services__item {
+    height: auto;
+    min-height: 335px;
+  }
+
+  .service-card,
+  .service-card--avito,
+  .service-card--target,
+  .service-card--crm {
+    display: flex;
+    min-height: 335px;
+    height: auto;
+    flex-direction: column;
+    padding: 22px 21px 23px;
+  }
+
+  .service-card__icon,
+  .service-card__icon--avito,
+  .service-card__title,
+  .service-card__description,
+  .service-card__tags,
+  .service-card__button {
+    position: relative;
+    inset: auto;
+    width: 100% !important;
+    max-width: none;
+  }
+
+  .service-card__icon,
+  .service-card__icon--avito {
+    width: 50px !important;
+    height: 50px;
+    flex: 0 0 auto;
+  }
+
+  .service-card__title {
+    margin-top: 19px;
+  }
+
+  .service-card__description {
+    margin-top: 15px;
+  }
+
+  .service-card__tags {
+    margin-top: auto;
+    padding-top: 16px;
+    white-space: normal;
+  }
+
+  .service-card__button {
+    flex: 0 0 47px;
+    margin-top: 16px;
   }
 
   .services-promo__title,
@@ -590,11 +795,6 @@
   .avito-inline-form__row,
   .avito-steps__message,
   .avito-step,
-  .avito-team__intro .avito-title,
-  .avito-team__members-wrap,
-  .avito-team__members,
-  .avito-team__member,
-  .avito-team__member-photo,
   .avito-bonus__content,
   .avito-bonus__list,
   .avito-bonus__list li:last-child,
@@ -613,6 +813,12 @@
     min-height: 1674px;
   }
 
+  .avito-cases {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 0;
+  }
+
   .avito-message__bubble {
     width: auto;
     flex: 1 1 auto;
@@ -627,26 +833,12 @@
     max-width: 350px;
   }
 
-  .avito-team {
-    height: auto;
-    min-height: 1303px;
-    padding-bottom: 0;
+  .avito-steps__line {
+    height: calc(1353px + var(--avito-roadmap-extra, 0px));
   }
 
-  .avito-team__member {
-    flex-basis: 100%;
-  }
-
-  .avito-team__member-photo {
-    aspect-ratio: 1;
-  }
-
-  .avito-team__member h3 {
-    white-space: normal;
-  }
-
-  .avito-team__leader .avito-button {
-    width: 100%;
+  .avito-steps__endpoint--finish {
+    top: calc(1295px + var(--avito-roadmap-extra, 0px));
   }
 
   .avito-bonus {
@@ -684,6 +876,60 @@
   .case-detail__tags li {
     min-width: 0;
     white-space: normal;
+  }
+}
+
+/* A fluid bridge between the 390 px mobile artboard and the tablet layout. */
+@media (min-width: 431px) and (max-width: 767px) {
+  .avito-container,
+  .avito-solutions__cta .avito-solutions__cta-inner {
+    width: min(calc(100% - 40px), 680px);
+  }
+
+  .avito-platform__container,
+  .avito-platform__title,
+  .avito-platform__source,
+  .avito-platform__benefits,
+  .avito-solutions__item,
+  .avito-inline-form,
+  .avito-channels__container,
+  .avito-channels__copy,
+  .avito-channels__viewport,
+  .avito-faq__list {
+    width: 100%;
+  }
+
+  .cases-catalog {
+    min-height: 0;
+    padding-bottom: 70px;
+  }
+
+  .cases-catalog__grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    justify-content: stretch;
+    column-gap: 24px;
+  }
+
+}
+
+@media (max-width: 430px) {
+  .hero__title,
+  .services__title,
+  .workflow__title,
+  .why-us__title,
+  .team__title,
+  .blog__title,
+  .avito-title,
+  .cases-catalog__title,
+  .case-detail__title,
+  .site-footer__title,
+  .site-footer__column-title {
+    font-size: clamp(44px, 12.82vw, 50px);
+  }
+
+  .site-footer__title,
+  .site-footer__column-title {
+    line-height: 1;
   }
 }
 

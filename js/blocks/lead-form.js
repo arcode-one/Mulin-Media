@@ -1,3 +1,5 @@
+import { initSuccessPopup, openSuccessPopup } from "./success-popup.js";
+
 const PHONE_LENGTH = 10;
 
 function getPhoneDigits(value) {
@@ -28,6 +30,8 @@ function formatPhone(digits) {
 }
 
 export function initLeadForms() {
+  initSuccessPopup();
+
   document.querySelectorAll(".lead-form").forEach((form) => {
     const input = form.querySelector(".lead-form__input");
     const checkbox = form.querySelector(".lead-form__checkbox");
@@ -113,8 +117,7 @@ export function initLeadForms() {
         form.reset();
         input.value = "";
         input.dataset.digits = "";
-        form.classList.add("is-success");
-        error.textContent = "Спасибо! Заявка отправлена — скоро свяжемся с вами";
+        openSuccessPopup(submit);
 
         form.dispatchEvent(new CustomEvent("lead-form:success", {
           bubbles: true,

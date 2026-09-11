@@ -1,15 +1,13 @@
 <header class="header" data-shared-header>
   <div class="header__container container">
     <a class="header__logo" href="./index.html" aria-label="Mulin Media — на главную">
-      <picture>
-        <source media="(max-width: 767px)" srcset="./assets/images/avito/hero/logo-mobile.png">
-        <img src="./assets/images/avito/hero/logo-desktop.png" width="86" height="52" alt="Mulin Media">
-      </picture>
+      <img class="header__logo-image header__logo-image--white" src="./assets/images/header/mulin-media-logo-white.svg" width="96" height="60" alt="" aria-hidden="true">
+      <img class="header__logo-image header__logo-image--black" src="./assets/images/header/mulin-media-logo-black.svg" width="96" height="60" alt="" aria-hidden="true">
     </a>
 
     <nav class="header__nav" aria-label="Основная навигация">
       <ul class="header__nav-list">
-        <li class="header__nav-item"><a class="header__nav-link" href="./index.html#about" data-header-route="about">О нас</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="./index.html">Главная</a></li>
         <li class="header__nav-item header__nav-item--has-submenu">
           <a class="header__nav-link" href="./index.html#services" data-header-route="services" aria-haspopup="true">Услуги</a>
           <div class="header__submenu">
@@ -23,14 +21,15 @@
           </div>
         </li>
         <li class="header__nav-item"><a class="header__nav-link" href="./cases.html" data-header-route="cases" data-page-link="cases">Кейсы</a></li>
-        <li class="header__nav-item"><a class="header__nav-link" href="./index.html#blog" data-header-route="articles">Статьи</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="./blog.html" data-page-link="blog">Блог</a></li>
+        <li class="header__nav-item"><a class="header__nav-link" href="#contacts">Контакты</a></li>
       </ul>
     </nav>
 
-    <a class="header__cta" href="https://t.me/sasha_mulin" target="_blank" rel="noopener noreferrer">Написать в тг <span class="header__cta-icon" aria-hidden="true"></span></a>
+    <a class="header__cta" href="https://t.me/mulin_manager" target="_blank" rel="noopener noreferrer">Написать в тг <span class="header__cta-icon" aria-hidden="true"></span></a>
 
     <button class="header__menu-toggle" type="button" aria-label="Открыть меню" aria-controls="mobile-menu" aria-expanded="false">
-      <span>Меню</span>
+      <img src="./assets/images/header/menu-open.svg" width="46" height="46" alt="" aria-hidden="true">
     </button>
   </div>
 
@@ -46,16 +45,15 @@
       <img class="header__menu-lines" src="./assets/images/header/menu-lines.svg" alt="" aria-hidden="true">
       <ul class="header__menu-list">
         <li class="header__menu-item"><a class="header__menu-link" href="./index.html">Главная</a></li>
-        <li class="header__menu-item"><a class="header__menu-link" href="./index.html#about" data-header-route="about">О нас</a></li>
         <li class="header__menu-item"><a class="header__menu-link" href="./index.html#services" data-header-route="services">Услуги</a></li>
         <li class="header__menu-item"><a class="header__menu-link" href="./cases.html" data-header-route="cases" data-page-link="cases">Кейсы</a></li>
-        <li class="header__menu-item"><a class="header__menu-link" href="./index.html#blog" data-header-route="articles">Статьи</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="./blog.html" data-page-link="blog">Блог</a></li>
         <li class="header__menu-item"><a class="header__menu-link" href="#contacts">Контакты</a></li>
       </ul>
     </nav>
 
     <div class="header__menu-socials" aria-label="Социальные сети">
-      <a class="header__menu-social-link" href="https://t.me/sasha_mulin" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+      <a class="header__menu-social-link" href="https://t.me/mulin_manager" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
         <span class="visually-hidden">Telegram</span>
       </a>
       <a class="header__menu-social-link" href="https://wa.me/79370003317" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">

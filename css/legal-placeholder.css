@@ -4,6 +4,7 @@
 @import url("./base/globals.css");
 @import url("./blocks/header.css");
 @import url("./blocks/lead-form.css");
+@import url("./blocks/success-popup.css");
 @import url("./blocks/footer.css");
 @import url("./blocks/button-states.css");
 @import url("./blocks/responsive-hardening.css");

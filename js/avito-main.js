@@ -3,10 +3,11 @@ import { initHeader } from "./blocks/header.js";
 import { initLeadForms } from "./blocks/lead-form.js";
 import { initFooter } from "./blocks/footer.js";
 import { initAvitoCases } from "./blocks/avito-cases.js";
-import { initAvitoTeam } from "./blocks/avito-team.js";
+import { initTeam } from "./blocks/team.js";
 import { initAvitoChannels } from "./blocks/avito-channels.js";
 import { initAvitoFaq } from "./blocks/avito-faq.js";
 import { initAvitoSolutions } from "./blocks/avito-solutions.js";
+import { initAvitoSteps } from "./blocks/avito-steps.js";
 
 async function bootstrap() {
   await initSharedLayout();
@@ -14,10 +15,11 @@ async function bootstrap() {
   initLeadForms();
   initFooter();
   initAvitoCases();
-  initAvitoTeam();
+  initTeam();
   initAvitoChannels();
   initAvitoFaq();
   initAvitoSolutions();
+  initAvitoSteps();
 }
 
 bootstrap().catch((error) => {

@@ -1,3 +1,5 @@
+import { openSuccessPopup } from "./success-popup.js";
+
 export function initAvitoSolutions() {
   document.querySelectorAll(".avito-inline-form").forEach((form) => {
     const phone = form.querySelector('input[type="tel"]');
@@ -17,8 +19,9 @@ export function initAvitoSolutions() {
         consent?.focus();
         return;
       }
-      if (error) error.textContent = "Спасибо! Заявка принята.";
+      if (error) error.textContent = "";
       form.reset();
+      openSuccessPopup(form.querySelector("button[type='submit']"));
     });
   });
 }

@@ -12,7 +12,7 @@
   left: 50%;
   width: 2328px;
   height: 1337px;
-  background: url("../../assets/images/avito/faq/desktop-img.svg") center / contain no-repeat;
+  background: url("../../assets/images/avito/faq/background-desktop.svg") center / contain no-repeat;
   content: "";
   transform: translateX(-50%);
 }
@@ -77,7 +77,7 @@
   min-height: 85px;
   padding: 20px 75px;
   color: var(--color-ink);
-  background: transparent url("../../assets/images/avito/faq/desktop-imgGroup2085665296.svg") center / 100% 100% no-repeat;
+  background: transparent url("../../assets/images/avito/faq/question-bubble-desktop.svg") center / 100% 100% no-repeat;
   border-radius: 0;
   filter: drop-shadow(0 12px 14px rgb(35 35 35 / 8%));
   text-align: left;
@@ -131,7 +131,7 @@
   position: absolute;
   z-index: 0;
   inset: 0;
-  background: transparent url("../../assets/images/avito/faq/desktop-imgGroup2085665295.svg") center / 100% 100% no-repeat;
+  background: transparent url("../../assets/images/avito/faq/answer-bubble-desktop.svg") center / 100% 100% no-repeat;
   content: "";
   filter: drop-shadow(0 12px 14px rgb(35 35 35 / 8%));
   pointer-events: none;
@@ -144,7 +144,7 @@
   right: -107px;
   width: 83px;
   height: 83px;
-  background: url("../../assets/images/avito/faq/desktop-imgEllipse2729.png") center / cover no-repeat;
+  background: url("../../assets/images/avito/faq/agency-avatar-desktop.png") center / cover no-repeat;
   border-radius: 50%;
   content: "";
   opacity: 0;
@@ -304,7 +304,7 @@
     right: -50px;
     width: 40px;
     height: 40px;
-    background-image: url("../../assets/images/avito/faq/mobile-imgEllipse2729.png");
+    background-image: url("../../assets/images/avito/faq/agency-avatar-mobile.png");
   }
 
   .avito-faq__answer-author {

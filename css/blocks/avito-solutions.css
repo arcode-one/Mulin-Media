@@ -29,7 +29,7 @@
   margin: 0 0 0 24px;
   padding: 17px 62px;
   color: #fff;
-  background: transparent url("../../assets/images/avito/solutions/desktop-imgGroup2085665295.svg") center / 100% 100% no-repeat;
+  background: transparent url("../../assets/images/avito/solutions/message-bubble-desktop.svg") center / 100% 100% no-repeat;
   border-radius: 0;
   font-size: 20px;
   line-height: 25px;
@@ -135,7 +135,7 @@
   left: calc(50% - 656px);
   width: 1421px;
   height: 672px;
-  background: url("../../assets/images/avito/solutions/desktop-imgGroup2085665616.svg") center / 100% 100% no-repeat;
+  background: url("../../assets/images/avito/solutions/cta-background-desktop.svg") center / 100% 100% no-repeat;
   content: "";
   pointer-events: none;
 }
@@ -399,7 +399,7 @@
     min-height: 60px;
     margin-left: 10px;
     padding: 6px 5px 6px 21px;
-    background-image: url("../../assets/images/avito/solutions/mobile-imgGroup2085665295.svg");
+    background-image: url("../../assets/images/avito/solutions/message-bubble-mobile.svg");
     border-radius: 0;
     font-size: 12px;
     line-height: 16px;
@@ -456,7 +456,7 @@
     left: calc(50% - 348px);
     width: 842px;
     height: 509px;
-    background-image: url("../../assets/images/avito/solutions/mobile-imgGroup2085665616.svg");
+    background-image: url("../../assets/images/avito/solutions/cta-background-mobile.svg");
   }
 
   .avito-solutions__cta .avito-solutions__cta-inner {

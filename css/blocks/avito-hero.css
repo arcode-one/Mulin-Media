@@ -140,7 +140,7 @@
   width: 703px;
   height: 704px;
   overflow: hidden;
-  background: url("../../assets/images/avito/hero/desktop-img1.png") 0 0 / 2556px 704px no-repeat;
+  background: url("../../assets/images/avito/hero/circles-sprite-desktop.png") 0 0 / 2556px 704px no-repeat;
 }
 
 .avito-hero__person,
@@ -155,8 +155,8 @@
 .avito-hero__person {
   width: 792px;
   height: 802px;
-  -webkit-mask: url("../../assets/images/avito/hero/desktop-img2.svg") 71.5px 17.5px / 783.5px 683.025px no-repeat;
-  mask: url("../../assets/images/avito/hero/desktop-img2.svg") 71.5px 17.5px / 783.5px 683.025px no-repeat;
+  -webkit-mask: url("../../assets/images/avito/hero/person-mask-desktop.svg") 71.5px 17.5px / 783.5px 683.025px no-repeat;
+  mask: url("../../assets/images/avito/hero/person-mask-desktop.svg") 71.5px 17.5px / 783.5px 683.025px no-repeat;
 }
 
 .avito-hero__person img {

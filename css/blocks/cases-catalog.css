@@ -8,7 +8,7 @@
 }
 
 .cases-catalog {
-  min-height: 1244px;
+  min-height: 0;
   background: var(--color-white);
 }
 
@@ -46,7 +46,6 @@
 .cases-catalog__sidebar {
   position: relative;
   left: 1px;
-  min-height: 1050px;
   padding-top: 111px;
 }
 
@@ -117,6 +116,7 @@
   align-items: center;
   padding: 0 28px;
   background: var(--color-white);
+  border: 1px solid rgb(35 35 35 / 9%);
   box-shadow: 0 105px 29px rgb(0 0 0 / 0%), 0 67px 27px rgb(0 0 0 / 1%), 0 38px 23px rgb(0 0 0 / 3%), 0 17px 17px rgb(0 0 0 / 4%), 0 4px 9px rgb(0 0 0 / 5%);
 }
 
@@ -183,15 +183,6 @@
 
 .cases-contact.has-error .cases-contact__status {
   color: #c94242;
-}
-
-.cases-catalog__ellipses {
-  position: absolute;
-  top: 881px;
-  left: 58px;
-  display: block;
-  width: 287px;
-  height: 276px;
 }
 
 .cases-catalog__results {
@@ -303,10 +294,6 @@
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
-  .cases-catalog {
-    min-height: 1180px;
-  }
-
   .cases-catalog__layout {
     grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
     gap: 48px;

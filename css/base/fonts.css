@@ -3,7 +3,7 @@
   src: url("../../assets/fonts/involve/Involve-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   src: url("../../assets/fonts/involve/Involve-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url("../../assets/fonts/involve/Involve-SemiBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   src: url("../../assets/fonts/involve/Involve-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -35,5 +35,5 @@
   src: url("../../assets/fonts/bebas-neue-cyrillic/BebasNeueCyrillic.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }

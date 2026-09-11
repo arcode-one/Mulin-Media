@@ -5,34 +5,24 @@ const PARTIALS = [
 
 const PAGE_ROUTES = {
   home: {
-    about: "#about",
     services: "#services",
     cases: "./cases.html",
-    articles: "#blog",
   },
   avito: {
-    about: "#avito-team",
     services: "#avito-solutions",
     cases: "./cases.html",
-    articles: "./index.html#blog",
   },
   cases: {
-    about: "./index.html#about",
     services: "./index.html#services",
     cases: "./cases.html",
-    articles: "./index.html#blog",
   },
   case: {
-    about: "./index.html#about",
     services: "./index.html#services",
     cases: "./cases.html",
-    articles: "./index.html#blog",
   },
   default: {
-    about: "./index.html#about",
     services: "./index.html#services",
     cases: "./cases.html",
-    articles: "./index.html#blog",
   },
 };
 
