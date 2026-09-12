@@ -558,7 +558,6 @@
     text-align: left;
     cursor: pointer;
   }
-  .header__menu-services-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
   .header__menu-services { padding-bottom: 14px; }
   .header__menu-services[hidden] { display: none; }
 }

@@ -13,6 +13,8 @@ export function initTeam() {
     previousButtons: section.querySelectorAll("[data-team-prev]"),
     nextButtons: section.querySelectorAll("[data-team-next]"),
     enableSwipe: true,
+    stableTrack: true,
+    revealLeadingClones: true,
     onPreview: (index) => {
       viewport.classList.add("is-previewing");
       viewport.querySelectorAll("[data-team-slide]").forEach((slide) => {

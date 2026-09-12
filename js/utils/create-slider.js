@@ -48,8 +48,18 @@ export function createLoopSlider(root, options = {}) {
   let pendingSteps = 0;
   let requestedIndex = null;
   let resizeFrame = 0;
-  let leadingClonesRevealed = false;
+  let leadingClonesRevealed = options.revealLeadingClones === true;
   let hasSnapInteraction = false;
+  let measuredStep = 0;
+  let previewIndex = null;
+  let layoutWidth = window.innerWidth;
+  let resizePending = false;
+
+  const preview = (index) => {
+    if (previewIndex === index) return;
+    previewIndex = index;
+    options.onPreview?.(index);
+  };
 
   const getSnapCorrection = () => {
     const inset = typeof options.snapInsetAfterInteraction === "function"
@@ -60,6 +70,7 @@ export function createLoopSlider(root, options = {}) {
   };
 
   const revealLeadingClones = () => {
+    if (leadingClonesRevealed) return;
     leadingClonesRevealed = true;
     clones.forEach((clone) => { clone.style.visibility = ""; });
   };
@@ -93,13 +104,19 @@ export function createLoopSlider(root, options = {}) {
   });
 
   const getStep = () => {
+    if (measuredStep) return measuredStep;
     const first = getOrderedSlides()[0];
     if (!first) return 0;
     const gap = Number.parseFloat(window.getComputedStyle(track).columnGap) || 0;
-    return first.getBoundingClientRect().width + gap;
+    measuredStep = first.getBoundingClientRect().width + gap;
+    return measuredStep;
   };
 
   const updateUi = () => {
+    previewIndex = null;
+    clones.forEach((slide) => {
+      slide.classList.toggle(activeClass, Number(slide.dataset.loopIndex) === activeIndex);
+    });
     slides.forEach((slide, index) => {
       const isActive = index === activeIndex;
       slide.classList.toggle(activeClass, isActive);
@@ -147,6 +164,8 @@ export function createLoopSlider(root, options = {}) {
   };
 
   const rebuild = () => {
+    measuredStep = 0;
+    resizePending = false;
     removeClones();
     const ordered = options.stableTrack ? slides : getOrderedSlides();
 
@@ -212,7 +231,7 @@ export function createLoopSlider(root, options = {}) {
 
     let settled = false;
     const done = (event) => {
-      if (settled || (event && event.propertyName !== "transform")) return;
+      if (settled || (event && (event.target !== track || event.propertyName !== "transform"))) return;
       settled = true;
       track.removeEventListener("transitionend", done);
       resolve();
@@ -223,7 +242,7 @@ export function createLoopSlider(root, options = {}) {
   });
 
   const animateStep = async (direction) => {
-    options.onPreview?.(mod(activeIndex + direction, slides.length));
+    preview(mod(activeIndex + direction, slides.length));
     // Preserve the initial container alignment, then snap to the section edge.
     const previousCorrection = getSnapCorrection();
     hasSnapInteraction = true;
@@ -256,6 +275,7 @@ export function createLoopSlider(root, options = {}) {
     } else {
       rebuild();
     }
+    if (resizePending) rebuild();
   };
 
   const processQueue = async () => {
@@ -297,7 +317,7 @@ export function createLoopSlider(root, options = {}) {
   };
 
   const animateBack = async () => {
-    options.onPreview?.(activeIndex);
+    preview(activeIndex);
     isAnimating = true;
     root.classList.remove("is-dragging");
     track.style.removeProperty("transition");
@@ -306,6 +326,9 @@ export function createLoopSlider(root, options = {}) {
     track.style.transform = `translate3d(${-baseOffset}px, 0, 0)`;
     await waitForTransition();
     isAnimating = false;
+    updateUi();
+    if (resizePending) rebuild();
+    processQueue();
   };
 
   const paintDrag = () => {
@@ -313,7 +336,7 @@ export function createLoopSlider(root, options = {}) {
     const step = getStep();
     const limit = options.stableTrack ? step : step * 1.08;
     const deltaX = Math.max(-limit, Math.min(limit, currentX - startX));
-    options.onPreview?.(Math.abs(deltaX) > step * 0.15
+    preview(Math.abs(deltaX) > step * 0.15
       ? mod(activeIndex - Math.sign(deltaX), slides.length)
       : activeIndex);
     track.style.transform = `translate3d(${-(baseOffset - deltaX)}px, 0, 0)`;
@@ -353,7 +376,10 @@ export function createLoopSlider(root, options = {}) {
 
     if (direction) move(direction);
     else if (wasHorizontal) animateBack();
-    else root.classList.remove("is-dragging");
+    else {
+      root.classList.remove("is-dragging");
+      if (resizePending) rebuild();
+    }
   };
 
   if (!root.hasAttribute("tabindex")) root.tabIndex = 0;
@@ -434,9 +460,13 @@ export function createLoopSlider(root, options = {}) {
   nextButtons.forEach((button) => button.addEventListener("click", () => move(1)));
   dots.forEach((dot, index) => dot.addEventListener("click", () => goTo(index)));
   window.addEventListener("resize", () => {
+    // Safari's browser chrome resizes height while scrolling, not the cards.
+    if (window.innerWidth === layoutWidth) return;
+    layoutWidth = window.innerWidth;
+    resizePending = true;
     window.cancelAnimationFrame(resizeFrame);
     resizeFrame = window.requestAnimationFrame(() => {
-      if (!isAnimating) rebuild();
+      if (!isAnimating && pointerId === null) rebuild();
     });
   }, { passive: true });
   reduceMotion.addEventListener("change", rebuild);

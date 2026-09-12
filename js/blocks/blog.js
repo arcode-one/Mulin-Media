@@ -13,6 +13,8 @@ export function initBlog() {
     previousButtons: section.querySelectorAll("[data-blog-prev]"),
     nextButtons: section.querySelectorAll("[data-blog-next]"),
     enableSwipe: true,
+    stableTrack: true,
+    revealLeadingClones: true,
     onPreview: (index) => {
       viewport.classList.add("is-previewing");
       viewport.querySelectorAll("[data-blog-slide]").forEach((slide) => {
