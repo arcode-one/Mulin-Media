@@ -1,0 +1,50 @@
+<section class="cases" id="cases" aria-labelledby="cases-title" data-service-cases>
+  <div class="cases__media" aria-hidden="true">
+    <div class="cases__background-base">
+      <picture>
+        <source media="(max-width: 767px)" srcset="./assets/images/cases/background-base-mobile.png">
+        <img loading="lazy" decoding="async" src="./assets/images/cases/background-base-desktop.png" alt="">
+      </picture>
+    </div>
+    <picture class="cases__background-overlay">
+      <source media="(max-width: 767px)" srcset="./assets/images/cases/background-overlay-mobile.png">
+      <img loading="lazy" decoding="async" src="./assets/images/cases/background-overlay-desktop.png" alt="">
+    </picture>
+    <div class="cases__background-light">
+      <picture>
+        <source media="(max-width: 767px)" srcset="./assets/images/cases/background-light-mobile.png">
+        <img loading="lazy" decoding="async" src="./assets/images/cases/background-light-desktop.png" alt="">
+      </picture>
+    </div>
+  </div>
+
+  <div class="cases__header container">
+    <h2 class="cases__title" id="cases-title">Наши кейсы</h2>
+    <div class="cases__header-actions">
+      <a class="cases__all-link" href="./cases.html">Смотреть все кейсы</a>
+      <div class="cases__controls cases__controls--mobile" aria-label="Переключение кейсов">
+        <button class="cases__mobile-control" type="button" data-cases-prev aria-label="Предыдущий кейс">
+          <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
+        </button>
+        <button class="cases__mobile-control cases__mobile-control--next" type="button" data-cases-next aria-label="Следующий кейс">
+          <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cases__viewport" data-cases-slider tabindex="0" aria-labelledby="cases-title">
+    <ul class="cases__track" id="cases-list"></ul>
+  </div>
+
+  <div class="cases__controls cases__controls--desktop" aria-label="Переключение кейсов">
+    <button class="cases__desktop-control cases__desktop-control--prev" type="button" data-cases-prev aria-label="Предыдущий кейс">
+      <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
+    </button>
+    <div class="cases__dots" data-cases-dots role="group" aria-label="Выбор кейса"></div>
+    <button class="cases__desktop-control cases__desktop-control--next" type="button" data-cases-next aria-label="Следующий кейс">
+      <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
+    </button>
+  </div>
+  <p class="visually-hidden" data-cases-status aria-live="polite">Показан первый кейс</p>
+</section>

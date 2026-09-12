@@ -48,6 +48,27 @@ export function createLoopSlider(root, options = {}) {
   let pendingSteps = 0;
   let requestedIndex = null;
   let resizeFrame = 0;
+  let leadingClonesRevealed = false;
+  let hasSnapInteraction = false;
+
+  const getSnapCorrection = () => {
+    const inset = typeof options.snapInsetAfterInteraction === "function"
+      ? options.snapInsetAfterInteraction() : options.snapInsetAfterInteraction;
+    if (!hasSnapInteraction || inset == null) return 0;
+    const padding = Number.parseFloat(window.getComputedStyle(track).paddingLeft) || 0;
+    return padding - inset;
+  };
+
+  const revealLeadingClones = () => {
+    leadingClonesRevealed = true;
+    clones.forEach((clone) => { clone.style.visibility = ""; });
+  };
+
+  const markInteracted = () => {
+    if (options.interactionClass) root.classList.add(options.interactionClass);
+  };
+
+  if (options.interactionClass) root.classList.remove(options.interactionClass);
 
   slides.forEach((slide, index) => {
     slide.dataset.loopIndex = String(index);
@@ -109,7 +130,7 @@ export function createLoopSlider(root, options = {}) {
     clone.dataset.loopClone = "";
     clone.classList.remove(activeClass);
     clone.setAttribute("aria-hidden", "true");
-    clone.style.pointerEvents = "none";
+    clone.style.pointerEvents = options.stableTrack ? "auto" : "none";
     clone.removeAttribute("id");
     clone.querySelectorAll("[id]").forEach((element) => element.removeAttribute("id"));
     clone.querySelectorAll("a, button, input, select, textarea, [tabindex]").forEach((element) => {
@@ -127,7 +148,7 @@ export function createLoopSlider(root, options = {}) {
 
   const rebuild = () => {
     removeClones();
-    const ordered = getOrderedSlides();
+    const ordered = options.stableTrack ? slides : getOrderedSlides();
 
     if (!isEnabled()) {
       slides.forEach((slide) => track.append(slide));
@@ -153,6 +174,7 @@ export function createLoopSlider(root, options = {}) {
 
     for (let position = -bufferCount; position < 0; position += 1) {
       const clone = makeClone(ordered[mod(position, ordered.length)]);
+      if (options.stableTrack && !leadingClonesRevealed) clone.style.visibility = "hidden";
       clones.push(clone);
       before.append(clone);
     }
@@ -165,7 +187,7 @@ export function createLoopSlider(root, options = {}) {
 
     track.prepend(before);
     track.append(after);
-    baseOffset = bufferCount * step;
+    baseOffset = (bufferCount + (options.stableTrack ? activeIndex : 0)) * step + getSnapCorrection();
     root.classList.add("is-loop-slider");
     if (options.enableSwipe !== false) root.classList.add("is-swipe-enabled");
     root.style.overflow = "hidden";
@@ -201,6 +223,12 @@ export function createLoopSlider(root, options = {}) {
   });
 
   const animateStep = async (direction) => {
+    options.onPreview?.(mod(activeIndex + direction, slides.length));
+    // Preserve the initial container alignment, then snap to the section edge.
+    const previousCorrection = getSnapCorrection();
+    hasSnapInteraction = true;
+    baseOffset += getSnapCorrection() - previousCorrection;
+    if (options.stableTrack && direction < 0) revealLeadingClones();
     isAnimating = true;
     root.classList.remove("is-dragging");
     root.classList.add("is-animating");
@@ -209,10 +237,25 @@ export function createLoopSlider(root, options = {}) {
     void track.offsetWidth;
     track.style.transform = `translate3d(${-(baseOffset + direction * getStep())}px, 0, 0)`;
     await waitForTransition();
+    const previousIndex = activeIndex;
     activeIndex = mod(activeIndex + direction, slides.length);
     root.classList.remove("is-animating");
     isAnimating = false;
-    rebuild();
+    if (options.stableTrack) {
+      // Keep the DOM fixed between swipes. Normalize only the transform at the
+      // loop boundary, where the identical copy occupies exactly the same place.
+      baseOffset += (activeIndex - previousIndex) * getStep();
+      if (activeIndex !== previousIndex + direction) {
+        revealLeadingClones();
+        track.style.transition = "none";
+        track.style.transform = `translate3d(${-baseOffset}px, 0, 0)`;
+        void track.offsetWidth;
+        setTrackTransition();
+      }
+      updateUi();
+    } else {
+      rebuild();
+    }
   };
 
   const processQueue = async () => {
@@ -239,6 +282,7 @@ export function createLoopSlider(root, options = {}) {
 
   const move = (direction) => {
     if (!isEnabled()) return;
+    markInteracted();
     requestedIndex = null;
     pendingSteps += direction;
     processQueue();
@@ -246,12 +290,14 @@ export function createLoopSlider(root, options = {}) {
 
   const goTo = (index) => {
     if (!isEnabled()) return;
+    markInteracted();
     pendingSteps = 0;
     requestedIndex = mod(index, slides.length);
     processQueue();
   };
 
   const animateBack = async () => {
+    options.onPreview?.(activeIndex);
     isAnimating = true;
     root.classList.remove("is-dragging");
     track.style.removeProperty("transition");
@@ -265,7 +311,11 @@ export function createLoopSlider(root, options = {}) {
   const paintDrag = () => {
     dragFrame = 0;
     const step = getStep();
-    const deltaX = Math.max(-step * 1.08, Math.min(step * 1.08, currentX - startX));
+    const limit = options.stableTrack ? step : step * 1.08;
+    const deltaX = Math.max(-limit, Math.min(limit, currentX - startX));
+    options.onPreview?.(Math.abs(deltaX) > step * 0.15
+      ? mod(activeIndex - Math.sign(deltaX), slides.length)
+      : activeIndex);
     track.style.transform = `translate3d(${-(baseOffset - deltaX)}px, 0, 0)`;
   };
 
@@ -279,7 +329,8 @@ export function createLoopSlider(root, options = {}) {
     }
 
     const deltaX = currentX - startX;
-    const dragged = dragDirection === "horizontal" && Math.abs(deltaX) > 6;
+    const wasHorizontal = dragDirection === "horizontal";
+    const dragged = wasHorizontal && Math.abs(deltaX) > 6;
     const distanceThreshold = Math.min(80, Math.max(36, root.clientWidth * 0.1));
     const velocityThreshold = 0.42;
     let direction = 0;
@@ -301,7 +352,8 @@ export function createLoopSlider(root, options = {}) {
     if (root.hasPointerCapture?.(finishedPointerId)) root.releasePointerCapture(finishedPointerId);
 
     if (direction) move(direction);
-    else animateBack();
+    else if (wasHorizontal) animateBack();
+    else root.classList.remove("is-dragging");
   };
 
   if (!root.hasAttribute("tabindex")) root.tabIndex = 0;
@@ -312,6 +364,7 @@ export function createLoopSlider(root, options = {}) {
   if (options.enableSwipe !== false) {
     root.addEventListener("pointerdown", (event) => {
       if (!isEnabled() || isAnimating || (event.pointerType === "mouse" && event.button !== 0)) return;
+      if (!options.stableTrack) markInteracted();
       pointerId = event.pointerId;
       startX = currentX = lastX = event.clientX;
       startY = event.clientY;
@@ -320,7 +373,7 @@ export function createLoopSlider(root, options = {}) {
       dragDirection = null;
 
       try {
-        root.setPointerCapture(pointerId);
+        if (!options.stableTrack) root.setPointerCapture(pointerId);
       } catch {
         // Synthetic pointer events do not always expose pointer capture.
       }
@@ -334,12 +387,17 @@ export function createLoopSlider(root, options = {}) {
       if (!dragDirection && Math.max(Math.abs(deltaX), Math.abs(deltaY)) >= 6) {
         dragDirection = Math.abs(deltaX) > Math.abs(deltaY) ? "horizontal" : "vertical";
         if (dragDirection === "horizontal") {
+          markInteracted();
+          if (options.stableTrack) {
+            try { root.setPointerCapture(pointerId); } catch { /* Synthetic pointer. */ }
+          }
           root.classList.add("is-dragging");
           track.style.transition = "none";
         }
       }
 
       if (dragDirection !== "horizontal") return;
+      if (options.stableTrack && deltaX > 0) revealLeadingClones();
       event.preventDefault();
       const elapsed = Math.max(1, event.timeStamp - lastTime);
       const instantVelocity = (event.clientX - lastX) / elapsed;
@@ -353,7 +411,9 @@ export function createLoopSlider(root, options = {}) {
     root.addEventListener("pointerup", (event) => finishSwipe(event));
     root.addEventListener("pointercancel", (event) => finishSwipe(event, true));
     root.addEventListener("lostpointercapture", (event) => {
-      if (pointerId !== null) finishSwipe(event, true);
+      // Touch starts with implicit capture on the tapped image/link. Its loss
+      // bubbles when we transfer capture to the viewport; that is not a cancel.
+      if (event.target === root && pointerId !== null) finishSwipe(event, true);
     });
     root.addEventListener("dragstart", (event) => event.preventDefault());
     root.addEventListener("click", (event) => {

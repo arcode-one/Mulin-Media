@@ -108,7 +108,7 @@
     <a class="skip-link" href="#main-content">Перейти к содержимому</a>
 
     <div class="site">
-      <section class="avito-hero" aria-labelledby="avito-hero-title">
+      <section class="avito-hero service-hero" aria-labelledby="avito-hero-title">
         <span class="avito-hero__ellipse avito-hero__ellipse--left" aria-hidden="true"></span>
         <span class="avito-hero__ellipse avito-hero__ellipse--middle" aria-hidden="true"></span>
         <span class="avito-hero__ellipse avito-hero__ellipse--right" aria-hidden="true"></span>
@@ -154,64 +154,7 @@
       </section>
 
       <main id="main-content">
-        <section class="avito-cases" id="avito-cases" aria-labelledby="avito-cases-title">
-          <div class="avito-cases__container avito-container">
-            <div class="avito-cases__head">
-              <h2 class="avito-title" id="avito-cases-title">Наши <span>кейсы</span></h2>
-              <a class="avito-cases__all" href="./cases.html">Смотреть все кейсы</a>
-              <div class="avito-cases__arrows" data-slider-controls>
-                <button class="avito-cases__arrow avito-cases__arrow--prev" type="button" data-prev aria-label="Предыдущий кейс"></button>
-                <button class="avito-cases__arrow avito-cases__arrow--next" type="button" data-next aria-label="Следующий кейс"></button>
-              </div>
-            </div>
-
-            <div class="avito-cases__viewport" data-avito-cases-slider>
-              <ul class="avito-cases__list">
-                <li class="avito-cases__item is-active" data-slide>
-                  <article class="avito-case-card">
-                    <picture><source media="(max-width: 767px)" srcset="./assets/images/avito/cases/case-cottages-mobile.png"><img loading="lazy" decoding="async" class="avito-case-card__image" src="./assets/images/avito/cases/case-cottages-desktop.png" width="386" height="338" alt="Коттеджи в современном поселке с охраной"></picture>
-                    <h3 class="avito-case-card__title">46 заявок на дома от 16 млн ₽ на Авито</h3>
-                    <p class="avito-case-card__copy">Помогли застройщику получать заявки и снизить стоимость обращения</p>
-                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
-                  </article>
-                </li>
-                <li class="avito-cases__item" data-slide>
-                  <article class="avito-case-card">
-                    <img loading="lazy" decoding="async" class="avito-case-card__image" src="./assets/images/avito/cases/case-auto-service-desktop.png" width="386" height="338" alt="Техническое обслуживание автомобиля">
-                    <h3 class="avito-case-card__title">179 заявок для автосервиса за первый месяц</h3>
-                    <p class="avito-case-card__copy">Помогли автосервису получать больше клиентов через Авито уже с первых запусков</p>
-                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
-                  </article>
-                </li>
-                <li class="avito-cases__item" data-slide>
-                  <article class="avito-case-card">
-                    <img loading="lazy" decoding="async" class="avito-case-card__image" src="./assets/images/avito/cases/case-floor-screed.webp" width="772" height="676" alt="Мастер по стяжке пола">
-                    <h3 class="avito-case-card__title">112 заявок на ремонт за месяц с Авито</h3>
-                    <p class="avito-case-card__copy">Помогли получить клиентов на ремонт через узкие услуги: штукатурку и наливной пол</p>
-                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
-                  </article>
-                </li>
-                <li class="avito-cases__item" data-slide>
-                  <article class="avito-case-card">
-                    <img loading="lazy" decoding="async" class="avito-case-card__image" src="./assets/images/cases-page/card-red-car.png" width="320" height="240" alt="Рекламный макет автосервиса с красным автомобилем">
-                    <h3 class="avito-case-card__title">68 заявок на услуги автосервиса с Авито</h3>
-                    <p class="avito-case-card__copy">Настроили продвижение и увеличили количество обращений от новых клиентов</p>
-                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
-                  </article>
-                </li>
-                <li class="avito-cases__item" data-slide>
-                  <article class="avito-case-card">
-                    <img loading="lazy" decoding="async" class="avito-case-card__image" src="./assets/images/blog/article-houses.png" width="2048" height="1536" alt="Современные загородные дома">
-                    <h3 class="avito-case-card__title">94 заявки на строительство загородных домов</h3>
-                    <p class="avito-case-card__copy">Помогли строительной компании стабильно получать целевые обращения через Авито</p>
-                    <a class="avito-button avito-case-card__button" href="./case.html">Открыть</a>
-                  </article>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
+        <div data-layout-cases></div>
         <section class="avito-platform" aria-labelledby="avito-platform-title">
           <div class="avito-platform__container avito-container">
             <h2 class="avito-title avito-platform__title" id="avito-platform-title">Авито – <span>платформа №1</span> для старта бизнеса</h2>

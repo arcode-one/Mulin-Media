@@ -112,6 +112,17 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__media" aria-hidden="true">
           <img class="hero__mobile-base" src="./assets/images/hero/hero-mask-mobile.png" alt="">
+          <picture class="hero__scene">
+            <img
+              class="hero__scene-image"
+              src="./assets/images/hero/hero-background-sharp.webp"
+              width="1774"
+              height="887"
+              alt=""
+              fetchpriority="high"
+              decoding="async"
+            >
+          </picture>
           <picture>
             <source media="(max-width: 767px)" srcset="./assets/images/hero/hero-office-mobile.png">
             <img decoding="async"
@@ -120,7 +131,6 @@
               width="3515"
               height="1978"
               alt=""
-              fetchpriority="high"
             >
           </picture>
           <picture>
@@ -131,7 +141,6 @@
               width="690"
               height="1436"
               alt=""
-              fetchpriority="high"
             >
           </picture>
           <img class="hero__glow hero__glow--left" src="./assets/images/hero/hero-glow-left.svg" alt="">
@@ -215,6 +224,7 @@
 
       <main id="main-content">
         <section class="trusted" aria-labelledby="trusted-title">
+          <div class="trusted__background" aria-hidden="true"></div>
           <div class="trusted__container container">
             <h2 class="trusted__title" id="trusted-title">
               Нам <span class="trusted__title-accent">доверяют</span>
@@ -226,7 +236,8 @@
               tabindex="0"
               aria-label="Клиенты Mulin Media. Логотипы движутся автоматически справа налево."
             >
-              <ul class="trusted__list">
+              <div class="trusted__track">
+                <ul class="trusted__group">
                 <li class="trusted__item trusted__item--samokat">
                   <div class="trusted__card">
                     <span class="trusted__logo-box">
@@ -339,153 +350,13 @@
                     </span>
                   </div>
                 </li>
-              </ul>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="cases" id="cases" aria-labelledby="cases-title">
-          <div class="cases__media" aria-hidden="true">
-            <div class="cases__background-base">
-              <picture>
-                <source media="(max-width: 767px)" srcset="./assets/images/cases/background-base-mobile.png">
-                <img loading="lazy" decoding="async" src="./assets/images/cases/background-base-desktop.png" alt="">
-              </picture>
-            </div>
-            <picture class="cases__background-overlay">
-              <source media="(max-width: 767px)" srcset="./assets/images/cases/background-overlay-mobile.png">
-              <img loading="lazy" decoding="async" src="./assets/images/cases/background-overlay-desktop.png" alt="">
-            </picture>
-            <div class="cases__background-light">
-              <picture>
-                <source media="(max-width: 767px)" srcset="./assets/images/cases/background-light-mobile.png">
-                <img loading="lazy" decoding="async" src="./assets/images/cases/background-light-desktop.png" alt="">
-              </picture>
-            </div>
-          </div>
-
-          <div class="cases__header container">
-            <h2 class="cases__title" id="cases-title">Наши кейсы</h2>
-            <a class="cases__all-link" href="./cases.html">Смотреть все кейсы</a>
-
-            <div class="cases__controls cases__controls--mobile" aria-label="Переключение кейсов">
-              <button class="cases__mobile-control" type="button" data-cases-prev aria-label="Предыдущий кейс">
-                <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-prev.svg" width="18" height="30" alt="">
-              </button>
-              <button class="cases__mobile-control cases__mobile-control--next" type="button" data-cases-next aria-label="Следующий кейс">
-                <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
-              </button>
-            </div>
-          </div>
-
-          <div class="cases__viewport" data-cases-slider tabindex="0" aria-labelledby="cases-title">
-            <ul class="cases__track" id="cases-list">
-              <li class="cases__slide">
-                <article class="case-card">
-                  <span class="case-card__tag">Авито</span>
-                  <picture class="case-card__metrics" aria-hidden="true">
-                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
-                    <img loading="lazy" decoding="async" src="./assets/images/cases/metrics-desktop.svg" width="80" height="30" alt="">
-                  </picture>
-                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
-                  <div class="case-card__media">
-                    <picture>
-                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
-                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
-                    </picture>
-                  </div>
-                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
-                  <a class="case-card__button" href="./case.html">
-                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
-                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
-                  </a>
-                </article>
-              </li>
-
-              <li class="cases__slide">
-                <article class="case-card">
-                  <span class="case-card__tag">Авито</span>
-                  <picture class="case-card__metrics" aria-hidden="true">
-                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
-                    <img loading="lazy" decoding="async" src="./assets/images/cases/metrics-desktop.svg" width="80" height="30" alt="">
-                  </picture>
-                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
-                  <div class="case-card__media">
-                    <picture>
-                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
-                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
-                    </picture>
-                  </div>
-                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
-                  <a class="case-card__button" href="./case.html">
-                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
-                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
-                  </a>
-                </article>
-              </li>
-
-              <li class="cases__slide">
-                <article class="case-card">
-                  <span class="case-card__tag">Авито</span>
-                  <picture class="case-card__metrics" aria-hidden="true">
-                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
-                    <img loading="lazy" decoding="async" src="./assets/images/cases/metrics-desktop.svg" width="80" height="30" alt="">
-                  </picture>
-                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
-                  <div class="case-card__media">
-                    <picture>
-                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
-                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
-                    </picture>
-                  </div>
-                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
-                  <a class="case-card__button" href="./case.html">
-                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
-                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
-                  </a>
-                </article>
-              </li>
-
-              <li class="cases__slide">
-                <article class="case-card">
-                  <span class="case-card__tag">Авито</span>
-                  <picture class="case-card__metrics" aria-hidden="true">
-                    <source media="(max-width: 767px)" srcset="./assets/images/cases/metrics-mobile.svg">
-                    <img loading="lazy" decoding="async" src="./assets/images/cases/metrics-desktop-alt.svg" width="80" height="30" alt="">
-                  </picture>
-                  <h3 class="case-card__title">Кейс “Название кейса”</h3>
-                  <div class="case-card__media">
-                    <picture>
-                      <source media="(max-width: 767px)" srcset="./assets/images/cases/case-belgerd-mobile.png">
-                      <img src="./assets/images/cases/case-belgerd-desktop.png" width="403" height="338" alt="Рекламный макет Belgerd для коллекции заборных блоков «Арктика»" loading="lazy">
-                    </picture>
-                  </div>
-                  <p class="case-card__description">Описание того, что сделали небольшое, главный вывод по всему, что сделали, ключевые показатели и так далее и тому подобное что-то написать</p>
-                  <a class="case-card__button" href="./case.html">
-                    <span class="case-card__button-label case-card__button-label--desktop">Открыть</span>
-                    <span class="case-card__button-label case-card__button-label--mobile">Заказать аудит</span>
-                  </a>
-                </article>
-              </li>
-            </ul>
-          </div>
-
-          <div class="cases__controls cases__controls--desktop" aria-label="Переключение кейсов">
-            <button class="cases__desktop-control cases__desktop-control--prev" type="button" data-cases-prev aria-label="Предыдущий кейс">
-              <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
-            </button>
-            <div class="cases__dots" role="group" aria-label="Выбор кейса">
-              <button class="cases__dot" type="button" data-cases-dot="0" aria-label="Показать кейс 1"></button>
-              <button class="cases__dot" type="button" data-cases-dot="1" aria-label="Показать кейс 2"></button>
-              <button class="cases__dot" type="button" data-cases-dot="2" aria-label="Показать кейс 3"></button>
-              <button class="cases__dot" type="button" data-cases-dot="3" aria-label="Показать кейс 4"></button>
-            </div>
-            <button class="cases__desktop-control cases__desktop-control--next" type="button" data-cases-next aria-label="Следующий кейс">
-              <img loading="lazy" decoding="async" src="./assets/images/cases/arrow-next.svg" width="18" height="30" alt="">
-            </button>
-          </div>
-          <p class="visually-hidden" data-cases-status aria-live="polite">Показан первый кейс</p>
-        </section>
+        <div data-layout-cases></div>
 
         <section class="services" id="services" aria-labelledby="services-title" data-services>
           <div class="services__background" aria-hidden="true">
@@ -606,7 +477,7 @@
 
             <article class="services-promo">
               <div class="services-promo__media" aria-hidden="true">
-                <img loading="lazy" decoding="async" src="./assets/images/services/performance-marketing.png" alt="">
+                <img loading="lazy" decoding="async" src="./assets/images/services/performance-marketing-transparent.webp" width="1681" height="936" alt="">
               </div>
               <h3 class="services-promo__title">
                 <span>Комплексный</span>
@@ -1038,7 +909,10 @@
 
               <div class="blog__controls" aria-label="Переключение статей">
                 <button class="blog__control blog__control--prev" type="button" data-blog-prev aria-label="Предыдущая статья">
-                  <img loading="lazy" decoding="async" src="./assets/images/blog/arrow-prev-mobile.svg" width="18" height="30" alt="">
+                  <picture>
+                    <source media="(max-width: 640px)" srcset="./assets/images/blog/arrow-next-mobile.svg">
+                    <img loading="lazy" decoding="async" src="./assets/images/blog/arrow-prev-mobile.svg" width="18" height="30" alt="">
+                  </picture>
                 </button>
                 <button class="blog__control blog__control--next" type="button" data-blog-next aria-label="Следующая статья">
                   <img loading="lazy" decoding="async" src="./assets/images/blog/arrow-next-mobile.svg" width="18" height="30" alt="">
@@ -1094,6 +968,6 @@
       <div data-layout-footer></div>
     </div>
 
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/main.js?v=20260912-5"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@ import { initSharedLayout } from "./blocks/layout.js";
 import { initHeader } from "./blocks/header.js";
 import { initHero } from "./blocks/hero.js";
 import { initLeadForms } from "./blocks/lead-form.js";
-import { initTrusted } from "./blocks/trusted.js";
+import { initTrusted } from "./blocks/trusted.js?v=20260912-5";
 import { initCases } from "./blocks/cases.js";
 import { initServices } from "./blocks/services.js";
 import { initWorkflow } from "./blocks/workflow.js";

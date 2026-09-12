@@ -467,6 +467,36 @@
   }
 }
 
+@media (max-width: 640px) {
+  .team__viewport {
+    --team-preview-card-width: min(350px, calc(100vw - 40px));
+    left: 0;
+    width: 100%;
+    transform: none;
+  }
+  .team__list {
+    gap: 20px;
+    padding-inline: max(0px, calc((100% - var(--team-preview-card-width)) / 2));
+  }
+  .team__item,
+  .team__item:nth-child(n) {
+    flex-basis: var(--team-preview-card-width);
+    width: var(--team-preview-card-width);
+    filter: blur(4px);
+    opacity: 0.55;
+    transition: filter 120ms ease, opacity 120ms ease;
+  }
+  .team__item.is-active,
+  .team__item.is-preview-active {
+    filter: none;
+    opacity: 1;
+  }
+  .team__viewport.is-previewing .team__item.is-active:not(.is-preview-active) {
+    filter: blur(4px);
+    opacity: 0.55;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .team__list {
     transition: none;

@@ -2,7 +2,7 @@ import { initSharedLayout } from "./blocks/layout.js";
 import { initHeader } from "./blocks/header.js";
 import { initLeadForms } from "./blocks/lead-form.js";
 import { initFooter } from "./blocks/footer.js";
-import { initAvitoCases } from "./blocks/avito-cases.js";
+import { initCases } from "./blocks/cases.js";
 import { initTeam } from "./blocks/team.js";
 import { initAvitoChannels } from "./blocks/avito-channels.js";
 import { initAvitoFaq } from "./blocks/avito-faq.js";
@@ -14,7 +14,7 @@ async function bootstrap() {
   initHeader();
   initLeadForms();
   initFooter();
-  initAvitoCases();
+  initCases();
   initTeam();
   initAvitoChannels();
   initAvitoFaq();

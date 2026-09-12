@@ -24,6 +24,10 @@ body.is-menu-open {
   overflow: clip;
 }
 
+body[data-layout-page="home"] main {
+  background: var(--color-white);
+}
+
 .container {
   width: min(calc(100% - (var(--container-gutter) * 2)), var(--container-width));
   margin-inline: auto;

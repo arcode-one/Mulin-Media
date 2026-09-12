@@ -1,0 +1,34 @@
+/* Continue adjacent light backgrounds beneath the rounded dark sections.
+   Only decorative layers extend: section and content positions stay unchanged. */
+body[data-layout-page="home"] :is(.cases, .why-us) {
+  z-index: 1;
+}
+
+body[data-layout-page="home"] .workflow__background {
+  height: calc(100% + 50px);
+  background-color: var(--color-white);
+}
+
+body[data-layout-page="home"] :is(.services__background, .content-showcase__background) {
+  top: -50px;
+  height: calc(100% + 750px);
+  background-color: var(--color-white);
+}
+
+body[data-layout-page="home"] :is(.services__ellipse, .content-showcase__ellipse) {
+  /* Keep each glow in its original position while exposing its upper edge. */
+  translate: 0 50px;
+}
+
+/* Cross-fade the workflow artwork over the continuing services background.
+   The section itself must be transparent or it would hide that backdrop. */
+@media (min-width: 768px) {
+  body[data-layout-page="home"] .workflow {
+    background: transparent;
+  }
+
+  body[data-layout-page="home"] .workflow__background {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 180px);
+    mask-image: linear-gradient(to bottom, transparent, #000 180px);
+  }
+}

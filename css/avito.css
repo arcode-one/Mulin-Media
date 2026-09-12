@@ -7,7 +7,7 @@
 @import url("./blocks/success-popup.css");
 @import url("./blocks/avito-page.css");
 @import url("./blocks/avito-hero.css");
-@import url("./blocks/avito-cases.css");
+@import url("./blocks/cases.css");
 @import url("./blocks/avito-platform.css");
 @import url("./blocks/avito-solutions.css");
 @import url("./blocks/avito-steps.css");
@@ -18,3 +18,132 @@
 @import url("./blocks/footer.css");
 @import url("./blocks/button-states.css");
 @import url("./blocks/responsive-hardening.css");
+
+/* Same shared carousel as the homepage, adapted to the light service page. */
+body[data-layout-page="avito"] .cases {
+  color: var(--color-black);
+  background: #fff;
+  border-radius: 0;
+}
+body[data-layout-page="avito"] .cases__media { display: none; }
+body[data-layout-page="avito"] .cases__title,
+body[data-layout-page="avito"] .cases__all-link { color: inherit; }
+body[data-layout-page="avito"] .case-card {
+  background: #fff;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+body[data-layout-page="avito"] .case-card__tag { border-color: currentColor; }
+body[data-layout-page="avito"] .case-card__metrics img,
+body[data-layout-page="avito"] .cases__desktop-control img,
+body[data-layout-page="avito"] .cases__mobile-control img { filter: brightness(0); }
+body[data-layout-page="avito"] .cases__dot { background: rgb(39 39 39 / 25%); }
+body[data-layout-page="avito"] .cases__dot.is-active { background: var(--color-accent); }
+body[data-layout-page="avito"] .cases__desktop-control {
+  background: #f6f1fb;
+  border: 1px solid rgb(139 0 255 / 18%);
+}
+@media (hover: hover) {
+  body[data-layout-page="avito"] .cases__all-link:hover { color: var(--color-accent); }
+  body[data-layout-page="avito"] .cases__mobile-control:hover img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2213%) hue-rotate(247deg) brightness(104%) contrast(101%);
+  }
+}
+
+body[data-layout-page="avito"] .cases__title-accent { color: #965eeb; }
+body[data-layout-page="avito"] .cases__header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  height: auto;
+  margin-bottom: 20px;
+}
+body[data-layout-page="avito"] .cases__header-actions {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+}
+body[data-layout-page="avito"] .cases__controls--desktop { display: none; }
+body[data-layout-page="avito"] .cases__controls--mobile {
+  position: static;
+  display: flex;
+  width: 90px;
+  height: 39px;
+  gap: 12px;
+}
+body[data-layout-page="avito"] .cases__mobile-control {
+  flex: 0 0 39px;
+  width: 39px;
+  height: 39px;
+  background: url("../assets/images/avito/cases/avito-carousel-arrows.svg") left center / 90px 39px no-repeat;
+}
+body[data-layout-page="avito"] .cases__mobile-control {
+  background-position: right center;
+  cursor: pointer;
+  transition: filter 160ms ease, opacity 160ms ease;
+}
+body[data-layout-page="avito"] .cases__mobile-control:not(.cases__mobile-control--next) {
+  transform: rotate(180deg);
+}
+body[data-layout-page="avito"] .cases__mobile-control--next { background-position: right center; }
+body[data-layout-page="avito"] .cases__mobile-control img { display: none; }
+@media (hover: hover) {
+  body[data-layout-page="avito"] .cases__mobile-control:hover {
+    filter: brightness(0.8);
+  }
+}
+body[data-layout-page="avito"] .cases__mobile-control:active { opacity: 0.65; }
+body[data-layout-page="avito"] .cases__track {
+  grid-template-rows: repeat(4, auto);
+  row-gap: 20px;
+}
+body[data-layout-page="avito"] .cases__slide { grid-row: 1 / span 4; }
+body[data-layout-page="avito"] .case-card { grid-row: span 4; row-gap: 20px; }
+body[data-layout-page="avito"] .case-card__top { display: none; }
+body[data-layout-page="avito"] .case-card__media {
+  grid-row: 1;
+  width: 100%;
+  aspect-ratio: 386 / 338;
+  border-radius: 20px;
+}
+body[data-layout-page="avito"] .case-card__media img { object-fit: cover; }
+body[data-layout-page="avito"] .case-card__media-backdrop { display: none; }
+body[data-layout-page="avito"] .case-card__title {
+  grid-row: 2;
+  color: #232323;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: none;
+}
+body[data-layout-page="avito"] .case-card__description {
+  grid-row: 3;
+  color: rgb(0 0 0 / 50%);
+  font-size: 16px;
+  line-height: 20px;
+}
+body[data-layout-page="avito"] .case-card__button {
+  grid-row: 4;
+  color: #fff;
+  background: #965eeb;
+  box-shadow: none;
+  min-height: 55px;
+  padding: 15px 20px;
+  font-size: 20px;
+  line-height: 25px;
+}
+body[data-layout-page="avito"] .case-card__button:hover { background: #8248d6; }
+@media (min-width: 1280px) {
+  body[data-layout-page="avito"] .cases {
+    --cases-gap: 20px;
+    --cases-card-width: calc((var(--container-width) - 40px) / 3);
+  }
+}
+@media (max-width: 1279px) {
+  body[data-layout-page="avito"] .case-card__title { font-size: 20px; line-height: 1.2; }
+  body[data-layout-page="avito"] .case-card__description { font-size: 14px; line-height: 18px; }
+  body[data-layout-page="avito"] .case-card__button { min-height: 47px; padding-block: 12px; font-size: 16px; line-height: 23px; }
+}

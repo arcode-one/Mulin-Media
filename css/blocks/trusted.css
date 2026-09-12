@@ -3,13 +3,22 @@
   isolation: isolate;
   height: var(--trusted-height-desktop);
   padding-block: 150px;
-  overflow: hidden;
+  overflow: visible;
   color: var(--color-black);
   background: var(--color-white);
 }
 
-.trusted::before,
-.trusted::after {
+.trusted__background {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 -50px;
+  overflow: hidden;
+  background: var(--color-white);
+  pointer-events: none;
+}
+
+.trusted__background::before,
+.trusted__background::after {
   position: absolute;
   z-index: -1;
   top: -500px;
@@ -22,13 +31,13 @@
   pointer-events: none;
 }
 
-.trusted::before {
+.trusted__background::before {
   left: -648px;
   top: -495px;
   background-image: url("../../assets/images/trusted/ellipse-left.svg");
 }
 
-.trusted::after {
+.trusted__background::after {
   right: -540px;
   background-image: url("../../assets/images/trusted/ellipse-right.svg");
 }
@@ -57,32 +66,34 @@
   box-sizing: border-box;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding-inline: max(var(--container-gutter), calc((100vw - var(--container-width)) / 2));
+  padding-inline: 0;
   overflow: hidden;
   outline-color: var(--color-accent);
 }
 
-.trusted__list {
+.trusted__track {
   --trusted-gap: clamp(64px, 8vw, 102px);
-  --trusted-cycle-translate: calc(-50% - (var(--trusted-gap) / 2));
 
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: var(--trusted-gap);
   width: max-content;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  animation: trusted-marquee 28s linear infinite;
-  animation-play-state: paused;
+  min-width: 100%;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
-.trusted__list[data-marquee-ready="true"] {
-  animation-play-state: running;
+.trusted__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--trusted-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .trusted__item {
@@ -92,10 +103,6 @@
 
   flex: 0 0 auto;
   width: var(--trusted-logo-width);
-}
-
-.trusted__item--clone {
-  display: block;
 }
 
 .trusted__item--samokat {
@@ -184,20 +191,14 @@
   }
 }
 
-@keyframes trusted-marquee {
-  to {
-    transform: translate3d(var(--trusted-cycle-translate), 0, 0);
-  }
-}
-
 @media (max-width: 768px) {
   .trusted {
     height: 325px;
     padding-block: 70px;
   }
 
-  .trusted::before,
-  .trusted::after {
+  .trusted__background::before,
+  .trusted__background::after {
     display: none;
   }
 
@@ -209,13 +210,14 @@
   }
 
   .trusted__slider {
-    padding-inline: 20px;
+    padding-inline: 0;
+    /* Leave room for card shadows inside the horizontal clipping viewport. */
+    padding-bottom: 60px;
+    margin-bottom: -60px;
   }
 
-  .trusted__list {
+  .trusted__track {
     --trusted-gap: 20px;
-
-    animation-duration: 30s;
   }
 
   .trusted__item {
@@ -252,7 +254,7 @@
     display: none;
   }
 
-  .trusted__list {
-    animation: none;
+  .trusted__track {
+    transform: none !important;
   }
 }

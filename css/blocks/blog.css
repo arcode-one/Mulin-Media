@@ -334,3 +334,18 @@
     line-height: 16px;
   }
 }
+
+@media (max-width: 640px) {
+  .blog__viewport {
+    width: min(100%, 300px);
+    margin-inline: auto;
+  }
+
+  .blog__list {
+    gap: 20px;
+  }
+
+  .blog-card {
+    width: 100%;
+  }
+}

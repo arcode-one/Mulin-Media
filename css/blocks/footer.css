@@ -278,13 +278,24 @@
 }
 
 .site-footer__form .lead-form__consent {
-  display: none;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-top: 14px;
+  text-align: left;
+}
+
+.site-footer__form .lead-form__consent-text {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-left: 0;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .site-footer__form .lead-form__error {
-  position: absolute;
-  top: 221px;
-  left: 28px;
+  position: relative;
+  inset: auto;
   margin: 0;
 }
 
@@ -456,17 +467,9 @@ a.site-footer__contact {
   transition: color var(--transition-fast);
 }
 
-a.site-footer__contact img {
-  transition: filter var(--transition-fast);
-}
-
 @media (hover: hover) {
   a.site-footer__contact:hover {
     color: #c479ff;
-  }
-
-  a.site-footer__contact:hover img {
-    filter: brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2213%) hue-rotate(247deg) brightness(104%) contrast(101%);
   }
 }
 
@@ -476,17 +479,34 @@ a.site-footer__contact:focus-visible {
   outline-offset: 4px;
 }
 
-.site-footer__contact picture {
-  display: flex;
+.site-footer__contact-icon {
+  display: block;
   flex: 0 0 18px;
-  justify-content: center;
+  width: 18px;
+  height: 19px;
   margin-right: 15px;
+  background-color: currentColor;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 
-.site-footer__contact img {
-  display: block;
-  max-width: 18px;
-  max-height: 19px;
+.site-footer__contact-icon--phone {
+  -webkit-mask-image: url("../../assets/images/footer/phone-desktop.svg");
+  mask-image: url("../../assets/images/footer/phone-desktop.svg");
+}
+
+.site-footer__contact-icon--email {
+  -webkit-mask-image: url("../../assets/images/footer/email-desktop.svg");
+  mask-image: url("../../assets/images/footer/email-desktop.svg");
+}
+
+.site-footer__contact-icon--location {
+  -webkit-mask-image: url("../../assets/images/footer/location-desktop.svg");
+  mask-image: url("../../assets/images/footer/location-desktop.svg");
 }
 
 .site-footer__contact-copy--mobile {
@@ -1029,14 +1049,11 @@ a.site-footer__contact:focus-visible {
     line-height: 20px;
   }
 
-  .site-footer__contact picture {
+  .site-footer__contact-icon {
     flex-basis: 16px;
+    width: 16px;
+    height: 16px;
     margin-right: 15px;
-  }
-
-  .site-footer__contact img {
-    max-width: 16px;
-    max-height: 16px;
   }
 
   .site-footer__contact-copy--desktop {

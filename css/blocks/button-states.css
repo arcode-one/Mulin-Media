@@ -102,7 +102,6 @@
   position: relative;
 }
 
-.cases__all-link::before,
 .blog__all-link::before,
 .avito-cases__all::before {
   position: absolute;
@@ -157,9 +156,8 @@
 
 .team__control .team__arrow,
 .blog__control img {
-  transition:
-    filter var(--transition-fast),
-    opacity var(--transition-fast);
+  /* Interpolating the filter chain produces unwanted intermediate hues. */
+  transition: opacity var(--transition-fast);
 }
 
 @media (hover: hover) {
@@ -182,6 +180,22 @@
 }
 
 /* Circular slider controls use the same accent feedback as primary actions. */
+@media (max-width: 640px) {
+  .cases__mobile-control img {
+    transition: opacity var(--transition-fast);
+  }
+  .cases__mobile-control:focus-visible img,
+  .cases__mobile-control:active img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2213%) hue-rotate(247deg) brightness(104%) contrast(101%);
+  }
+  .cases__mobile-control:active img { opacity: 0.72; }
+}
+@media (max-width: 640px) and (hover: hover) {
+  .cases__mobile-control:hover img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2213%) hue-rotate(247deg) brightness(104%) contrast(101%);
+  }
+}
+
 .avito-slider-controls__button {
   transition:
     color var(--transition-fast),

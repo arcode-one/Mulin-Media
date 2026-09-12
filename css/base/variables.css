@@ -25,6 +25,7 @@
 
   --container-width: 1200px;
   --container-gutter: 24px;
+  --page-frame-width: calc(var(--container-width) + 2 * var(--container-gutter));
   --hero-height-desktop: 807px;
   --hero-radius-desktop: 45px;
   --trusted-height-desktop: 448px;

@@ -1,6 +1,7 @@
 const PARTIALS = [
   ["[data-layout-header]", "./partials/header.html"],
   ["[data-layout-footer]", "./partials/footer.html"],
+  ["[data-layout-cases]", "./partials/cases.html"],
 ];
 
 const PAGE_ROUTES = {

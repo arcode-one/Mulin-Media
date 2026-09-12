@@ -4,6 +4,81 @@
  * sizing without duplicating fixes in every page bundle.
  */
 
+/* Browser zoom-out creates an ultra-wide CSS viewport. Keep the artwork and
+   moving content tied to the same centred stage as the text at these widths. */
+@media (min-width: 1921px) {
+  .site {
+    width: var(--page-frame-width);
+    margin-inline: auto;
+  }
+
+  .header {
+    right: auto;
+    left: calc((100% - var(--page-frame-width)) / 2);
+    width: var(--page-frame-width);
+  }
+
+  .hero {
+    /* At zoom-out the whole composition shrinks together instead of leaving
+       a small picture inside a viewport-height black canvas. */
+    height: min(100dvh, var(--hero-height-desktop));
+  }
+
+  .trusted__slider {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .cases {
+    --cases-content-left: var(--container-gutter);
+  }
+
+  .hero__media .hero__scene {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cases__background-base {
+    inset: -6px;
+    width: auto;
+    height: auto;
+  }
+
+  .cases__background-base img {
+    top: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cases__background-overlay,
+  .why-us__backdrop-wrap,
+  .site-footer__texture--desktop {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .why-us__wordmark-wrap {
+    left: calc(50% - 851px);
+  }
+
+  .why-us__light-wrap {
+    left: calc(50% - 1467px);
+  }
+
+  .cases__background-light {
+    left: calc(50% - 1382px);
+  }
+
+  .site-footer__light--desktop {
+    left: calc(50% - 1527px);
+  }
+}
+
 :where(
   .site-header,
   .site-footer,
@@ -47,6 +122,18 @@
 
 .avito-steps__endpoint--finish {
   top: calc(1019px + var(--avito-roadmap-extra, 0px));
+}
+
+/* Shared contract for the first screen of current and future service pages. */
+.service-hero {
+  height: 100vh;
+  height: 100svh;
+}
+
+@media (min-width: 1921px) {
+  .service-hero {
+    height: min(100svh, var(--service-hero-height-desktop, var(--hero-height-desktop)));
+  }
 }
 
 @media (min-width: 1280px) {
@@ -962,5 +1049,629 @@
   .cases-catalog__mobile-filter,
   .mobile-case-filter__trigger {
     max-width: 100%;
+  }
+}
+
+/* Align the three stats to the left edge, centre and right edge. */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .why-us__stats .why-us__stat:nth-child(n) {
+    width: 197px;
+    max-width: 100%;
+  }
+  .why-us__stat--experience { justify-self: start; }
+  .why-us__stat--projects { justify-self: center; }
+  .why-us__stat--budget { justify-self: end; }
+}
+
+/* Three readable team cards on narrow tablets; the rest remain swipeable. */
+@media (min-width: 768px) and (max-width: 820px) {
+  .team__item,
+  .team__item:nth-child(n) {
+    flex-basis: calc((100% - 40px) / 3);
+    width: calc((100% - 40px) / 3);
+  }
+}
+@media (max-width: 820px) {
+  .team-card__name { white-space: nowrap; }
+}
+@media (max-width: 767px) {
+  .team-card__name { font-size: 20px; line-height: 25px; }
+}
+
+/* More compact section rhythm below the desktop layout. */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .services { min-height: 0; padding-bottom: 45px; }
+  .workflow { min-height: 0; padding-block: 40px 70px; }
+  .workflow-detail { margin-top: 40px; }
+  .cases { padding-bottom: 56px; }
+  .cases__controls--desktop { margin-top: 28px; }
+  .site-footer { height: 720px; }
+  .site-footer__legal { top: 630px; }
+}
+
+@media (max-width: 767px) {
+  .services { padding-bottom: 50px; }
+  .cases { padding-bottom: 40px; }
+  .workflow { height: auto; padding-bottom: 45px; }
+  .workflow__container { height: auto; }
+  .workflow__header { position: relative; inset: auto; }
+  .workflow__steps {
+    position: relative;
+    inset: auto;
+    height: auto;
+    margin-top: 30px;
+  }
+  .site-footer { height: 1342px; }
+  .site-footer__legal { top: 1119px; }
+}
+
+/* Content-driven cards: no fixed artboard heights on tablets and phones. */
+@media (max-width: 1279px) {
+  .why-us {
+    height: auto;
+    padding-block: 70px;
+  }
+  .why-us__container {
+    display: grid;
+    gap: 40px;
+    height: auto;
+  }
+  .why-us__title,
+  .why-us__benefits,
+  .why-us__stats {
+    position: relative;
+    inset: auto;
+    height: auto;
+  }
+  .why-us__benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .why-us__benefit,
+  .why-us__benefit:nth-child(n) {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+  }
+  .why-us-card {
+    padding: 24px;
+  }
+  .why-us-card__icon,
+  .why-us-card__title,
+  .why-us-card__description {
+    position: relative;
+    inset: auto;
+    width: auto;
+    white-space: normal;
+  }
+  .why-us-card__icon { display: block; }
+  .why-us-card__title { margin-top: 18px; }
+  .why-us-card__description { margin-top: 18px; }
+  .why-us__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+  }
+  .why-us__stat,
+  .why-us__stat:nth-child(n) {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+  }
+  .why-us__stat-value,
+  .why-us__stat-caption {
+    position: relative;
+    inset: auto;
+  }
+  .why-us__stat-caption { white-space: normal; }
+  .team-card__image {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .content-showcase,
+  body[data-layout-page="home"] .content-showcase {
+    height: auto;
+    padding-bottom: var(--content-showcase-footer-gap, 0px);
+  }
+  .team {
+    height: auto;
+    padding-block: 70px;
+  }
+  .team__container { height: auto; }
+  .team__title { position: relative; top: auto; }
+  .team__controls { top: 15px; }
+  .team__viewport {
+    position: relative;
+    inset: auto;
+    height: auto;
+    margin-top: 40px;
+  }
+  .team__list,
+  .team__item,
+  .team__item:nth-child(n) { height: auto; }
+  .team-card__photo { flex-shrink: 0; }
+  .team-card__info { padding-bottom: 4px; }
+}
+
+@media (max-width: 767px) {
+  .why-us { padding-block: 52px; }
+  .why-us__container { gap: 30px; }
+  .why-us__benefits,
+  .why-us__stats { grid-template-columns: minmax(0, 1fr); }
+  .why-us-card { padding: 20px; }
+  .why-us-card__title,
+  .why-us-card__description { margin-top: 12px; }
+  .why-us__stats {
+    width: min(100%, 220px);
+    margin-inline: auto;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-us__stats {
+    width: min(100%, 480px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 20px;
+    justify-items: center;
+  }
+  .why-us__stats .why-us__stat:nth-child(n) {
+    width: min(100%, 197px);
+    min-width: 0;
+  }
+  .why-us__stat--budget {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  .why-us__stat-value {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    height: auto;
+  }
+  .why-us__stat-value strong {
+    font-size: clamp(64px, 14vw, 90px);
+    line-height: 1;
+  }
+  .why-us__stat-value span {
+    position: static;
+    font-size: clamp(18px, 3.9vw, 25px);
+    line-height: 1;
+  }
+  .why-us__stat-caption {
+    margin-top: 8px;
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+}
+
+@media (max-width: 640px) {
+  .workflow__steps { gap: 16px; }
+  .workflow__steps .workflow__item:nth-child(n) {
+    height: auto;
+    margin: 0;
+  }
+  .workflow-card {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 8px 10px;
+    height: auto;
+    padding: 16px;
+  }
+  .workflow-card .workflow-card__icon,
+  .workflow-card .workflow-card__title,
+  .workflow-card .workflow-card__summary,
+  .workflow-card .workflow-card__mobile-detail,
+  .workflow-card .workflow-card__result,
+  .workflow-card .workflow-card__time {
+    position: static;
+    inset: auto;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+  }
+  .workflow-card__icon {
+    grid-area: 1 / 1;
+    font-size: 26px;
+    line-height: 28px;
+  }
+  .workflow-card__title {
+    grid-area: 1 / 2;
+    align-self: center;
+    font-size: clamp(16px, 3.6vw, 20px);
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .workflow-card__time {
+    grid-area: 1 / 3;
+    align-self: start;
+    min-height: 22px;
+    padding: 5px 10px;
+  }
+  .workflow-card__summary,
+  .workflow-card__mobile-detail {
+    grid-area: 2 / 2 / auto / 4;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .workflow-card__result {
+    grid-area: 3 / 2 / auto / 4;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    height: auto;
+    padding-block: 50px 40px;
+    text-align: center;
+  }
+  .site-footer__container { height: auto; }
+  .site-footer__cta,
+  .site-footer__title-wrap,
+  .site-footer__cta-copy,
+  .site-footer__form.lead-form,
+  .site-footer__divider,
+  .site-footer__columns,
+  .site-footer__column,
+  .site-footer__legal,
+  .site-footer__copyright,
+  .site-footer__privacy,
+  .site-footer__requisites {
+    position: relative;
+    inset: auto;
+    height: auto;
+    margin-inline: auto;
+    max-width: 100%;
+  }
+  .site-footer__cta,
+  .site-footer__title-wrap,
+  .site-footer__columns,
+  .site-footer__column,
+  .site-footer__legal { width: 100%; }
+  .site-footer__title-wrap > picture { display: none; }
+  .site-footer__cta-copy {
+    margin-top: 24px;
+    white-space: normal;
+  }
+  .site-footer__form.lead-form { margin-top: 32px; }
+  .site-footer__form .lead-form__consent {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+  }
+  .site-footer__form .lead-form__consent-text {
+    flex: 1 1 0;
+    margin-left: 0;
+  }
+  .site-footer__form .lead-form__error,
+  .site-footer__form.is-success .lead-form__error {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    text-align: center;
+  }
+  .site-footer__divider {
+    width: 100%;
+    height: 2px;
+    margin-block: 40px;
+  }
+  .site-footer__columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 20px;
+  }
+  .site-footer__column {
+    min-width: 0;
+    text-align: left;
+  }
+  .site-footer__column--contacts {
+    grid-column: 1 / -1;
+    width: fit-content;
+    justify-self: center;
+  }
+  .site-footer__column--services {
+    width: fit-content;
+    justify-self: end;
+    margin-inline: 0;
+    text-align: left;
+  }
+  .site-footer__column--company .site-footer__column-title,
+  .site-footer__column--services .site-footer__column-title {
+    font-size: clamp(26px, 6.8vw, 44px);
+    line-height: 1.1;
+  }
+  .site-footer__column--services .site-footer__column-subtitle {
+    font-size: clamp(14px, 3.1vw, 20px);
+    line-height: 1.25;
+  }
+  .site-footer__company-copy,
+  .site-footer__location-line,
+  .site-footer__services-list { overflow-wrap: anywhere; }
+  .site-footer__company-logo { margin-inline: 0; }
+  .site-footer__location-line,
+  .site-footer__contact-heading,
+  .site-footer__contact { justify-content: flex-start; }
+  .site-footer__contact-heading { flex-wrap: wrap; }
+  .site-footer__services-list { justify-items: start; }
+  .site-footer__services-list li {
+    width: fit-content;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+  .site-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px 12px;
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .site-footer__legal > * {
+    flex: 1 1 130px;
+    max-width: 200px;
+    margin-inline: 0;
+  }
+}
+
+.site-footer .site-footer__form .lead-form__error {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* Match the space above the divider to the existing gap below it. */
+@media (min-width: 768px) {
+  .site-footer { --footer-divider-shift: 14px; }
+  .site-footer__divider { margin-top: var(--footer-divider-shift); }
+  .site-footer__columns { transform: translateY(var(--footer-divider-shift)); }
+  .site-footer__legal { margin-top: var(--footer-divider-shift); }
+}
+@media (min-width: 1280px) {
+  .site-footer {
+    --footer-divider-shift: 38px;
+    height: calc(var(--footer-height-desktop) + var(--footer-divider-shift));
+  }
+}
+
+@media (max-width: 640px) {
+  .cases { --cases-card-width: min(350px, calc(100vw - 40px)); }
+  .cases__viewport {
+    width: var(--cases-card-width);
+    margin-inline: auto;
+  }
+  .cases__track { padding-inline: 0; }
+}
+@media (min-width: 481px) and (max-width: 640px) {
+  body[data-layout-page="home"] .content-showcase::after {
+    display: none;
+  }
+  .blog .blog__viewport {
+    width: 100%;
+    padding-block: 16px;
+    margin-top: 14px;
+    margin-bottom: -16px;
+  }
+  .blog__list { padding-inline: calc((100% - 300px) / 2); }
+  .blog__item,
+  .blog__item:nth-child(n) {
+    flex-basis: 300px;
+    width: 300px;
+  }
+  .cases__viewport { width: calc(100% - 40px); }
+  .cases__track { padding-inline: calc((100vw - 40px - var(--cases-card-width)) / 2); }
+  .blog__item,
+  .cases__slide {
+    filter: blur(4px);
+    opacity: 0.55;
+    transition: filter 120ms ease, opacity 120ms ease;
+  }
+  .blog__item.is-active,
+  .blog__item.is-preview-active,
+  .cases__slide.is-active,
+  .cases__slide.is-preview-active { filter: none; opacity: 1; }
+  .is-previewing .blog__item.is-active:not(.is-preview-active),
+  .is-previewing .cases__slide.is-active:not(.is-preview-active) {
+    filter: blur(4px);
+    opacity: 0.55;
+  }
+}
+
+/* One icon per text row, instead of stretching a four-icon sprite. */
+.site-footer__checks { display: none; }
+.site-footer__services-list { padding-left: 0; }
+.site-footer__services-list li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: center;
+  gap: 17px;
+}
+.site-footer__services-list li::before {
+  width: 16px;
+  height: 16px;
+  background: url("../../assets/images/footer/checks-desktop.svg") left top / 16px 106px no-repeat;
+  content: "";
+}
+@media (max-width: 1279px) {
+  .site-footer__services-list li { grid-template-columns: 12px minmax(0, 1fr); gap: 13px; }
+  .site-footer__services-list li::before { width: 12px; height: 12px; background-size: 12px 79.5px; }
+}
+
+/* One centred, size-independent check for every consent form. */
+:is(.lead-form__checkbox-mark, .avito-inline-form__checkbox-mark, .lead-form--light .lead-form__checkbox-mark)::after {
+  inset: 8%;
+  width: auto;
+  height: auto;
+  border: 0;
+  background-color: var(--consent-check-color, #fff);
+  -webkit-mask: url("../../assets/images/form/consent-check.svg") center / contain no-repeat;
+  mask: url("../../assets/images/form/consent-check.svg") center / contain no-repeat;
+  transform: none;
+  transition: opacity var(--transition-fast);
+}
+.lead-form--light .lead-form__checkbox-mark {
+  --consent-check-color: var(--color-avito-violet);
+}
+.lead-form__checkbox:checked + .lead-form__checkbox-mark::after,
+.avito-inline-form__checkbox:checked + .avito-inline-form__checkbox-mark::after {
+  transform: none;
+}
+
+/* Compact controls from small laptops down, without scaling the text layer. */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero__form.lead-form {
+    width: clamp(390px, 45vw, 460px);
+  }
+  .hero__form .lead-form__controls,
+  .hero__form .lead-form__submit {
+    height: clamp(48px, 5.08vw, 52px);
+  }
+  .hero__form .lead-form__phone-field {
+    flex: 1 1 56%;
+    padding-left: 20px;
+  }
+  .hero__form .lead-form__submit {
+    flex: 0 0 44%;
+    font-size: 16px;
+  }
+  .hero__form .lead-form__input {
+    flex: 1 1 auto;
+    width: 0;
+    font-size: 16px;
+  }
+  .hero__form .lead-form__prefix { font-size: 16px; margin-left: 10px; }
+  .hero__form .lead-form__flag { width: 26px; height: 16px; }
+  .hero__form .lead-form__consent { margin-top: 20px; }
+  .hero__form .lead-form__checkbox-mark { width: 18px; height: 18px; flex-basis: 18px; }
+
+  .site-footer__form.lead-form { width: min(350px, 48%); }
+  .site-footer__name,
+  .site-footer__form .lead-form__phone-field { height: 52px; }
+  .site-footer__name { padding-inline: 22px; font-size: 17px; }
+  .site-footer__form .lead-form__controls {
+    grid-template-rows: 52px 48px;
+    height: auto;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .site-footer__form .lead-form__phone-field { padding-left: 22px; }
+  .site-footer__form .lead-form__submit { height: 48px; font-size: 17px; }
+  .site-footer__form .lead-form__input {
+    flex: 1 1 auto;
+    width: 0;
+    font-size: 17px;
+  }
+  .site-footer__form .lead-form__prefix { font-size: 17px; margin-left: 10px; }
+  .site-footer__form .lead-form__flag { width: 27px; height: 16px; }
+  .site-footer__form .lead-form__error { top: 194px; }
+
+  .cases__controls--desktop {
+    min-width: 240px;
+    height: 54px;
+    gap: 16px;
+  }
+  .cases__desktop-control {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+  }
+  .cases__desktop-control img {
+    position: static;
+    width: 15px;
+    height: 25px;
+  }
+  .cases__dots { gap: 10px; }
+  .cases__dot { width: 8px; height: 8px; }
+  .cases__dot.is-active { width: 28px; }
+}
+
+@media (max-width: 767px) {
+  .hero__form .lead-form__controls,
+  .site-footer__form .lead-form__controls {
+    grid-template-rows: 44px 44px;
+    height: auto;
+    gap: 16px;
+  }
+  .hero__form .lead-form__phone-field,
+  .hero__form .lead-form__submit,
+  .site-footer__form .lead-form__phone-field,
+  .site-footer__form .lead-form__submit { height: 44px; }
+}
+
+/* Blog previews retain the complete artwork instead of a fixed-height crop. */
+@media (max-width: 1200px) {
+  body[data-layout-page="home"] .content-showcase {
+    height: auto;
+    padding-bottom: var(--content-showcase-footer-gap, 70px);
+  }
+  .blog,
+  .blog__container {
+    height: auto;
+  }
+  .blog__title {
+    position: relative;
+    inset: auto;
+  }
+  .blog__viewport {
+    position: relative;
+    inset: auto;
+    margin-top: 30px;
+  }
+  .blog__list {
+    position: relative;
+    inset: auto;
+    height: auto;
+  }
+  .blog__item,
+  .blog__item:nth-child(n) {
+    position: relative;
+    inset: auto;
+    height: auto;
+  }
+  .blog-card {
+    display: flex;
+    height: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .blog-card__image-link,
+  .blog-card__date,
+  .blog-card__title,
+  .blog-card__button {
+    position: relative;
+    inset: auto;
+    margin: 0;
+  }
+  .blog-card__image-link,
+  .blog-card__image-link picture {
+    height: auto;
+  }
+  .blog-card__image {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .blog-card__button {
+    flex-shrink: 0;
+    margin-top: auto;
   }
 }

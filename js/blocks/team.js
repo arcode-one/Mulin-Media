@@ -13,6 +13,18 @@ export function initTeam() {
     previousButtons: section.querySelectorAll("[data-team-prev]"),
     nextButtons: section.querySelectorAll("[data-team-next]"),
     enableSwipe: true,
+    onPreview: (index) => {
+      viewport.classList.add("is-previewing");
+      viewport.querySelectorAll("[data-team-slide]").forEach((slide) => {
+        slide.classList.toggle("is-preview-active", Number(slide.dataset.loopIndex) === index);
+      });
+    },
+    onChange: () => {
+      viewport.classList.remove("is-previewing");
+      viewport.querySelectorAll(".is-preview-active").forEach((slide) => {
+        slide.classList.remove("is-preview-active");
+      });
+    },
     updateSlide: (slide, { isActive }) => {
       slide.setAttribute("aria-hidden", String(mobileLayout.matches && !isActive));
     },
