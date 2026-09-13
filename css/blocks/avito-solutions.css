@@ -208,16 +208,9 @@
   box-shadow: 0 0 0 1px rgb(35 35 35 / 18%);
 }
 
-.avito-inline-form__chevron {
-  flex: 0 0 auto;
-  width: 7px;
-  height: 6px;
-  margin-left: 5px;
-}
-
 .avito-inline-form__prefix {
   flex: 0 0 auto;
-  margin-left: 23px;
+  margin-left: 14px;
   color: var(--color-ink);
   font-size: 20px;
   font-weight: 500;
@@ -511,14 +504,8 @@
     height: 16px;
   }
 
-  .avito-inline-form__chevron {
-    width: 6.4px;
-    height: 6.4px;
-    margin-left: 10.4px;
-  }
-
   .avito-inline-form__prefix {
-    margin-left: 6.8px;
+    margin-left: 10px;
     font-size: 16px;
     line-height: 16px;
   }

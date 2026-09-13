@@ -79,9 +79,11 @@ export function initHeader() {
 
     if (isOpen) {
       lastFocusedElement = document.activeElement;
-      requestAnimationFrame(() => closeButton.focus());
+      requestAnimationFrame(() => {
+        if (menu.classList.contains("is-open")) closeButton.focus({ preventScroll: true });
+      });
     } else if (lastFocusedElement instanceof HTMLElement) {
-      lastFocusedElement.focus();
+      lastFocusedElement.focus({ preventScroll: true });
     }
   };
 
@@ -104,6 +106,37 @@ export function initHeader() {
   openButton.addEventListener("click", () => setMenuState(true));
   closeButton.addEventListener("click", () => setMenuState(false));
   menuLinks.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+
+  const dismissMenu = () => {
+    if (menu.classList.contains("is-open")) setMenuState(false);
+  };
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target) && !openButton.contains(event.target)) dismissMenu();
+  });
+  window.addEventListener("scroll", dismissMenu, { passive: true });
+  // The page is scroll-locked while open, so also handle scroll intent outside
+  // the drawer. Scrolling a long list inside the drawer must remain available.
+  document.addEventListener("wheel", (event) => {
+    if (event.deltaY !== 0 && !menu.contains(event.target)) dismissMenu();
+  }, { passive: true });
+  let outsideTouch = null;
+  document.addEventListener("touchstart", (event) => {
+    outsideTouch = menu.classList.contains("is-open") && !menu.contains(event.target) && event.touches.length === 1
+      ? { x: event.touches[0].clientX, y: event.touches[0].clientY }
+      : null;
+  }, { passive: true });
+  document.addEventListener("touchmove", (event) => {
+    if (!outsideTouch || event.touches.length !== 1) return;
+    const dx = Math.abs(event.touches[0].clientX - outsideTouch.x);
+    const dy = Math.abs(event.touches[0].clientY - outsideTouch.y);
+    if (dy > 10 && dy > dx) {
+      outsideTouch = null;
+      dismissMenu();
+    }
+  }, { passive: true });
+  const clearOutsideTouch = () => { outsideTouch = null; };
+  document.addEventListener("touchend", clearOutsideTouch, { passive: true });
+  document.addEventListener("touchcancel", clearOutsideTouch, { passive: true });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && servicesToggle?.getAttribute("aria-expanded") === "true") {

@@ -3,7 +3,7 @@ import { createLoopSlider } from "../utils/create-slider.js";
 export function initTeam() {
   const section = document.querySelector("[data-team]");
   const viewport = section?.querySelector(".team__viewport");
-  const mobileLayout = window.matchMedia("(max-width: 767px)");
+  const mobileLayout = window.matchMedia(document.body.dataset.layoutPage === "avito" ? "(max-width: 768px)" : "(max-width: 767px)");
 
   if (!section || !viewport) return;
 

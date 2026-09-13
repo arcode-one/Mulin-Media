@@ -146,7 +146,7 @@
           <div class="avito-hero__visual" aria-hidden="true">
             <span class="avito-hero__circles"></span>
             <picture class="avito-hero__person">
-              <source media="(max-width: 767px)" srcset="./assets/images/avito/hero/visual-mobile.png">
+              <source media="(max-width: 640px)" srcset="./assets/images/avito/hero/visual-mobile.png">
               <img src="./assets/images/avito/hero/person-desktop.png" width="799" height="991" alt="" fetchpriority="high" decoding="async">
             </picture>
           </div>
@@ -208,7 +208,6 @@
                   <div class="avito-inline-form__phone-field">
                     <label class="visually-hidden" for="solutions-phone">Номер телефона</label>
                     <img loading="lazy" decoding="async" class="avito-inline-form__flag" src="./assets/images/avito/solutions/flag-ru.png" width="33" height="20" alt="Россия">
-                    <img loading="lazy" decoding="async" class="avito-inline-form__chevron" src="./assets/images/avito/solutions/country-chevron.svg" width="7" height="6" alt="" aria-hidden="true">
                     <span class="avito-inline-form__prefix" aria-hidden="true">+7</span>
                     <input class="avito-inline-form__phone-input" id="solutions-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(000) 000-00-00" aria-describedby="solutions-form-error" required>
                   </div>
@@ -234,7 +233,7 @@
             </div>
 
             <div class="avito-steps__roadmap">
-              <picture><source media="(max-width: 767px)" srcset="./assets/images/avito/steps/timeline-connector-mobile.svg"><img loading="lazy" decoding="async" class="avito-steps__line" src="./assets/images/avito/steps/timeline-connector-desktop.svg" alt="" aria-hidden="true"></picture>
+              <picture><source media="(max-width: 768px)" srcset="./assets/images/avito/steps/timeline-connector-mobile.svg"><source media="(max-width: 992px)" srcset="./assets/images/avito/steps/timeline-connector-tablet.svg"><img loading="lazy" decoding="async" class="avito-steps__line" src="./assets/images/avito/steps/timeline-connector-desktop.svg" alt="" aria-hidden="true"></picture>
               <div class="avito-steps__endpoint avito-steps__endpoint--start">
                 <span>
                   <picture class="avito-steps__endpoint-ring"><source media="(max-width: 767px)" srcset="./assets/images/avito/steps/endpoint-start-ring-mobile.png"><img loading="lazy" decoding="async" src="./assets/images/avito/steps/endpoint-start-ring-desktop.png" alt=""></picture>
@@ -406,7 +405,7 @@
                 <li><span class="avito-bonus__icon"><picture><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/icon-ring-mobile.png"><img loading="lazy" decoding="async" class="avito-bonus__icon-ring" src="./assets/images/avito/bonus/icon-ring-desktop.png" alt=""></picture><img loading="lazy" decoding="async" class="avito-bonus__icon-glyph" src="./assets/images/avito/bonus/icon-wallet-topup.png" alt=""></span><div><h3>Пополнить кошелёк</h3><p>от 5 000 ₽ до 20 000 ₽, мы удваиваем сумму первого пополнения</p></div></li>
               </ol>
             </div>
-            <picture class="avito-bonus__profile"><source media="(max-width: 767px)" srcset="./assets/images/avito/bonus/profile-mobile.png"><img loading="lazy" decoding="async" src="./assets/images/avito/bonus/profile-desktop.png" alt="Пример профиля Авито с 20 000 бонусов"></picture>
+            <picture class="avito-bonus__profile"><img loading="lazy" decoding="async" src="./assets/images/avito/bonus/profile-desktop.png" alt="Пример профиля Авито с 20 000 бонусов"></picture>
           </div>
         </section>
 
@@ -444,25 +443,25 @@
                 <img loading="lazy" decoding="async" class="avito-faq__avatar" src="./assets/images/avito/faq/client-avatar-01.png" alt="Клиент">
                 <div class="avito-faq__dialog">
                   <h3><button class="avito-faq__question" type="button" aria-expanded="true" aria-controls="faq-answer-1" id="faq-question-1"><span>Какие гарантии вы даете на количество заявок?</span></button></h3>
-                  <div class="avito-faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"><span class="avito-faq__answer-author">Mulin Media</span><p>Количество заявок зависит от ниши, региона и вашего бюджета. Перед стартом мы проводим бесплатный аудит и называем прогнозные цифры, основываясь на нашем опыте и данных конкурентов. Мы гарантируем качественную техническую настройку и выполнение всех этапов стратегии.</p></div>
+                  <div class="avito-faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"><span class="avito-faq__answer-tail" aria-hidden="true"></span><span class="avito-faq__answer-author">Mulin Media</span><p>Количество заявок зависит от ниши, региона и вашего бюджета. Перед стартом мы проводим бесплатный аудит и называем прогнозные цифры, основываясь на нашем опыте и данных конкурентов. Мы гарантируем качественную техническую настройку и выполнение всех этапов стратегии.</p></div>
                   <button class="avito-faq__action" type="button" aria-expanded="true" aria-controls="faq-answer-1">Скрыть ответ</button>
                 </div>
               </article>
               <article class="avito-faq__item">
                 <img loading="lazy" decoding="async" class="avito-faq__avatar" src="./assets/images/avito/faq/client-avatar-02.png" alt="Клиент">
-                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2"><span>Работаете ли вы с НДС и по договору?</span></button></h3><div class="avito-faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Да, работаем официально по договору, фиксируем объем работ, сроки и отчетность. Закрывающие документы предоставляем.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-2">Получить ответ</button></div>
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2"><span>Работаете ли вы с НДС и по договору?</span></button></h3><div class="avito-faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden><span class="avito-faq__answer-tail" aria-hidden="true"></span><span class="avito-faq__answer-author">Mulin Media</span><p>Да, работаем официально по договору, фиксируем объем работ, сроки и отчетность. Закрывающие документы предоставляем.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-2">Получить ответ</button></div>
               </article>
               <article class="avito-faq__item">
                 <img loading="lazy" decoding="async" class="avito-faq__avatar" src="./assets/images/avito/faq/client-avatar-03.png" alt="Клиент">
-                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3"><span>Сколько денег нужно на рекламный бюджет Авито?</span></button></h3><div class="avito-faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Бюджет зависит от категории и региона. После аудита мы предложим минимальный тестовый бюджет и сценарий масштабирования.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-3">Получить ответ</button></div>
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3"><span>Сколько денег нужно на рекламный бюджет Авито?</span></button></h3><div class="avito-faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden><span class="avito-faq__answer-tail" aria-hidden="true"></span><span class="avito-faq__answer-author">Mulin Media</span><p>Бюджет зависит от категории и региона. После аудита мы предложим минимальный тестовый бюджет и сценарий масштабирования.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-3">Получить ответ</button></div>
               </article>
               <article class="avito-faq__item">
                 <img loading="lazy" decoding="async" class="avito-faq__avatar" src="./assets/images/avito/faq/client-avatar-04.png" alt="Клиент">
-                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4"><span>Что если у меня специфический или дорогой товар (Готовый бизнес/Спецтехника)?</span></button></h3><div class="avito-faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Для готового бизнеса, спецтехники и дорогих товаров мы отдельно изучаем спрос и цикл сделки, а объявления строим вокруг доверия и квалификации лида.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-4">Получить ответ</button></div>
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4"><span>Что если у меня специфический или дорогой товар (Готовый бизнес/Спецтехника)?</span></button></h3><div class="avito-faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden><span class="avito-faq__answer-tail" aria-hidden="true"></span><span class="avito-faq__answer-author">Mulin Media</span><p>Для готового бизнеса, спецтехники и дорогих товаров мы отдельно изучаем спрос и цикл сделки, а объявления строим вокруг доверия и квалификации лида.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-4">Получить ответ</button></div>
               </article>
               <article class="avito-faq__item">
                 <img loading="lazy" decoding="async" class="avito-faq__avatar" src="./assets/images/avito/faq/client-avatar-05.png" alt="Клиент">
-                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5"><span>Можете ли вы помочь с другими каналами продаж?</span></button></h3><div class="avito-faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden><span class="avito-faq__answer-author">Mulin Media</span><p>Да. Подключаем Яндекс Директ, Telegram Ads, ВКонтакте, сайты и CRM, чтобы каналы работали как единая система.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-5">Получить ответ</button></div>
+                <div class="avito-faq__dialog"><h3><button class="avito-faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5"><span>Можете ли вы помочь с другими каналами продаж?</span></button></h3><div class="avito-faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden><span class="avito-faq__answer-tail" aria-hidden="true"></span><span class="avito-faq__answer-author">Mulin Media</span><p>Да. Подключаем Яндекс Директ, Telegram Ads, ВКонтакте, сайты и CRM, чтобы каналы работали как единая система.</p></div><button class="avito-faq__action" type="button" aria-expanded="false" aria-controls="faq-answer-5">Получить ответ</button></div>
               </article>
             </div>
           </div>

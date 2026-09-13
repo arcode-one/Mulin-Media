@@ -31,7 +31,7 @@ export function initAvitoSteps() {
   };
 
   const layout = () => {
-    const isMobile = matchMedia("(max-width: 767px)").matches;
+    const isMobile = matchMedia("(max-width: 768px)").matches;
     const config = isMobile ? MOBILE_LAYOUT : DESKTOP_LAYOUT;
     const steps = [...roadmap.querySelectorAll(".avito-step")];
 
@@ -91,7 +91,7 @@ export function initAvitoSteps() {
   const resizeObserver = new ResizeObserver(() => {
     const steps = [...roadmap.querySelectorAll(".avito-step")];
     const signature = [
-      matchMedia("(max-width: 767px)").matches,
+      matchMedia("(max-width: 768px)").matches,
       roadmap.clientWidth,
       ...steps.map((step) => Math.ceil(step.getBoundingClientRect().height)),
     ].join(":");

@@ -1675,3 +1675,48 @@
     margin-top: auto;
   }
 }
+/* Compact tablet cards: reserve real space for the title and duration badge. */
+@media (min-width: 768px) and (max-width: 819px) {
+  .workflow__steps .workflow-card {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    grid-template-rows: auto 1fr;
+    gap: 18px 8px;
+    padding: 16px;
+    align-items: start;
+  }
+  .workflow-card .workflow-card__icon,
+  .workflow-card .workflow-card__title,
+  .workflow-card .workflow-card__time,
+  .workflow-card .workflow-card__summary {
+    position: static;
+    inset: auto;
+    width: auto;
+    margin: 0;
+  }
+  .workflow-card .workflow-card__icon {
+    grid-area: 1 / 1;
+    font-size: 30px;
+    line-height: 32px;
+  }
+  .workflow-card .workflow-card__title {
+    grid-area: 1 / 2;
+    align-self: center;
+    font-size: 16px;
+    line-height: 20px;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+  .workflow-card .workflow-card__time {
+    grid-area: 1 / 3;
+    align-self: center;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+  .workflow-card .workflow-card__summary {
+    grid-area: 2 / 2 / 3 / 4;
+  }
+}

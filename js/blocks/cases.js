@@ -70,7 +70,7 @@ export const initCases = () => {
       dotClass: "cases__dot",
       enableSwipe: true,
       stableTrack: true,
-      snapInsetAfterInteraction: () => window.innerWidth <= 640 ? null : 16,
+      snapInsetAfterInteraction: () => window.innerWidth <= (document.body.dataset.layoutPage === "home" ? 767 : 640) ? null : 16,
       onPreview: (index) => {
         slider.classList.add("is-previewing");
         slider.querySelectorAll(".cases__slide").forEach((slide) => {

@@ -48,9 +48,12 @@ function configureHeader(page) {
 
   if (!header) return;
 
-  header.classList.toggle("header--light", page !== "home");
+  header.classList.add("header--light");
+  const darkHero = document.body.dataset.headerTheme === "dark" ||
+    (!document.body.dataset.headerTheme && page === "home");
+  header.classList.toggle("header--on-dark", darkHero);
 
-  const routes = PAGE_ROUTES[page] ?? PAGE_ROUTES.default;
+  const routes = PAGE_ROUTES.default;
 
   header.querySelectorAll("[data-header-route]").forEach((link) => {
     const route = link.dataset.headerRoute;
@@ -72,17 +75,11 @@ function configureHeader(page) {
   });
 }
 
-function configureFooter(page) {
-  const footer = document.querySelector("[data-shared-footer]");
-  footer?.classList.toggle("site-footer--avito", page === "avito");
-}
-
 export async function initSharedLayout() {
   const page = document.body.dataset.layoutPage ?? "default";
 
   await Promise.all(PARTIALS.map(([selector, path]) => loadPartial(selector, path)));
   configureHeader(page);
-  configureFooter(page);
 
   document.documentElement.classList.add("layout-is-ready");
 }

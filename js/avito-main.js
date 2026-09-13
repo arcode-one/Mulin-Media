@@ -8,10 +8,12 @@ import { initAvitoChannels } from "./blocks/avito-channels.js";
 import { initAvitoFaq } from "./blocks/avito-faq.js";
 import { initAvitoSolutions } from "./blocks/avito-solutions.js";
 import { initAvitoSteps } from "./blocks/avito-steps.js";
+import { initAvitoHero } from "./blocks/avito-hero.js";
 
 async function bootstrap() {
   await initSharedLayout();
   initHeader();
+  initAvitoHero();
   initLeadForms();
   initFooter();
   initCases();

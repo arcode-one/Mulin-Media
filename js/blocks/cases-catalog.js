@@ -33,7 +33,7 @@ function initFilters(root) {
   const mobileOptions = root.querySelector("[data-mobile-filter-options]");
   const mobileLabel = root.querySelector("[data-mobile-filter-label]");
 
-  if (!buttons.length || !cards.length || !empty) return;
+  if (!buttons.length || !empty) return;
 
   const closeMobileFilter = () => {
     if (!mobileFilter || !mobileTrigger || !mobileOptions) return;
@@ -49,7 +49,7 @@ function initFilters(root) {
     let visibleCount = 0;
 
     cards.forEach((card) => {
-      const isVisible = filter === "all" || card.dataset.category === filter;
+      const isVisible = filter === "all" || (card.dataset.category || "").split(/\s+/).includes(filter);
       card.hidden = !isVisible;
       if (isVisible) visibleCount += 1;
     });
@@ -89,11 +89,13 @@ function initFilters(root) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
+    if (event.key !== "Escape" || !mobileFilter?.classList.contains("is-open")) return;
 
     closeMobileFilter();
     mobileTrigger?.focus();
   });
+  window.matchMedia("(min-width: 992px)").addEventListener("change", closeMobileFilter);
+  applyFilter(buttons.find((button) => button.classList.contains("is-active"))?.dataset.filter || "all");
 }
 
 function initContactForm(root) {

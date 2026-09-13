@@ -540,15 +540,6 @@
     width: 100%;
     margin-inline: auto;
   }
-  body[data-layout-page="home"] .header:not(.is-scrolled) .header__logo {
-    flex-basis: 125px;
-    width: 125px;
-    height: 30px;
-  }
-  body[data-layout-page="home"] .header:not(.is-scrolled) .header__logo-image--white {
-    content: url("../../assets/images/footer/footer-logo-white-horizontal.svg");
-    object-fit: contain;
-  }
   .hero {
     height: 100dvh;
     min-height: 0;
