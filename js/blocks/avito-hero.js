@@ -28,8 +28,19 @@ export function initAvitoHero() {
     const artworkBottom = visual.offsetTop + 760 * scale;
     container.style.setProperty("--hero-content-height", `${Math.ceil(Math.max(contentBottom, artworkBottom))}px`);
   };
-  new ResizeObserver(update).observe(container);
-  new ResizeObserver(update).observe(content);
-  range.addEventListener("change", update);
+  // The update writes the observed container's height. Defer that write out of
+  // ResizeObserver delivery so WebKit does not enter a same-frame resize loop.
+  let frame = 0;
+  const schedule = () => {
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      update();
+    });
+  };
+  const observer = new ResizeObserver(schedule);
+  observer.observe(container);
+  observer.observe(content);
+  range.addEventListener("change", schedule);
   update();
 }

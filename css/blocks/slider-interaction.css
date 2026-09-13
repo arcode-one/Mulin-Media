@@ -1,0 +1,24 @@
+/* Keep native vertical scrolling and pinch zoom; horizontal movement is handled
+   by the shared slider. Avoid expensive per-frame blur rasterization on touch. */
+.is-loop-slider.is-swipe-enabled {
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .is-loop-slider .team__item,
+  .is-loop-slider .blog__item,
+  .is-loop-slider .cases__slide {
+    filter: none !important;
+    transition: opacity 160ms ease !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-loop-slider .team__item,
+  .is-loop-slider .blog__item,
+  .is-loop-slider .cases__slide {
+    transition: none !important;
+  }
+}

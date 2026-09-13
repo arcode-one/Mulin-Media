@@ -19,6 +19,7 @@
 @import url("./blocks/button-states.css");
 @import url("./blocks/responsive-hardening.css");
 @import url("./blocks/footer-responsive.css");
+@import url("./blocks/slider-interaction.css");
 
 /* Same shared carousel as the homepage, adapted to the light service page. */
 body[data-layout-page="avito"] .cases {

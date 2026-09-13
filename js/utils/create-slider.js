@@ -29,7 +29,7 @@ export function createLoopSlider(root, options = {}) {
   const nextButtons = toElements(options.nextButtons);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const activeClass = options.activeClass || "is-active";
-  const transition = options.transition || "transform 440ms cubic-bezier(.22, 1, .36, 1)";
+  const transition = options.transition || "transform 320ms cubic-bezier(.22, 1, .36, 1)";
   const initialActive = slides.findIndex((slide) => slide.classList.contains(activeClass));
   let activeIndex = initialActive >= 0 ? initialActive : 0;
   let clones = [];
@@ -54,6 +54,9 @@ export function createLoopSlider(root, options = {}) {
   let previewIndex = null;
   let layoutWidth = window.innerWidth;
   let resizePending = false;
+  let dragOffset = 0;
+  let queueVersion = 0;
+  let cancelTransition = null;
 
   const preview = (index) => {
     if (previewIndex === index) return;
@@ -222,26 +225,59 @@ export function createLoopSlider(root, options = {}) {
     updateUi();
   };
 
-  const waitForTransition = () => new Promise((resolve) => {
-    const transitionTime = reduceMotion.matches ? 0 : getTransitionTime(track);
+  const readTrackX = () => {
+    const transform = window.getComputedStyle(track).transform;
+    return transform === "none" ? 0 : new DOMMatrixReadOnly(transform).m41;
+  };
+
+  const waitForTransition = (distance) => new Promise((resolve) => {
+    const transitionTime = reduceMotion.matches || distance < 0.5 ? 0 : getTransitionTime(track);
     if (!transitionTime) {
-      resolve();
+      resolve(true);
       return;
     }
 
     let settled = false;
-    const done = (event) => {
+    let timer = 0;
+    const done = (event, completed = true) => {
       if (settled || (event && (event.target !== track || event.propertyName !== "transform"))) return;
       settled = true;
       track.removeEventListener("transitionend", done);
-      resolve();
+      window.clearTimeout(timer);
+      cancelTransition = null;
+      resolve(completed);
     };
 
+    cancelTransition = () => done(null, false);
     track.addEventListener("transitionend", done);
-    window.setTimeout(() => done(), transitionTime + 80);
+    timer = window.setTimeout(() => done(), transitionTime + 80);
   });
 
+  // Pick up the rendered position, not the animation's destination. Normalizing
+  // a loop copy changes coordinates only; the same card stays under the finger.
+  const interruptAnimation = () => {
+    const renderedX = readTrackX();
+    queueVersion += 1;
+    cancelTransition?.();
+    pendingSteps = 0;
+    requestedIndex = null;
+    isAnimating = false;
+    root.classList.remove("is-animating");
+    const step = getStep();
+    const nearest = Math.round(-(renderedX + baseOffset) / step);
+    const previousIndex = activeIndex;
+    activeIndex = mod(activeIndex + nearest, slides.length);
+    const indexDelta = activeIndex - previousIndex;
+    baseOffset += indexDelta * step;
+    const normalizedX = renderedX + (nearest - indexDelta) * step;
+    dragOffset = normalizedX + baseOffset;
+    track.style.transition = "none";
+    track.style.transform = `translate3d(${normalizedX}px, 0, 0)`;
+    updateUi();
+  };
+
   const animateStep = async (direction) => {
+    const renderedX = readTrackX();
     preview(mod(activeIndex + direction, slides.length));
     // Preserve the initial container alignment, then snap to the section edge.
     const previousCorrection = getSnapCorrection();
@@ -254,8 +290,9 @@ export function createLoopSlider(root, options = {}) {
     track.style.removeProperty("transition");
     setTrackTransition();
     void track.offsetWidth;
-    track.style.transform = `translate3d(${-(baseOffset + direction * getStep())}px, 0, 0)`;
-    await waitForTransition();
+    const targetX = -(baseOffset + direction * getStep());
+    track.style.transform = `translate3d(${targetX}px, 0, 0)`;
+    if (!await waitForTransition(Math.abs(renderedX - targetX))) return;
     const previousIndex = activeIndex;
     activeIndex = mod(activeIndex + direction, slides.length);
     root.classList.remove("is-animating");
@@ -279,9 +316,10 @@ export function createLoopSlider(root, options = {}) {
   };
 
   const processQueue = async () => {
-    if (isAnimating || !isEnabled()) return;
+    if (isAnimating || pointerId !== null || !isEnabled()) return;
+    const version = queueVersion;
 
-    while (isEnabled()) {
+    while (isEnabled() && version === queueVersion && pointerId === null) {
       let direction = 0;
 
       if (pendingSteps) {
@@ -317,15 +355,18 @@ export function createLoopSlider(root, options = {}) {
   };
 
   const animateBack = async () => {
+    const renderedX = readTrackX();
     preview(activeIndex);
     isAnimating = true;
     root.classList.remove("is-dragging");
+    root.classList.add("is-animating");
     track.style.removeProperty("transition");
     setTrackTransition();
     void track.offsetWidth;
     track.style.transform = `translate3d(${-baseOffset}px, 0, 0)`;
-    await waitForTransition();
+    if (!await waitForTransition(Math.abs(renderedX + baseOffset))) return;
     isAnimating = false;
+    root.classList.remove("is-animating");
     updateUi();
     if (resizePending) rebuild();
     processQueue();
@@ -335,8 +376,8 @@ export function createLoopSlider(root, options = {}) {
     dragFrame = 0;
     const step = getStep();
     const limit = options.stableTrack ? step : step * 1.08;
-    const deltaX = Math.max(-limit, Math.min(limit, currentX - startX));
-    preview(Math.abs(deltaX) > step * 0.15
+    const deltaX = Math.max(-limit, Math.min(limit, dragOffset + currentX - startX));
+    preview(Math.abs(deltaX) > step * 0.5
       ? mod(activeIndex - Math.sign(deltaX), slides.length)
       : activeIndex);
     track.style.transform = `translate3d(${-(baseOffset - deltaX)}px, 0, 0)`;
@@ -345,17 +386,20 @@ export function createLoopSlider(root, options = {}) {
   const finishSwipe = (event, cancelled = false) => {
     if (pointerId === null || (event.pointerId !== undefined && event.pointerId !== pointerId)) return;
 
-    currentX = Number.isFinite(event.clientX) ? event.clientX : currentX;
+    // A cancelled pointer may report (0, 0), especially during browser gestures.
+    if (!cancelled && Number.isFinite(event.clientX)) currentX = event.clientX;
     if (dragFrame) {
       window.cancelAnimationFrame(dragFrame);
       paintDrag();
     }
 
-    const deltaX = currentX - startX;
+    const fingerDelta = currentX - startX;
+    const deltaX = dragOffset + fingerDelta;
     const wasHorizontal = dragDirection === "horizontal";
-    const dragged = wasHorizontal && Math.abs(deltaX) > 6;
+    const dragged = wasHorizontal && Math.abs(fingerDelta) > 6;
     const distanceThreshold = Math.min(80, Math.max(36, root.clientWidth * 0.1));
     const velocityThreshold = 0.42;
+    if (event.timeStamp - lastTime > 100) velocityX = 0;
     let direction = 0;
 
     if (!cancelled && dragDirection === "horizontal"
@@ -375,7 +419,7 @@ export function createLoopSlider(root, options = {}) {
     if (root.hasPointerCapture?.(finishedPointerId)) root.releasePointerCapture(finishedPointerId);
 
     if (direction) move(direction);
-    else if (wasHorizontal) animateBack();
+    else if (wasHorizontal || Math.abs(dragOffset) > 0.5) animateBack();
     else {
       root.classList.remove("is-dragging");
       if (resizePending) rebuild();
@@ -389,7 +433,11 @@ export function createLoopSlider(root, options = {}) {
 
   if (options.enableSwipe !== false) {
     root.addEventListener("pointerdown", (event) => {
-      if (!isEnabled() || isAnimating || (event.pointerType === "mouse" && event.button !== 0)) return;
+      if (!isEnabled() || pointerId !== null || event.isPrimary === false
+        || (event.pointerType === "mouse" && event.button !== 0)) return;
+      if (isAnimating && !options.stableTrack) return;
+      dragOffset = 0;
+      if (isAnimating) interruptAnimation();
       if (!options.stableTrack) markInteracted();
       pointerId = event.pointerId;
       startX = currentX = lastX = event.clientX;
@@ -424,7 +472,7 @@ export function createLoopSlider(root, options = {}) {
 
       if (dragDirection !== "horizontal") return;
       if (options.stableTrack && deltaX > 0) revealLeadingClones();
-      event.preventDefault();
+      if (event.cancelable) event.preventDefault();
       const elapsed = Math.max(1, event.timeStamp - lastTime);
       const instantVelocity = (event.clientX - lastX) / elapsed;
       velocityX = velocityX * 0.7 + instantVelocity * 0.3;
@@ -434,14 +482,18 @@ export function createLoopSlider(root, options = {}) {
       if (!dragFrame) dragFrame = window.requestAnimationFrame(paintDrag);
     });
 
-    root.addEventListener("pointerup", (event) => finishSwipe(event));
-    root.addEventListener("pointercancel", (event) => finishSwipe(event, true));
+    window.addEventListener("pointerup", (event) => finishSwipe(event));
+    window.addEventListener("pointercancel", (event) => finishSwipe(event, true));
     root.addEventListener("lostpointercapture", (event) => {
       // Touch starts with implicit capture on the tapped image/link. Its loss
       // bubbles when we transfer capture to the viewport; that is not a cancel.
       if (event.target === root && pointerId !== null) finishSwipe(event, true);
     });
     root.addEventListener("dragstart", (event) => event.preventDefault());
+    window.addEventListener("blur", () => finishSwipe({}, true));
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) finishSwipe({}, true);
+    });
     root.addEventListener("click", (event) => {
       if (!suppressClick) return;
       event.preventDefault();
@@ -469,7 +521,10 @@ export function createLoopSlider(root, options = {}) {
       if (!isAnimating && pointerId === null) rebuild();
     });
   }, { passive: true });
-  reduceMotion.addEventListener("change", rebuild);
+  reduceMotion.addEventListener("change", () => {
+    if (isAnimating || pointerId !== null) resizePending = true;
+    else rebuild();
+  });
 
   rebuild();
   return { move, goTo, rebuild, getActiveIndex: () => activeIndex };
@@ -489,6 +544,7 @@ export function createSlider(root, options = {}) {
     dotsWrap,
     dotClass: "avito-slider-controls__dot",
     enableSwipe: options.enableSwipe,
+    stableTrack: true,
     enabled: () => window.matchMedia("(max-width: 767px)").matches || Boolean(options.translateOnDesktop),
   });
 }
