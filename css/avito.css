@@ -339,6 +339,16 @@ body[data-layout-page="avito"] .case-card__button:hover { background: #8248d6; }
   .avito-platform .avito-platform__benefit:nth-child(n) span { min-width: 0; white-space: normal; }
 }
 @media (max-width: 576px) {
+  .avito-platform .avito-platform__map-wrap {
+    overflow: visible;
+  }
+  .avito-platform .avito-platform__map {
+    top: -6px;
+    left: calc(50% + 77px);
+    width: 863px;
+    height: 454px;
+    transform: translateX(-50%) rotate(-14.85deg);
+  }
   .avito-platform .avito-platform__stat { width: clamp(164px, 43vw, 182px); }
   .avito-platform .avito-platform__stat--users { top: 20px; left: 20px; right: auto; }
   .avito-platform .avito-platform__stat--deals { top: 140px; left: auto; right: 20px; }
@@ -638,8 +648,7 @@ body[data-layout-page="avito"] .case-card__button:hover { background: #8248d6; }
   }
   body[data-layout-page="avito"] .team {
     height: auto;
-    padding-top: calc(var(--avito-section-gap) * 1.326667);
-    padding-bottom: calc(var(--avito-section-gap) * 0.666667);
+    padding-block: var(--avito-section-gap);
   }
   body[data-layout-page="avito"] .team__container { height: auto; }
   body[data-layout-page="avito"] .team__title { position: relative; top: auto; }
@@ -652,7 +661,7 @@ body[data-layout-page="avito"] .case-card__button:hover { background: #8248d6; }
   body[data-layout-page="avito"] .avito-bonus {
     height: auto;
     min-height: 0;
-    margin-top: calc(var(--avito-section-gap) * 1.026667);
+    margin-top: 0;
     margin-bottom: calc(var(--avito-section-gap) * 0.826667);
     padding-top: 0;
   }
@@ -932,4 +941,71 @@ body[data-layout-page="avito"] .avito-message .avito-message__bubble::after {
   body[data-layout-page="avito"] .avito-hero__visual {
     top: calc(50% - 380px * var(--hero-visual-scale, 0.5));
   }
+}
+
+@media (max-width: 850px) {
+  .avito-solutions__cta-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile Figma artwork keeps its natural size instead of fitting the viewport
+   height. Normal flow also leaves room for validation messages in the form. */
+@media (max-width: 640px) {
+  body[data-layout-page="avito"] .avito-hero {
+    height: auto;
+    min-height: 0;
+  }
+  body[data-layout-page="avito"] .avito-hero__container {
+    height: auto;
+    min-height: 0;
+    padding-top: 116px;
+  }
+  body[data-layout-page="avito"] .avito-hero__content {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
+  }
+  body[data-layout-page="avito"] .avito-hero__visual {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: calc(50% + 4.5px);
+    width: min(381px, calc(100vw - 9px));
+    height: auto;
+    aspect-ratio: 381 / 396;
+    margin-top: 15px;
+    transform: translateX(-50%);
+  }
+}
+
+/* One section gap around the team, without leftover roadmap height or the
+   bonus section's additional top margin. Shared homepage styles stay intact. */
+body[data-layout-page="avito"] .avito-steps {
+  height: auto !important;
+  min-height: 0 !important;
+  padding-bottom: 0;
+}
+@media (min-width: 1441px) {
+  body[data-layout-page="avito"] .content-showcase--team-only {
+    height: auto;
+    padding-bottom: 0;
+  }
+  body[data-layout-page="avito"] .team {
+    height: auto;
+    padding-block: 150px;
+  }
+  body[data-layout-page="avito"] .team__container { height: auto; }
+  body[data-layout-page="avito"] .team__title { position: relative; top: auto; }
+  body[data-layout-page="avito"] .team__controls { top: 20px; }
+  body[data-layout-page="avito"] .team__viewport {
+    position: relative;
+    inset: auto;
+    margin-top: 50px;
+  }
+  body[data-layout-page="avito"] .avito-bonus { margin-top: 0; }
 }

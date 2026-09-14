@@ -1,0 +1,124 @@
+.hero__description-figma { display: none; }
+.hero__mobile-person { display: none; }
+
+/* Figma 62:563: a 390px-wide composition ending at y=1151.
+   Keep its vertical coordinates independent of browser chrome and screen height.
+   Wider phones expose more of the same room; the portrait is never stretched. */
+@media (max-width: 576px) {
+  .hero {
+    height: 1151px;
+    min-height: 1151px;
+    background: #000;
+  }
+  .hero__media { background: #000; }
+  .hero__media .hero__scene { display: none; }
+  .hero__office {
+    display: block;
+    inset: auto;
+    top: 395px;
+    left: calc(50% - 1062px);
+    width: 1729.068px;
+    height: 973px;
+    z-index: 1;
+    transform: none;
+  }
+  .hero__mobile-base {
+    display: block;
+    top: 383px;
+    left: calc(50% - 1162px);
+    width: 1834px;
+    height: 768px;
+    z-index: 0;
+  }
+  .hero__mobile-person {
+    display: block;
+    position: absolute;
+    top: 411.725px;
+    left: calc(50% - 154.917px);
+    width: 339.419px;
+    height: 706.384px;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .hero__mobile-person img {
+    position: absolute;
+    top: -0.03%;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    height: 103.92%;
+  }
+  .hero__media::before {
+    display: block;
+    inset: 0 0 auto;
+    height: 488px;
+    background: #000;
+  }
+  .hero__media::after { display: none; }
+  .hero__mobile-shadow {
+    display: block;
+    top: -440px;
+    left: calc(50% - 531px);
+    width: 1258px;
+    height: 1185px;
+  }
+  .hero__mobile-light {
+    display: block;
+    top: -59.965px;
+    left: calc(50% - 529.45px);
+    width: 848.541px;
+    height: 670.435px;
+    transform: rotate(-19.83deg);
+  }
+  .hero__mobile-glow {
+    display: block;
+    top: 844px;
+    left: calc(50% - 666px);
+    width: 1277px;
+    height: 642px;
+  }
+  .hero__container { width: 100%; height: 100%; margin: 0; }
+  .hero__content { position: relative; inset: auto; width: 100%; height: 100%; padding: 0; transform: none; }
+  .hero__title-wrap {
+    position: absolute;
+    top: 100px;
+    left: 34px;
+    width: calc(100% - 68px);
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .hero .hero__title { width: 100%; max-width: none; font-size: 50px; line-height: 60px; }
+  .hero__title-copy--mobile br { display: initial; }
+  .hero__description {
+    position: absolute;
+    top: 433px;
+    left: 20px;
+    width: min(329px, calc(100% - 40px));
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .hero__description-default { display: none; }
+  .hero__description-figma { display: inline; }
+  .hero .hero__form.lead-form {
+    position: absolute;
+    top: 865px;
+    left: 50%;
+    width: min(334px, calc(100% - 40px));
+    margin: 0;
+    transform: translateX(-50%);
+  }
+  .hero .hero__form .lead-form__intro { width: 100%; font-size: 12px; line-height: 16px; }
+  .hero .hero__form .lead-form__controls {
+    grid-template-rows: 47px 47px;
+    gap: 20px;
+    height: auto;
+    margin-top: 20px;
+  }
+  .hero .hero__form .lead-form__phone-field,
+  .hero .hero__form .lead-form__submit { height: 47px; }
+  .hero .hero__form .lead-form__consent { width: min(318px, 100%); margin-top: 20px; }
+  .hero .hero__form .lead-form__consent-text { flex: 1 1 0; min-width: 0; font-size: 12px; line-height: 16px; }
+  .hero .hero__form .lead-form__checkbox-mark { width: 21px; height: 21px; flex-basis: 21px; margin-top: 0; }
+}

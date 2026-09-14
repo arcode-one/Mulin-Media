@@ -211,35 +211,23 @@
 
   .trusted__slider {
     padding-inline: 0;
-    /* Leave room for card shadows inside the horizontal clipping viewport. */
-    padding-bottom: 60px;
-    margin-bottom: -60px;
   }
 
   .trusted__track {
-    --trusted-gap: 20px;
+    --trusted-gap: 32px;
   }
 
   .trusted__item {
-    flex: 0 0 min(350px, calc(100vw - 40px));
-    width: min(350px, calc(100vw - 40px));
+    flex: 0 0 var(--trusted-mobile-logo-width);
+    width: var(--trusted-mobile-logo-width);
   }
 
   .trusted__card {
     height: 105px;
-    background: var(--color-white);
-    border: 1px solid var(--color-border-light);
-    border-radius: 10px;
-    box-shadow:
-      0 82px 23px rgb(0 0 0 / 0%),
-      0 53px 21px rgb(0 0 0 / 1%),
-      0 30px 18px rgb(0 0 0 / 5%),
-      0 13px 13px rgb(0 0 0 / 9%),
-      0 3px 7px rgb(0 0 0 / 10%);
   }
 
   .trusted__logo-box {
-    width: min(var(--trusted-mobile-logo-width), calc(100% - 40px));
+    width: 100%;
   }
 }
 
